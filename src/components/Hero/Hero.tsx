@@ -117,7 +117,6 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
-              {/* Left-side hero logo */}
               <div className="mt-4 sm:mt-6">
                 <Image
                   src="/logo.svg"
