@@ -1,0 +1,181 @@
+.section {
+  padding: 80px 0;
+  background-color: #f8fafc;
+  max-width: 1280%;
+  margin: 0 auto;
+
+  
+  }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.iconWrapper {
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(225, 29, 72, 0.1);
+}
+
+.mainTitle {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: #022d6d;
+  letter-spacing: -1px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.intro {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.danger {
+  color: #e11d48;
+  text-decoration: underline;
+}
+
+.desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Report Box Styling */
+.reportBox {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  border-left: 6px solid #6CA642; /* CSS Green Theme */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+}
+
+.reportBox h3 {
+  color: #022d6d;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.reportBox p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.contactRow a {
+  color: #6CA642;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.contactRow a:hover { opacity: 0.8; }
+
+.divider { color: #ddd; }
+
+/* Right List Styling */
+.listCard {
+  background-color: #022d6d;
+  padding: 50px 40px;
+  border-radius: 30px;
+  color: white;
+  box-shadow: 0 25px 50px -12px rgba(2, 45, 109, 0.25);
+}
+
+.listTitle {
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.never {
+  color: #ff9999;
+  text-decoration: underline;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.listItem {
+  display: flex;
+  gap: 15px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.cross {
+  color: #ff4d4d;
+  font-weight: 800;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 60px 0;
+  
+  
+  }
+  .listCard {
+    padding: 30px 20px;
+  }
+  .reportBox {
+    padding: 20px;
+  }
+  .contactRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .divider { display: none; }
+}

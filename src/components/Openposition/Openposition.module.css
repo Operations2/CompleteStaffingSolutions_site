@@ -1,0 +1,314 @@
+
+
+
+
+
+
+
+
+/* OPEN POSITION PAGE - EXACT FIGMA DESIGN */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+.hero {
+  position: relative;
+  min-height: 450px;
+  background: url('/open position/open-position-hero.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.heroTitle {
+  font-family: var(--font-jakarta);
+  font-size: clamp(23px, 4vw, 40px); /* Responsive font size */
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.heroSubtitle {
+  font-family: var(--font-jakarta);
+  font-size: clamp(16px, 2.5vw, 32px);
+  margin-bottom: 40px;
+  color: white;
+  font-weight: 500;
+}
+
+/* --- Search Form Container --- */
+.searchForm {
+  width: 100%;
+  max-width: 1000px; /* Changed from width: 1000px to max-width */
+  margin: 0 auto;
+  background: #B9C6DC;
+  border-radius: 15px;
+  padding: 24px 50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.searchInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+/* --- Input & Select Wrappers --- */
+.inputWrapper, .selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 4px;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.searchInput, .searchSelect {
+  width: 100%;
+  padding: 14px 15px 14px 45px; /* Space on left for icon */
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 15px;
+  background: white;
+  color: #374151;
+  outline: none;
+}
+
+/* Custom Select styling */
+.searchSelect {
+  appearance: none; /* Hide default browser arrow */
+  cursor: pointer;
+}
+
+.customArrow {
+  position: absolute;
+  right: 15px;
+  pointer-events: none;
+  color: #374151;
+  display: flex;
+  align-items: center;
+}
+
+.searchButton {
+  padding: 14px 35px;
+  background: #19478E;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.searchButton:hover {
+  background: #143a75;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   RESPONSIVE QUERIES
+   ========================================== */
+
+/* For Tablets (Screens smaller than 1024px) */
+@media (max-width: 1024px) {
+  .searchForm {
+    padding: 24px 30px;
+  }
+  .searchInputs {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    gap: 15px;
+  }
+  .searchButton {
+    grid-column: span 2; /* Button takes full width of row */
+  }
+}
+
+/* For Mobile (Screens smaller than 640px) */
+@media (max-width: 640px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 15px;
+  }
+  .searchForm {
+    padding: 20px;
+  }
+  .searchInputs {
+    grid-template-columns: 1fr; /* Stack everything in 1 column */
+  }
+  .searchButton {
+    grid-column: span 1;
+    width: 100%;
+  }
+  .heroTitle {
+    line-height: 1.2;
+  }
+}
+/* ==========================================
+   FEATURED JOBS - RESPONSIVE VERSION
+   ========================================== */
+
+.featured {
+  padding: 80px 20px; /* Added horizontal padding for mobile spacing */
+  background: white;
+}
+
+.sectionTitle {
+  font-family: var(--font-jakarta);
+  font-size: clamp(28px, 4vw, 32px); /* Responsive font size */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.featuredGrid {
+  /* FIXED: Removed width: 950px */
+  max-width: 950px; 
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  /* Laptop/Desktop: 3 columns */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 32px;
+}
+
+.featuredCard {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.featuredImage {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  padding: 12px 17px; /* Matches your padding */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px; /* Matches your design */
+  transition: transform 0.3s;
+}
+
+.featuredCard:hover .image {
+  transform: scale(1.02);
+}
+
+.featuredContent {
+  padding: 15px 20px;
+  flex-grow: 1; /* Ensures content fills space if cards are different heights */
+}
+
+.featuredTitle {
+  font-family: var(--font-jakarta);
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.featuredInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.featuredButton {
+  display: block;
+  background: #19478E;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0 auto 20px auto;
+  transition: all 0.3s;
+}
+
+.featuredButton:hover {
+  background: #143a75;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   RESPONSIVE QUERIES
+   ========================================== */
+
+/* TABLETS (Screens smaller than 1024px) */
+@media (max-width: 1024px) {
+  .featuredGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    gap: 20px;
+    max-width: 700px;
+    margin-bottom: 40px;
+  }
+}
+
+/* MOBILE (Screens smaller than 640px) */
+@media (max-width: 640px) {
+  .featured {
+    padding: 50px 15px;
+  }
+  
+  .featuredGrid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    max-width: 100%;
+  }
+
+  .featuredImage {
+    height: 200px; /* Slightly shorter on mobile */
+  }
+
+  .featuredInfo {
+    flex-direction: row; /* Keep location and type side-by-side */
+    justify-content: space-around;
+  }
+}

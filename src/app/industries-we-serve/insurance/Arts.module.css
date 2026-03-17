@@ -1,0 +1,115 @@
+
+.heroSection {
+  position: relative;
+  max-width: 100vw;
+  height: 390px;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: url('/industries detail pages/arts-hero.jpg'); /* add your hero image here */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.288);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.heroTitle {
+  font-size: clamp(28px, 4vw, 4rem); 
+  color: white;
+  letter-spacing: 0.1em;
+  margin: 0;
+  max-width: 900px;
+}
+
+.contentSection {
+  text-align: center;
+  padding: 80px 0;
+  background-color: white;
+  font-weight: 500;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.contentParagraph {
+  color: black;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* Responsive Media Queries */
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .contentParagraph {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .heroTitle {
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+  }
+
+  .contentParagraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .heroTitle {
+    font-size: 3.5rem;
+    letter-spacing: 0.09em;
+  }
+
+  .contentParagraph {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1201px) {
+  .heroTitle {
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+  }
+
+  .contentParagraph {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}

@@ -1,0 +1,172 @@
+/* ========================= */
+/* Base Styles (Laptop View) */
+/* ========================= */
+
+.section {
+  padding: 50px 60px;
+  background-color: #022d6d;
+  color: white;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  
+  }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.label {
+  color: #6CA642;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.green {
+  color: #6CA642;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #b9c6dc;
+  margin-bottom: 30px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 30px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #6CA642;
+  font-size: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  height: 450px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.img {
+  object-fit: cover;
+}
+
+/* ============================= */
+/* Responsive Styles Start Here  */
+/* ============================= */
+
+/* Large Screens (bigger than laptops - 1400px and above) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1600px;
+    gap: 90px;
+    padding: 0 80px;
+  }
+
+  .title {
+    font-size: clamp(32px, 4vw, 52px);
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .imageContainer {
+    height: 520px;
+  }
+}
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  .section {
+    padding: 40px 20px;
+  
+  
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .list {
+    align-items: center;
+  }
+
+  .list li {
+    padding-left: 0;
+  }
+
+  .list li::before {
+    position: relative;
+    left: 0;
+    margin-right: 8px;
+  }
+
+  .imageContainer {
+    height: 350px;
+    border-radius: 24px;
+  }
+}
+
+/* Mobile Phones (576px and below) */
+@media (max-width: 576px) {
+  .section {
+    padding: 30px 15px;
+  
+  
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .list li {
+    font-size: 14px;
+  }
+
+  .imageContainer {
+    height: 260px;
+    border-radius: 18px;
+  }
+}
