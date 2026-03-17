@@ -69,9 +69,9 @@ const PauseIcon = () => (
 );
 
 const stats = [
-  { number: "35,000+", description: "Successful Placements" },
-  { number: "200,000+", description: "Qualified Candidates" },
   { number: "25+", description: "Years of Experience" },
+  { number: "200,000+", description: "Successful Placements" },
+  { number: "35,000+", description: "Companies Served" },
 ];
 
 const pillars = [

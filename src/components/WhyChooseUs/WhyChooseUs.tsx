@@ -116,6 +116,19 @@ export default function WhyChooseUs() {
               </div>
             </Link>
           ))}
+          <div className="industries-card group flex flex-col bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 cursor-pointer">
+            <Link href="/industries-we-serve" className="block w-full h-full">
+              <div className="relative aspect-[4/3] w-full h-full">
+                <Image
+                  src="/Industry-card.webp"
+                  alt="View All Industries"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -203,7 +203,7 @@ export default function Header() {
           <div className="flex items-center gap-4 text-xs sm:text-sm">
             <div className="hidden sm:flex items-center gap-2 text-black">
               <PhoneIcon className="w-4 h-4 text-[#6ca642]" />
-              <span>(401) 475-8800</span>
+              <a href="tel:(401) 475-8800">(401) 475-8800</a>
             </div>
             <button
               onClick={() => setShowFraudModal(true)}

@@ -157,7 +157,7 @@ export default function Footer() {
                     aria-hidden
                   />
                   <a
-                    href="tel:+12025550153"
+                    href="tel:(401) 475-8800"
                     className="footerLink text-neutral-800 no-underline hover:text-neutral-900 sm:text-xs"
                   >
                     (401) 475-8800
