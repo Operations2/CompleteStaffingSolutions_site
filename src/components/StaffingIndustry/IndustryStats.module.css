@@ -1,0 +1,45 @@
+.section {
+  padding: 40px 0;
+  background: #f8f9fa;
+
+  
+  }
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.statBox {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.stat {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.num {
+  font-size: 36px;
+  font-weight: 800;
+  color: #6CA642; /* Green from your fraud notice */
+}
+.label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.divider {
+  width: 1px;
+  height: 50px;
+  background: #ddd;
+}
+@media (max-width: 768px) {
+  .statBox { flex-direction: column; gap: 30px; }
+  .divider { display: none; }
+}

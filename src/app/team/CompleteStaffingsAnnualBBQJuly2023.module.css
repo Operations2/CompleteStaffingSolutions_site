@@ -1,0 +1,216 @@
+.section {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 24px 64px;
+  box-sizing: border-box;
+  gap: 24px;
+  font-family: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+
+  
+  }
+
+.title {
+  margin: 0;
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 700;
+  color: #0d0d0d;
+  line-height: 1.25;
+  text-align: left;
+  width: 100%;
+  max-width: 1292px;
+  padding: 0 0 0 4px;
+}
+
+/* Row 1: 6:2 aspect (width:height = 3:1); gallery matches other sections' width */
+.gallery {
+  width: 100%;
+  max-width: 1292px;
+  display: grid;
+  grid-template-columns: 749fr 513fr;
+  grid-template-rows: 320px 185px 150px;
+  gap: 12px;
+  min-height: 0;
+}
+
+/* Next.js Image renders a span wrapper - constrain it so grid rows don't grow */
+.imageFull {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+}
+
+.imageLeftMid {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+}
+
+.imageRightTall {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+}
+
+.bottomRow {
+  grid-column: 1;
+  grid-row: 3;
+  min-height: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 360fr 359fr;
+  gap: 12px;
+}
+
+.imageLeftBot,
+.imageRightBot {
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 40px 20px 56px;
+    gap: 20px;
+  
+  
+  }
+
+  .gallery {
+    max-width: 100%;
+    grid-template-rows: 240px 170px 135px;
+    gap: 12px;
+  }
+
+  .bottomRow {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 32px 16px 48px;
+    gap: 20px;
+  
+  
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "full"
+      "leftMid"
+      "rightTall"
+      "bottomRow";
+    gap: 14px;
+  }
+
+  .imageFull {
+    grid-area: full;
+    grid-column: auto;
+    grid-row: auto;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .imageLeftMid {
+    grid-area: leftMid;
+    grid-column: auto;
+    grid-row: auto;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .imageRightTall {
+    grid-area: rightTall;
+    grid-column: auto;
+    grid-row: auto;
+    height: 220px;
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  .bottomRow {
+    grid-area: bottomRow;
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .imageLeftBot,
+  .imageRightBot {
+    height: 140px;
+    min-height: 0;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 24px 12px 40px;
+    gap: 16px;
+  
+  
+  }
+
+  .gallery {
+    gap: 12px;
+  }
+
+  .imageFull {
+    height: 200px;
+  }
+
+  .imageLeftMid {
+    height: 160px;
+  }
+
+  .imageRightTall {
+    height: 200px;
+  }
+
+  .imageLeftBot,
+  .imageRightBot {
+    height: 120px;
+  }
+
+  .bottomRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
