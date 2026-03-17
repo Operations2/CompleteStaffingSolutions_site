@@ -3,14 +3,19 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaHospital, FaLandmark, FaCity, FaCog, FaBriefcase } from "react-icons/fa";
+import {
+  FaHospital,
+  FaLandmark,
+  FaCity,
+  FaCog,
+  FaBriefcase,
+} from "react-icons/fa";
 
 const INDUSTRY_CARDS = [
   {
     id: "our-solutions",
     title: "Our Solutions",
-    description:
-      "We offer a wide range of solutions to meet your needs.",
+    description: "We offer a wide range of solutions to meet your needs.",
     href: "/our-solutions",
     image: "/industries detail pages/manufacturing-hero.jpg",
     icon: FaBriefcase,
@@ -19,8 +24,7 @@ const INDUSTRY_CARDS = [
   {
     id: "healthcare",
     title: "Healthcare",
-    description:
-      "Nurses, technicians, healthcare administrator roles.",
+    description: "Nurses, technicians, healthcare administrator roles.",
     href: "/industries-we-serve/healthcare",
     image: "/industries detail pages/healthcare-hero.jpg",
     icon: FaHospital,
@@ -29,8 +33,7 @@ const INDUSTRY_CARDS = [
   {
     id: "financial-services",
     title: "Financial Services",
-    description:
-      "Banking, investment, accounting positions.",
+    description: "Banking, investment, accounting positions.",
     href: "/industries-we-serve/financial-services",
     image: "/financial_hero_section_image.jpg",
     icon: FaLandmark,
@@ -39,13 +42,12 @@ const INDUSTRY_CARDS = [
   {
     id: "real-estate",
     title: "Real Estate",
-    description:
-      "Property management, sales, development roles.",
+    description: "Property management, sales, development roles.",
     href: "/industries-we-serve/real-estate",
     image: "/industries detail pages/real-estate.jpg",
     icon: FaCity,
     linkColor: "#4a9da8",
-  }
+  },
 ];
 
 export default function WhyChooseUs() {
@@ -56,7 +58,7 @@ export default function WhyChooseUs() {
           Explore Opportunities Across Industries
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-6 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 md:gap-6 lg:gap-6">
           {INDUSTRY_CARDS.map((card) => (
             <Link
               key={card.id}
@@ -116,19 +118,43 @@ export default function WhyChooseUs() {
               </div>
             </Link>
           ))}
-          <div className="industries-card group flex flex-col bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 cursor-pointer">
-            <Link href="/industries-we-serve" className="block w-full h-full">
-              <div className="relative aspect-[4/3] w-full h-full">
-                <Image
-                  src="/Industry-card.webp"
-                  alt="View All Industries"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                />
+          <Link
+            href="/industries-we-serve"
+            className="group flex flex-col w-full max-w-sm bg-[#243261] rounded-3xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+          >
+            {/* Top Section: Nebula Background & Icon */}
+            <div className="relative aspect-square w-full overflow-hidden flex items-center justify-center">
+              {/* The Space/Nebula Background Image */}
+              <Image
+                src="/Industry-card.webp"
+                alt="Space Background"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+
+            {/* Bottom Section: Text & Arrow */}
+            <div className="flex items-center justify-between p-8 pt-6 pb-10">
+              <h3 className="text-white font-bold text-3xl sm:text-4xl leading-tight max-w-[200px]">
+                View All <br /> Industries
+              </h3>
+
+              {/* Chevron Icon */}
+              <div className="text-white transition-transform duration-300 group-hover:translate-x-2">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-10 h-10 sm:w-12 sm:h-12"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
