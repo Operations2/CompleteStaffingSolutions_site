@@ -122,7 +122,7 @@ export default function WhyChooseUs() {
             href="/industries-we-serve"
             className="group flex flex-col w-full max-w-sm bg-[#243261] rounded-3xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
           >
-            {/* Top Section: Nebula Background & Icon */}
+            {/* Topackground & Icon */}
             <div className="relative aspect-square w-full overflow-hidden flex items-center justify-center">
               {/* The Space/Nebula Background Image */}
               <Image
