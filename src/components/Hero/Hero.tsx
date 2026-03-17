@@ -110,7 +110,7 @@ export default function Hero() {
                     Search Jobs
                   </Link>
                   <Link
-                    href="/employment-form"
+                    href="/job-request"
                     className="hero-cta hero-cta-green inline-flex items-center justify-center h-[50px] px-6 rounded-lg text-base font-semibold font-[var(--font-inter)] text-white no-underline  text-xs lg:text-base transition-all duration-300 hover:scale-[1.02] hover:shadow-lg min-w-[140px] sm:min-w-[140px] whitespace-nowrap"
                   >
                     Hire Talent
