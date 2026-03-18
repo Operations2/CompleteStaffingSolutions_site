@@ -2,7 +2,7 @@
 
 export default function EmploymentpositionHero() {
   return (
-    <section className="relative w-full min-h-[380px] xs:min-h-[420px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#19478e] via-[#225eb9] to-[#6CA642]">
+    <section className="relative w-full min-h-[200px] xs:min-h-[300px] sm:min-h-[400px] flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#19478e] via-[#225eb9] to-[#6CA642]">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute -left-10 top-10 w-40 h-40 rounded-full border border-white/40" />
         <div className="absolute right-6 top-12 w-24 h-24 rounded-full border border-white/30" />

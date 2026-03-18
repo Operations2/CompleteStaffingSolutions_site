@@ -88,11 +88,22 @@ export default function Hero() {
 
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
         {/* Hero content */}
-        <div className="relative z-[4] col-span-2 flex flex-1 flex-col justify-center pt-[100px] md:pt-[120px] pb-6 md:pb-8">
+        <div className="relative z-4 col-span-2 flex flex-1 flex-col justify-center pt-[75px] md:pt-[120px] pb-6 md:pb-8">
           <div className="w-full max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 2xl:px-8">
-            <div className="flex items-center justify-between">
-              <div className="revealLeft textContent max-w-[600px] flex flex-col items-start gap-5 md:gap-6">
-                <h1 className="hero-title font-bold text-[clamp(28px,4vw,48px)] md:text-[clamp(36px,4.5vw,56px)] leading-[1.15] text-white text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4">
+              {/* Centered logo on mobile, right-aligned on larger screens */}
+              <div className="block sm:hidden mb-2">
+                <Image
+                  src="/logo.svg"
+                  alt="Complete Staffing Solutions"
+                  width={320}
+                  height={120}
+                  className="h-auto w-[220px] sm:w-[260px] md:w-[300px] object-contain drop-shadow-[0_10px_40px_rgba(0,0,0,0.7)]"
+                  priority
+                />
+              </div>
+              <div className="revealLeft textContent max-w-[600px] flex flex-col items-center sm:items-start gap-5 md:gap-6 text-center sm:text-left">
+                <h1 className="hero-title font-bold text-[clamp(28px,4vw,48px)] md:text-[clamp(36px,4.5vw,56px)] leading-[1.15] text-white">
                   Empowering Careers.
                   <br />
                   Strengthening Businesses.
@@ -117,7 +128,8 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
-              <div className="mt-4 sm:mt-6">
+              {/* Desktop / tablet logo (kept on the right) */}
+              <div className="hidden sm:block mt-4 sm:mt-6">
                 <Image
                   src="/logo.svg"
                   alt="Complete Staffing Solutions"

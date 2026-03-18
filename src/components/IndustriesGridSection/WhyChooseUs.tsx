@@ -50,7 +50,7 @@ const INDUSTRY_CARDS = [
   },
 ];
 
-export default function WhyChooseUs() {
+export default function IndustriesGridSection() {
   return (
     <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 2xl:px-12 py-4 md:py-6 lg:py-8 xl:py-10">
       <div className="w-full max-w-[1280px] 2xl:max-w-[1440px] mx-auto">
