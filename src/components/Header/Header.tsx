@@ -110,7 +110,7 @@ function DesktopDropdown({
         type="button"
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className={`inline-flex items-center gap-1 font-semibold pb-1 border-b-2 border-transparent -mb-1.5 hover:text-[var(--accent)] transition-colors ${
+        className={`inline-flex items-center gap-1 font-semibold pb-1 border-b-2 border-transparent -mb-1.5 hover:text-accent transition-colors ${
           isSpecificPath(pathname) ? "text-black" : ""
         }`}
       >
@@ -146,6 +146,7 @@ export default function Header() {
   const [showFraudModal, setShowFraudModal] = useState(false);
 
   const pathname = usePathname();
+  const hideNavbar = pathname?.startsWith("/staffing-agency") ?? false;
 
   useEffect(() => {
     setMounted(true);
@@ -180,10 +181,10 @@ export default function Header() {
   const dropdownLinkClass = `block px-5 py-2.5 text-[15px] font-semibold text-black no-underline hover:bg-[#6ca642]/10 hover:text-[#6ca642]`;
 
   return (
-    <header className="relative z-50 w-full text-sm font-[var(--font-inter)]">
+    <header className="relative z-50 w-full text-sm font-(--font-inter)">
       {/* Top bar */}
       <div className="w-full bg-[#bbe5ff] text-white">
-        <div className="w-full max-w-[1280px] 2xl:max-w-[1840px] mx-auto flex flex-wrap items-center justify-between gap-3 px-4 py-2 2xl:px-8 font-[var(--font-dm-sans)]">
+        <div className="w-full max-w-[1280px] 2xl:max-w-[1840px] mx-auto flex flex-wrap items-center justify-between gap-3 px-4 py-2 2xl:px-8 font-(--font-dm-sans)">
           <Link
             href="/"
             aria-label="Complete Staffing Solutions - Home"
@@ -214,141 +215,145 @@ export default function Header() {
           </div>
 
           {/* Mobile hamburger */}
-          <button
-            type="button"
-            className="inline-flex lg:hidden items-center justify-center w-10 h-10 rounded hover:bg-black/10 text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen((open) => !open)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? (
-              <CloseIcon className="w-6 h-6" />
-            ) : (
-              <HamburgerIcon className="w-6 h-6" />
-            )}
-          </button>
+          {!hideNavbar && (
+            <button
+              type="button"
+              className="inline-flex lg:hidden items-center justify-center w-10 h-10 rounded hover:bg-black/10 text-white transition-colors"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? (
+                <CloseIcon className="w-6 h-6" />
+              ) : (
+                <HamburgerIcon className="w-6 h-6" />
+              )}
+            </button>
+          )}
         </div>
       </div>
 
       {/* Desktop nav */}
-      <div className="w-full absolute top-[56px] sm:top-[60px] left-0 right-0 z-40">
-        <div className="w-full max-w-[1280px] 2xl:max-w-[1440px] mx-auto flex items-center justify-end px-4 py-3 lg:py-4 2xl:px-8">
-          <nav
-            className="py-5 hidden lg:flex items-center gap-6 text-[15px] text-white"
-            aria-label="Main navigation"
-          >
-            <Link
-              href="/"
-              className={navItemClass("/")}
-              onClick={() => setDesktopOpenDropdown(null)}
-            >
-              Home
-            </Link>
-
-            <Link
-              href="/about-us"
-              className={navItemClass("/about-us")}
-              onClick={() => setDesktopOpenDropdown(null)}
-            >
-              About Us
-            </Link>
-
-            <Link
-              href="/why-choose-us"
-              className={navItemClass("/why-choose-us")}
-              onClick={() => setDesktopOpenDropdown(null)}
-            >
-              Why Choose Us
-            </Link>
-
-            <DesktopDropdown
-              label="Employers"
-              dropdownKey="employers"
-              openKey={desktopOpenDropdown}
-              onOpen={setDesktopOpenDropdown}
-              onClose={() => setDesktopOpenDropdown(null)}
+      {!hideNavbar && (
+        <div className="w-full absolute top-[56px] sm:top-[60px] left-0 right-0 z-40">
+          <div className="w-full max-w-[1280px] 2xl:max-w-[1440px] mx-auto flex items-center justify-end px-4 py-3 lg:py-4 2xl:px-8">
+            <nav
+              className="py-5 hidden lg:flex items-center gap-6 text-[15px] text-white"
+              aria-label="Main navigation"
             >
               <Link
-                href="/our-solutions"
-                className={dropdownLinkClass}
+                href="/"
+                className={navItemClass("/")}
                 onClick={() => setDesktopOpenDropdown(null)}
               >
-                Our Solutions
+                Home
               </Link>
-              <Link
-                href="/industries-we-serve"
-                className={dropdownLinkClass}
-                onClick={() => setDesktopOpenDropdown(null)}
-              >
-                Industries
-              </Link>
-            </DesktopDropdown>
 
-            <Link
-              href="/our-recruiting-process"
-              className={navItemClass("/our-recruiting-process")}
-              onClick={() => setDesktopOpenDropdown(null)}
-            >
-              Our Recruiting Process
-            </Link>
+              <Link
+                href="/about-us"
+                className={navItemClass("/about-us")}
+                onClick={() => setDesktopOpenDropdown(null)}
+              >
+                About Us
+              </Link>
 
-            <DesktopDropdown
-              label="Job Seekers"
-              dropdownKey="jobseekers"
-              openKey={desktopOpenDropdown}
-              onOpen={setDesktopOpenDropdown}
-              onClose={() => setDesktopOpenDropdown(null)}
-            >
               <Link
-                href="/open-position"
-                className={dropdownLinkClass}
+                href="/why-choose-us"
+                className={navItemClass("/why-choose-us")}
                 onClick={() => setDesktopOpenDropdown(null)}
               >
-                Open Positions
+                Why Choose Us
               </Link>
-              <Link
-                href="/employment-form"
-                className={dropdownLinkClass}
-                onClick={() => setDesktopOpenDropdown(null)}
-              >
-                For Job Applications
-              </Link>
-            </DesktopDropdown>
 
-            <DesktopDropdown
-              label="Contact"
-              dropdownKey="contact"
-              openKey={desktopOpenDropdown}
-              onOpen={setDesktopOpenDropdown}
-              onClose={() => setDesktopOpenDropdown(null)}
-              alignRight
-            >
+              <DesktopDropdown
+                label="Employers"
+                dropdownKey="employers"
+                openKey={desktopOpenDropdown}
+                onOpen={setDesktopOpenDropdown}
+                onClose={() => setDesktopOpenDropdown(null)}
+              >
+                <Link
+                  href="/our-solutions"
+                  className={dropdownLinkClass}
+                  onClick={() => setDesktopOpenDropdown(null)}
+                >
+                  Our Solutions
+                </Link>
+                <Link
+                  href="/industries-we-serve"
+                  className={dropdownLinkClass}
+                  onClick={() => setDesktopOpenDropdown(null)}
+                >
+                  Industries
+                </Link>
+              </DesktopDropdown>
+
               <Link
-                href="/contact"
-                className={dropdownLinkClass}
+                href="/our-recruiting-process"
+                className={navItemClass("/our-recruiting-process")}
                 onClick={() => setDesktopOpenDropdown(null)}
               >
-                Our Locations
+                Our Recruiting Process
               </Link>
-              <Link
-                href="/policies"
-                className={dropdownLinkClass}
-                onClick={() => setDesktopOpenDropdown(null)}
+
+              <DesktopDropdown
+                label="Job Seekers"
+                dropdownKey="jobseekers"
+                openKey={desktopOpenDropdown}
+                onOpen={setDesktopOpenDropdown}
+                onClose={() => setDesktopOpenDropdown(null)}
               >
-                Policies and Disclosures
-              </Link>
-            </DesktopDropdown>
-          </nav>
+                <Link
+                  href="/open-position"
+                  className={dropdownLinkClass}
+                  onClick={() => setDesktopOpenDropdown(null)}
+                >
+                  Open Positions
+                </Link>
+                <Link
+                  href="/employment-form"
+                  className={dropdownLinkClass}
+                  onClick={() => setDesktopOpenDropdown(null)}
+                >
+                  For Job Applications
+                </Link>
+              </DesktopDropdown>
+
+              <DesktopDropdown
+                label="Contact"
+                dropdownKey="contact"
+                openKey={desktopOpenDropdown}
+                onOpen={setDesktopOpenDropdown}
+                onClose={() => setDesktopOpenDropdown(null)}
+                alignRight
+              >
+                <Link
+                  href="/contact"
+                  className={dropdownLinkClass}
+                  onClick={() => setDesktopOpenDropdown(null)}
+                >
+                  Our Locations
+                </Link>
+                <Link
+                  href="/policies"
+                  className={dropdownLinkClass}
+                  onClick={() => setDesktopOpenDropdown(null)}
+                >
+                  Policies and Disclosures
+                </Link>
+              </DesktopDropdown>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Mobile nav */}
-      {isMobileMenuOpen && (
+      {!hideNavbar && isMobileMenuOpen && (
         <nav
           className="lg:hidden w-full bg-white border-b border-neutral-200 shadow-md"
           aria-label="Mobile navigation"
         >
-          <div className="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4 py-4 text-sm font-[var(--font-inter)]">
+          <div className="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4 py-4 text-sm font-(--font-inter)">
             <Link
               href="/"
               className="block py-4 font-semibold text-neutral-900"
@@ -504,7 +509,7 @@ export default function Header() {
       {/* Fraud Notice Modal */}
       {showFraudModal && (
         <div
-          className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto bg-black/60 p-4 sm:p-6"
+          className="fixed inset-0 z-100 flex items-start justify-center overflow-y-auto bg-black/60 p-4 sm:p-6"
           onClick={() => setShowFraudModal(false)}
         >
           <div

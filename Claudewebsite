@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════════
+       SEO META — dynamically updates per city selection
+       In production: render server-side per URL slug
+       ═══════════════════════════════════════════════ -->
+  <title id="page-title">Staffing Agency in Boston, MA | Healthcare, Engineering & Finance Recruiting | Complete Staffing Solutions</title>
+  <meta name="description" id="meta-desc" content="Complete Staffing Solutions is Boston's trusted staffing agency specializing in Healthcare, Engineering, and Accounting & Finance placements. 25+ years experience. Hire qualified candidates in 48 hours. Call (401) 475-8800.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" id="canonical" href="https://www.completestaffingsolutions.com/staffing-agency-boston-ma">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" id="og-title" content="Staffing Agency in Boston, MA | Complete Staffing Solutions">
+  <meta property="og:description" id="og-desc" content="Healthcare, Engineering & Finance staffing in Boston, MA. 25+ years. 200,000+ placements. Call (401) 475-8800.">
+  <meta property="og:url" id="og-url" content="https://www.completestaffingsolutions.com/staffing-agency-boston-ma">
+  <meta property="og:image" content="https://www.completestaffingsolutions.com/og-image.jpg">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json" id="schema-org">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.completestaffingsolutions.com/#organization",
+        "name": "Complete Staffing Solutions",
+        "description": "Full-service staffing and recruitment agency specializing in Healthcare, Engineering, and Accounting & Finance placements across Connecticut, Rhode Island, Massachusetts, New York, and Florida.",
+        "url": "https://www.completestaffingsolutions.com",
+        "telephone": "+14014758800",
+        "email": "contactus@completestaffingsolutions.com",
+        "foundingDate": "1999",
+        "areaServed": ["Connecticut","Rhode Island","Massachusetts","New York","Florida"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "33 Boston Post Road West, Suite 190",
+          "addressLocality": "Marlborough",
+          "addressRegion": "MA",
+          "postalCode": "01752",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/complete-staffing-solutions"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Staffing Services",
+          "itemListElement": [
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Healthcare Staffing"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Engineering Staffing"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Accounting & Finance Staffing"}}
+          ]
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.completestaffingsolutions.com/staffing-agency-boston-ma",
+        "name": "Staffing Agency in Boston, MA | Complete Staffing Solutions",
+        "description": "Healthcare, Engineering and Accounting & Finance staffing in Boston. 25+ years serving Greater Boston employers.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type":"ListItem","position":1,"name":"Home","item":"https://www.completestaffingsolutions.com"},
+            {"@type":"ListItem","position":2,"name":"Locations","item":"https://www.completestaffingsolutions.com/locations"},
+            {"@type":"ListItem","position":3,"name":"Boston, MA","item":"https://www.completestaffingsolutions.com/staffing-agency-boston-ma"}
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How quickly can Complete Staffing Solutions fill a position in Boston?",
+            "acceptedAnswer": {"@type":"Answer","text":"We typically present qualified candidates within 24–48 hours for most roles in Healthcare, Engineering, and Accounting & Finance."}
+          },
+          {
+            "@type": "Question",
+            "name": "What staffing types does Complete Staffing Solutions offer?",
+            "acceptedAnswer": {"@type":"Answer","text":"We offer direct/permanent placement, temporary staffing, and temp-to-hire arrangements across all disciplines."}
+          },
+          {
+            "@type": "Question",
+            "name": "Does Complete Staffing Solutions serve all of Massachusetts?",
+            "acceptedAnswer": {"@type":"Answer","text":"Yes. We serve Boston, Worcester, Springfield, Lowell, Cambridge, Marlborough, and the broader Massachusetts market, as well as CT, RI, NY, and FL."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:   #0A1628;
+      --navy2:  #112240;
+      --slate:  #1E3A5F;
+      --blue:   #1A6BFF;
+      --blue-l: #4D8BFF;
+      --teal:   #00C4B4;
+      --gold:   #E8A020;
+      --offwhite: #F7F6F3;
+      --cream:  #EEF0F5;
+      --gray:   #64748B;
+      --light:  #CBD5E1;
+      --white:  #FFFFFF;
+      --ff-head: 'DM Serif Display', Georgia, serif;
+      --ff-body: 'DM Sans', system-ui, sans-serif;
+      --r:      0.5rem;
+      --r-lg:   1rem;
+      --shadow: 0 4px 24px rgba(10,22,40,0.10);
+      --shadow-lg: 0 12px 48px rgba(10,22,40,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--offwhite);
+      color: var(--navy);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+    }
+    .nav-logo {
+      font-family: var(--ff-head);
+      font-size: 1.2rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--light); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--teal);
+      color: var(--navy) !important;
+      padding: 0.45rem 1.25rem;
+      border-radius: 100px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #00d6c4 !important; color: var(--navy) !important; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      background: var(--cream);
+      padding: 0.65rem 2rem;
+      font-size: 0.8rem;
+      color: var(--gray);
+      border-bottom: 0.5px solid var(--light);
+    }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 0.4rem; }
+
+    /* ── CITY SELECTOR ── */
+    .city-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--cream);
+      padding: 0 2rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+      box-shadow: 0 2px 8px rgba(10,22,40,0.06);
+    }
+    .city-bar::-webkit-scrollbar { display: none; }
+    .city-tabs {
+      display: flex;
+      gap: 0;
+      min-width: max-content;
+    }
+    .state-group { display: flex; align-items: stretch; }
+    .state-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0 0.75rem;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid var(--cream);
+      background: var(--cream);
+    }
+    .city-tab {
+      padding: 0.85rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--gray);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid transparent;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .city-tab:hover { color: var(--blue); background: #f0f5ff; }
+    .city-tab.active {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+      font-weight: 600;
+      background: #f0f5ff;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 45%, var(--slate) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 2rem 4rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(0,196,180,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--blue), var(--gold));
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,196,180,0.15);
+      border: 1px solid rgba(0,196,180,0.3);
+      color: var(--teal);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: var(--ff-head);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--teal);
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 620px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover { background: #00d6c4; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,196,180,0.35); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.5); }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: var(--ff-head);
+      font-size: 2rem;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--teal); }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── MAIN CONTENT ── */
+    .page-main { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--blue);
+    }
+    .intro-strip h2 {
+      font-family: var(--ff-head);
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    .intro-strip p { color: var(--gray); font-size: 1rem; line-height: 1.75; }
+
+    /* ── INDUSTRY SECTIONS ── */
+    .industries { margin: 3rem 0; }
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+    .section-header h2 {
+      font-family: var(--ff-head);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--navy);
+      line-height: 1.25;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .industry-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid transparent;
+    }
+    .industry-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--blue-l);
+    }
+    .card-header {
+      padding: 1.75rem 1.75rem 1.25rem;
+      position: relative;
+    }
+    .card-header.healthcare { background: linear-gradient(135deg, #E6F7F5 0%, #CCF2ED 100%); }
+    .card-header.engineering { background: linear-gradient(135deg, #EEF2FF 0%, #DDE5FF 100%); }
+    .card-header.finance { background: linear-gradient(135deg, #FFF8E6 0%, #FFE9B0 100%); }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card-icon.hc { background: var(--teal); }
+    .card-icon.en { background: var(--blue); }
+    .card-icon.fi { background: var(--gold); }
+
+    .card-header h3 {
+      font-family: var(--ff-head);
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+    .card-header p { font-size: 0.85rem; color: var(--gray); }
+
+    .card-body { padding: 1.5rem 1.75rem; }
+
+    .role-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .role-list li {
+      font-size: 0.82rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .role-list li::before {
+      content: '→';
+      color: var(--teal);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--cream);
+    }
+    .card-cta-text { font-size: 0.8rem; color: var(--gray); }
+    .card-cta-link {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--blue);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card-cta-link:hover { color: var(--navy); }
+
+    /* ── CITY MARKET SECTION ── */
+    .market-section {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 2.5rem;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow);
+    }
+    .market-section h2 {
+      font-family: var(--ff-head);
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .market-section p { color: var(--gray); line-height: 1.75; margin-bottom: 1rem; }
+
+    .market-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.25rem 0;
+    }
+    .market-pill {
+      background: var(--cream);
+      color: var(--slate);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      border: 1px solid var(--light);
+    }
+
+    /* ── NEARBY CITIES ── */
+    .nearby-cities {
+      background: var(--navy);
+      border-radius: var(--r-lg);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+    }
+    .nearby-cities h3 {
+      font-family: var(--ff-head);
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .nearby-cities p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; }
+    .city-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .city-link {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.18s;
+      cursor: pointer;
+    }
+    .city-link:hover {
+      background: var(--teal);
+      color: var(--navy);
+      border-color: var(--teal);
+    }
+
+    /* ── FAQ ── */
+    .faq-section { margin: 2.5rem 0; }
+    .faq-section h2 {
+      font-family: var(--ff-head);
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--r);
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--cream);
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 1.1rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-q:hover { background: #f8f9ff; }
+    .faq-chevron { color: var(--blue); font-size: 1rem; transition: transform 0.2s; }
+    .faq-a {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 1.5rem 1.25rem; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--slate) 100%);
+      border-radius: var(--r-lg);
+      padding: 3rem 2.5rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-banner h2 {
+      font-family: var(--ff-head);
+      font-size: 1.75rem;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .cta-banner p { color: rgba(255,255,255,0.75); font-size: 0.95rem; }
+    .cta-banner-btns { display: flex; gap: 0.85rem; flex-wrap: wrap; flex-shrink: 0; }
+    .btn-white {
+      background: var(--white);
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-white:hover { background: var(--offwhite); }
+    .btn-ghost-white {
+      background: transparent;
+      color: var(--white);
+      font-weight: 500;
+      font-size: 0.88rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      transition: all 0.2s;
+    }
+    .btn-ghost-white:hover { background: rgba(255,255,255,0.1); }
+
+    /* ── STATE GRID ── */
+    .state-section { margin: 3rem 0; }
+    .state-section h2 {
+      font-family: var(--ff-head);
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .state-section > p {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .state-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 1rem;
+    }
+    .state-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 1.25rem;
+      box-shadow: var(--shadow);
+      border-top: 3px solid transparent;
+      transition: all 0.22s;
+      cursor: pointer;
+    }
+    .state-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .state-card.ct { border-top-color: #2563EB; }
+    .state-card.ri { border-top-color: var(--teal); }
+    .state-card.ma { border-top-color: #DC2626; }
+    .state-card.ny { border-top-color: var(--gold); }
+    .state-card.fl { border-top-color: #F97316; }
+    .state-name {
+      font-family: var(--ff-head);
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .state-cities { list-style: none; }
+    .state-cities li {
+      font-size: 0.8rem;
+      color: var(--gray);
+      padding: 0.25rem 0;
+      border-bottom: 1px solid var(--cream);
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .state-cities li:last-child { border-bottom: none; }
+    .state-cities li:hover { color: var(--blue); }
+    .state-cities li a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .state-cities li a::after { content: '→'; font-size: 0.7rem; opacity: 0; transition: opacity 0.15s; }
+    .state-cities li:hover a::after { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem 1.5rem;
+      margin-top: 4rem;
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand h4 {
+      font-family: var(--ff-head);
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.7; }
+    .footer-contact { margin-top: 1rem; font-size: 0.82rem; }
+    .footer-contact a { color: var(--teal); text-decoration: none; }
+    .footer-col h5 { color: var(--white); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.85rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.82rem; transition: color 0.15s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .industry-grid { grid-template-columns: 1fr; }
+      .state-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .cta-banner { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .state-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+      .role-list { grid-template-columns: 1fr; }
+    }
+
+    /* ── ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-inner > * {
+      animation: fadeUp 0.6s ease forwards;
+      opacity: 0;
+    }
+    .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-inner > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-inner > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-inner > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-inner > *:nth-child(5) { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav>
+  <a href="https://www.completestaffingsolutions.com" class="nav-logo">
+    Complete <span>Staffing</span> Solutions
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">For Employers</a></li>
+    <li><a href="#">For Job Seekers</a></li>
+    <li><a href="#">Industries</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="tel:+14014758800" class="nav-cta">(401) 475-8800</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     CITY SELECTOR BAR
+══════════════════════════════════════════ -->
+<div class="city-bar" role="navigation" aria-label="Select your city">
+  <div class="city-tabs">
+    <div class="state-group">
+      <div class="state-label">MA</div>
+      <button class="city-tab active" onclick="selectCity('boston','MA')">Boston</button>
+      <button class="city-tab" onclick="selectCity('worcester','MA')">Worcester</button>
+      <button class="city-tab" onclick="selectCity('cambridge','MA')">Cambridge</button>
+      <button class="city-tab" onclick="selectCity('lowell','MA')">Lowell</button>
+      <button class="city-tab" onclick="selectCity('springfield','MA')">Springfield</button>
+    </div>
+    <div class="state-group">
+      <div class="state-label">CT</div>
+      <button class="city-tab" onclick="selectCity('hartford','CT')">Hartford</button>
+      <button class="city-tab" onclick="selectCity('stamford','CT')">Stamford</button>
+      <button class="city-tab" onclick="selectCity('new-haven','CT')">New Haven</button>
+      <button class="city-tab" onclick="selectCity('bridgeport','CT')">Bridgeport</button>
+    </div>
+    <div class="state-group">
+      <div class="state-label">RI</div>
+      <button class="city-tab" onclick="selectCity('providence','RI')">Providence</button>
+      <button class="city-tab" onclick="selectCity('warwick','RI')">Warwick</button>
+      <button class="city-tab" onclick="selectCity('cranston','RI')">Cranston</button>
+    </div>
+    <div class="state-group">
+      <div class="state-label">NY</div>
+      <button class="city-tab" onclick="selectCity('new-york','NY')">New York City</button>
+      <button class="city-tab" onclick="selectCity('albany','NY')">Albany</button>
+      <button class="city-tab" onclick="selectCity('buffalo','NY')">Buffalo</button>
+    </div>
+    <div class="state-group">
+      <div class="state-label">FL</div>
+      <button class="city-tab" onclick="selectCity('miami','FL')">Miami</button>
+      <button class="city-tab" onclick="selectCity('tampa','FL')">Tampa</button>
+      <button class="city-tab" onclick="selectCity('naples','FL')">Naples</button>
+      <button class="city-tab" onclick="selectCity('orlando','FL')">Orlando</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     BREADCRUMB
+══════════════════════════════════════════ -->
+<div class="breadcrumb">
+  <a href="https://www.completestaffingsolutions.com">Home</a>
+  <span>›</span>
+  <a href="#">Locations</a>
+  <span>›</span>
+  <span id="bc-city">Staffing Agency — Boston, MA</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <div class="hero-tag">📍 <span id="hero-tag-text">Serving Greater Boston, MA</span></div>
+    <h1 id="hero-h1">
+      <span id="hero-h1-city">Boston</span>'s Trusted Staffing Agency for<br>
+      <em>Healthcare, Engineering &amp; Finance</em>
+    </h1>
+    <p id="hero-p">
+      For over 25 years, Complete Staffing Solutions has connected <strong id="hero-p-city">Boston</strong> employers with
+      exceptional healthcare professionals, engineers, and finance experts.
+      Direct hire, temp-to-hire, and contract placements — qualified candidates in 48 hours.
+    </p>
+    <div class="hero-ctas">
+      <a href="https://www.completestaffingsolutions.com/job-request" class="btn-primary">
+        ⚡ Request Talent Now
+      </a>
+      <a href="tel:+14014758800" class="btn-secondary">
+        📞 Call (401) 475-8800
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">25<span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200<span>K+</span></div>
+        <div class="stat-label">Placements Made</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">35<span>K+</span></div>
+        <div class="stat-label">Companies Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">48<span>hr</span></div>
+        <div class="stat-label">Avg. Time to Candidates</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MAIN
+══════════════════════════════════════════ -->
+<main class="page-main">
+
+  <!-- INTRO -->
+  <div class="intro-strip">
+    <h2 id="intro-h2">Staffing Solutions Built for Boston's Economy</h2>
+    <p id="intro-p">
+      Boston's healthcare networks, biotech firms, engineering companies, and financial institutions
+      require specialized talent. Complete Staffing Solutions recruiters understand the local market,
+      the regulatory environment, and the culture of Greater Boston employers. Whether you need a
+      Registered Nurse for a major hospital network, a Mechanical Engineer for a Cambridge technology firm, or a
+      Senior Accountant for a financial services company — we deliver qualified candidates, fast.
+    </p>
+  </div>
+
+  <!-- ── INDUSTRY CARDS ── -->
+  <section class="industries" aria-labelledby="industries-h2">
+    <div class="section-header">
+      <div class="section-eyebrow">Specialized Recruiting Divisions</div>
+      <h2 id="industries-h2">Three Verticals. One Trusted Partner.</h2>
+    </div>
+
+    <div class="industry-grid">
+      <!-- Healthcare -->
+      <article class="industry-card" itemscope itemtype="https://schema.org/Service">
+        <div class="card-header healthcare">
+          <div class="card-icon hc">🏥</div>
+          <h3 itemprop="name" id="hc-title">Healthcare Staffing in Boston, MA</h3>
+          <p>Clinical & administrative healthcare talent for hospitals, clinics, and care facilities</p>
+        </div>
+        <div class="card-body">
+          <ul class="role-list" aria-label="Healthcare roles we place">
+            <li>Registered Nurse (RN)</li>
+            <li>Physical Therapist</li>
+            <li>Medical Assistant</li>
+            <li>Nurse Practitioner</li>
+            <li>Medical Biller/Coder</li>
+            <li>Phlebotomist</li>
+            <li>Dental Assistant</li>
+            <li>Surgical Scheduler</li>
+            <li>Pharmacy Technician</li>
+            <li>Patient Care Tech</li>
+          </ul>
+          <div class="card-cta">
+            <span class="card-cta-text">Direct hire · Temp · Contract</span>
+            <a href="https://www.completestaffingsolutions.com/industries-we-serve/healthcare" class="card-cta-link">
+              View All Healthcare Roles →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Engineering -->
+      <article class="industry-card" itemscope itemtype="https://schema.org/Service">
+        <div class="card-header engineering">
+          <div class="card-icon en">⚙️</div>
+          <h3 itemprop="name" id="en-title">Engineering Staffing in Boston, MA</h3>
+          <p>Skilled engineers across mechanical, civil, electrical, software, and more</p>
+        </div>
+        <div class="card-body">
+          <ul class="role-list" aria-label="Engineering roles we place">
+            <li>Mechanical Engineer</li>
+            <li>Civil Engineer</li>
+            <li>Electrical Engineer</li>
+            <li>Software Developer</li>
+            <li>Systems Engineer</li>
+            <li>Manufacturing Engineer</li>
+            <li>QA/Test Engineer</li>
+            <li>Project Manager</li>
+            <li>CAD Designer</li>
+            <li>Environmental Engineer</li>
+          </ul>
+          <div class="card-cta">
+            <span class="card-cta-text">Direct hire · Temp · Contract</span>
+            <a href="https://www.completestaffingsolutions.com/industries-we-serve/engineering" class="card-cta-link">
+              View All Engineering Roles →
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Finance -->
+      <article class="industry-card" itemscope itemtype="https://schema.org/Service">
+        <div class="card-header finance">
+          <div class="card-icon fi">📊</div>
+          <h3 itemprop="name" id="fi-title">Accounting & Finance Staffing in Boston, MA</h3>
+          <p>Finance professionals for banking, investment, accounting, and corporate roles</p>
+        </div>
+        <div class="card-body">
+          <ul class="role-list" aria-label="Finance roles we place">
+            <li>Controller</li>
+            <li>Financial Analyst</li>
+            <li>Staff Accountant</li>
+            <li>Accounting Manager</li>
+            <li>CFO</li>
+            <li>Credit Analyst</li>
+            <li>Payroll Specialist</li>
+            <li>AP/AR Specialist</li>
+            <li>Tax Specialist</li>
+            <li>Bookkeeper</li>
+          </ul>
+          <div class="card-cta">
+            <span class="card-cta-text">Direct hire · Temp · Contract</span>
+            <a href="https://www.completestaffingsolutions.com/industries-we-serve/finance" class="card-cta-link">
+              View All Finance Roles →
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── LOCAL MARKET INSIGHTS ── -->
+  <section class="market-section" aria-labelledby="market-h2">
+    <h2 id="market-h2">Why Boston Companies Choose Complete Staffing Solutions</h2>
+    <p id="market-p1">
+      Boston's labor market is one of the most competitive in the country. World-class hospital and healthcare networks
+      create constant demand for clinical and administrative talent. The Route 128 technology and biotech corridor drives
+      engineering hiring across the region. Boston's dense concentration of investment firms, banks, and corporate
+      headquarters means accounting and finance talent is always in high demand.
+    </p>
+    <p id="market-p2">
+      Complete Staffing Solutions maintains an active candidate database of pre-screened professionals in the
+      Greater Boston area. Our recruiters specialize in the disciplines they hire for — so you speak to someone
+      who understands the difference between a charge nurse and a clinical coordinator, or knows why an
+      investment firm needs a different CFO profile than a manufacturing company.
+    </p>
+
+    <div class="market-pills" id="market-pills" aria-label="Key employers and industries in this market">
+      <span class="market-pill">Major Hospital & Health Networks</span>
+      <span class="market-pill">Academic Medical Centers</span>
+      <span class="market-pill">Investment & Asset Management Firms</span>
+      <span class="market-pill">Regional Banking Institutions</span>
+      <span class="market-pill">Aerospace & Defense Contractors</span>
+      <span class="market-pill">Biotech & Life Sciences Companies</span>
+      <span class="market-pill">Higher Education Institutions</span>
+      <span class="market-pill">Insurance & Financial Services</span>
+      <span class="market-pill">Manufacturing & Engineering Firms</span>
+      <span class="market-pill">Technology & Software Companies</span>
+    </div>
+  </section>
+
+  <!-- ── NEARBY CITIES ── -->
+  <div class="nearby-cities">
+    <h3 id="nearby-h3">Also Serving Greater Boston & New England</h3>
+    <p id="nearby-p">We place candidates across the entire region — not just the city center. Click a market to learn more.</p>
+    <div class="city-links" id="nearby-links">
+      <a class="city-link" onclick="selectCity('worcester','MA')">Worcester, MA</a>
+      <a class="city-link" onclick="selectCity('cambridge','MA')">Cambridge, MA</a>
+      <a class="city-link" onclick="selectCity('lowell','MA')">Lowell, MA</a>
+      <a class="city-link" onclick="selectCity('providence','RI')">Providence, RI</a>
+      <a class="city-link" onclick="selectCity('hartford','CT')">Hartford, CT</a>
+      <a class="city-link" onclick="selectCity('new-haven','CT')">New Haven, CT</a>
+      <a class="city-link" onclick="selectCity('springfield','MA')">Springfield, MA</a>
+      <a class="city-link" onclick="selectCity('warwick','RI')">Warwick, RI</a>
+    </div>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <section class="faq-section" aria-labelledby="faq-h2">
+    <h2 id="faq-h2">Frequently Asked Questions — Boston Staffing</h2>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span id="faq-q1">How quickly can you fill a healthcare position in Boston?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a" id="faq-a1">
+        We typically present a shortlist of pre-screened, qualified healthcare candidates within 24–48 hours
+        of receiving your job request. For specialized roles like Nurse Practitioners or Physical Therapists,
+        allow 3–5 business days for a highly targeted search.
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span id="faq-q2">Do you offer engineering contract staffing in Boston?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a" id="faq-a2">
+        Yes. We offer direct/permanent placement, temporary staffing, and temp-to-hire arrangements for
+        engineering roles. Contract engineers are employed by CSS — meaning you avoid payroll processing,
+        benefits costs, and unemployment liability.
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span id="faq-q3">What accounting and finance roles do you specialize in for Boston employers?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a" id="faq-a3">
+        Our finance division places Controllers, CFOs, Financial Analysts, Staff Accountants, AP/AR Specialists,
+        Payroll Professionals, and Tax Specialists across corporate, financial services, and nonprofit sectors
+        throughout Greater Boston.
+      </div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">
+        <span id="faq-q4">Does Complete Staffing Solutions serve all of Massachusetts?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a" id="faq-a4">
+        Yes. In addition to Boston and Greater Boston, we serve Worcester, Springfield, Lowell, Cambridge,
+        Marlborough, Brockton, Quincy, and the broader Massachusetts market. We also operate across Connecticut,
+        Rhode Island, New York, and Florida.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <div class="cta-banner" role="complementary" aria-label="Call to action">
+    <div>
+      <h2 id="cta-h2">Ready to hire in Boston?</h2>
+      <p>Tell us your staffing need and we'll have qualified candidates to you in 48 hours.</p>
+    </div>
+    <div class="cta-banner-btns">
+      <a href="https://www.completestaffingsolutions.com/job-request" class="btn-white">Submit a Job Request</a>
+      <a href="tel:+14014758800" class="btn-ghost-white">Call (401) 475-8800</a>
+    </div>
+  </div>
+
+  <!-- ── ALL STATES ── -->
+  <section class="state-section" aria-labelledby="states-h2">
+    <h2 id="states-h2">We Staff Across 5 States</h2>
+    <p>Click any city to view market-specific information for healthcare, engineering, and finance staffing.</p>
+    <div class="state-grid">
+      <div class="state-card ma">
+        <div class="state-name">Massachusetts</div>
+        <ul class="state-cities">
+          <li><a onclick="selectCity('boston','MA')">Boston <span>→</span></a></li>
+          <li><a onclick="selectCity('worcester','MA')">Worcester</a></li>
+          <li><a onclick="selectCity('cambridge','MA')">Cambridge</a></li>
+          <li><a onclick="selectCity('lowell','MA')">Lowell</a></li>
+          <li><a onclick="selectCity('springfield','MA')">Springfield</a></li>
+          <li><a onclick="selectCity('marlborough','MA')">Marlborough</a></li>
+        </ul>
+      </div>
+      <div class="state-card ct">
+        <div class="state-name">Connecticut</div>
+        <ul class="state-cities">
+          <li><a onclick="selectCity('hartford','CT')">Hartford</a></li>
+          <li><a onclick="selectCity('stamford','CT')">Stamford</a></li>
+          <li><a onclick="selectCity('new-haven','CT')">New Haven</a></li>
+          <li><a onclick="selectCity('bridgeport','CT')">Bridgeport</a></li>
+          <li><a onclick="selectCity('waterbury','CT')">Waterbury</a></li>
+          <li><a onclick="selectCity('groton','CT')">Groton</a></li>
+        </ul>
+      </div>
+      <div class="state-card ri">
+        <div class="state-name">Rhode Island</div>
+        <ul class="state-cities">
+          <li><a onclick="selectCity('providence','RI')">Providence</a></li>
+          <li><a onclick="selectCity('warwick','RI')">Warwick</a></li>
+          <li><a onclick="selectCity('cranston','RI')">Cranston</a></li>
+          <li><a onclick="selectCity('pawtucket','RI')">Pawtucket</a></li>
+          <li><a onclick="selectCity('east-providence','RI')">East Providence</a></li>
+        </ul>
+      </div>
+      <div class="state-card ny">
+        <div class="state-name">New York</div>
+        <ul class="state-cities">
+          <li><a onclick="selectCity('new-york','NY')">New York City</a></li>
+          <li><a onclick="selectCity('albany','NY')">Albany</a></li>
+          <li><a onclick="selectCity('buffalo','NY')">Buffalo</a></li>
+          <li><a onclick="selectCity('rochester','NY')">Rochester</a></li>
+          <li><a onclick="selectCity('syracuse','NY')">Syracuse</a></li>
+        </ul>
+      </div>
+      <div class="state-card fl">
+        <div class="state-name">Florida</div>
+        <ul class="state-cities">
+          <li><a onclick="selectCity('miami','FL')">Miami</a></li>
+          <li><a onclick="selectCity('tampa','FL')">Tampa</a></li>
+          <li><a onclick="selectCity('naples','FL')">Naples</a></li>
+          <li><a onclick="selectCity('orlando','FL')">Orlando</a></li>
+          <li><a onclick="selectCity('jacksonville','FL')">Jacksonville</a></li>
+          <li><a onclick="selectCity('fort-lauderdale','FL')">Fort Lauderdale</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h4>Complete Staffing Solutions</h4>
+      <p>Full-service staffing and recruitment organization providing industry-focused hiring solutions across Healthcare, Engineering, Accounting & Finance, and more.</p>
+      <div class="footer-contact">
+        <div>📍 33 Boston Post Road West, Suite 190, Marlborough, MA 01752</div>
+        <div>📞 <a href="tel:+14014758800">(401) 475-8800</a></div>
+        <div>✉️ <a href="mailto:contactus@completestaffingsolutions.com">contactus@completestaffingsolutions.com</a></div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Industries</h5>
+      <ul>
+        <li><a href="#">Healthcare Staffing</a></li>
+        <li><a href="#">Engineering Staffing</a></li>
+        <li><a href="#">Accounting & Finance</a></li>
+        <li><a href="#">Corporate Services</a></li>
+        <li><a href="#">Legal Staffing</a></li>
+        <li><a href="#">IT Staffing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Direct Hire</a></li>
+        <li><a href="#">Temp Staffing</a></li>
+        <li><a href="#">Temp-to-Hire</a></li>
+        <li><a href="#">Executive Search</a></li>
+        <li><a href="#">Contract Staffing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Markets</h5>
+      <ul>
+        <li><a href="#">Massachusetts</a></li>
+        <li><a href="#">Connecticut</a></li>
+        <li><a href="#">Rhode Island</a></li>
+        <li><a href="#">New York</a></li>
+        <li><a href="#">Florida</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Complete Staffing Solutions. All Rights Reserved.</span>
+    <span>
+      <a href="#" style="color:rgba(255,255,255,0.4);text-decoration:none;margin-right:1rem">Privacy Policy</a>
+      <a href="#" style="color:rgba(255,255,255,0.4);text-decoration:none">Terms &amp; Conditions</a>
+    </span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     CITY DATA + JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+// ─────────────────────────────────────────────
+// CITY DATABASE
+// In production: each city gets its own URL/page
+// rendered server-side with unique content.
+// This JS demo simulates the content variation.
+// ─────────────────────────────────────────────
+const cities = {
+  'boston': {
+    name: 'Boston', state: 'MA', slug: 'boston-ma',
+    tag: 'Serving Greater Boston, MA',
+    h1city: 'Boston',
+    intro_h2: "Staffing Solutions Built for Boston's Economy",
+    intro_p: "Boston's healthcare systems, biotech firms, engineering companies, and financial institutions require specialized talent. Complete Staffing Solutions recruiters understand the local market, the regulatory environment, and the culture of Greater Boston employers. Whether you need a Registered Nurse for a major hospital network, a Mechanical Engineer for a Cambridge technology firm, or a Senior Accountant for a financial services company — we deliver qualified candidates, fast.",
+    market_p1: "Boston's labor market is one of the most competitive in the country. World-class hospital and healthcare networks create constant demand for clinical and administrative talent. The Route 128 technology and biotech corridor drives engineering hiring across the region. Boston's dense concentration of investment firms, banks, and corporate headquarters means accounting and finance talent is always in high demand.",
+    market_p2: "Our recruiters specialize in the disciplines they hire for — so you speak to someone who understands the difference between a charge nurse and a clinical coordinator, or knows why a private equity firm needs a different CFO profile than a manufacturing company.",
+    employers: ["Major Hospital & Health Networks","Academic Medical Centers","Regional Banking Institutions","Investment & Asset Management Firms","Aerospace & Defense Contractors","Biotech & Life Sciences Companies","Higher Education Institutions","Insurance & Financial Services","Manufacturing & Engineering Firms","Technology & Software Companies"],
+    nearby_h3: "Also Serving Greater Boston & New England",
+    nearby: [['worcester','MA','Worcester, MA'],['cambridge','MA','Cambridge, MA'],['lowell','MA','Lowell, MA'],['providence','RI','Providence, RI'],['hartford','CT','Hartford, CT'],['springfield','MA','Springfield, MA']],
+    faq: [
+      ["How quickly can you fill a healthcare position in Boston?", "We typically present a shortlist of pre-screened, qualified healthcare candidates within 24–48 hours of receiving your job request. For specialized roles like Nurse Practitioners or Physical Therapists, allow 3–5 business days for a highly targeted search."],
+      ["Do you offer engineering contract staffing in Boston?", "Yes. We offer direct/permanent placement, temporary staffing, and temp-to-hire arrangements for engineering roles. Contract engineers are employed by CSS — meaning you avoid payroll processing, benefits costs, and unemployment liability."],
+      ["What accounting and finance roles do you specialize in for Boston employers?", "Our finance division places Controllers, CFOs, Financial Analysts, Staff Accountants, AP/AR Specialists, Payroll Professionals, and Tax Specialists across corporate, financial services, and nonprofit sectors throughout Greater Boston."],
+      ["Does Complete Staffing Solutions serve all of Massachusetts?", "Yes. In addition to Boston and Greater Boston, we serve Worcester, Springfield, Lowell, Cambridge, Marlborough, Brockton, Quincy, and the broader Massachusetts market. We also operate across Connecticut, Rhode Island, New York, and Florida."]
+    ]
+  },
+  'providence': {
+    name: 'Providence', state: 'RI', slug: 'providence-ri',
+    tag: 'Serving Greater Providence, RI',
+    h1city: 'Providence',
+    intro_h2: "Staffing Solutions Built for Providence's Growing Economy",
+    intro_p: "Providence is experiencing significant growth in healthcare, advanced manufacturing, and financial services. Major hospital systems and academic medical centers are among the largest healthcare employers in Rhode Island. Complete Staffing Solutions has deep roots in the Providence market and places hundreds of professionals across RI each year.",
+    market_p1: "Rhode Island's economy is anchored by healthcare and higher education. The Jewelry District has evolved into a hub for technology and biotech startups. Financial services firms in downtown Providence need accounting and finance talent year-round. Advanced manufacturing throughout the state drives ongoing demand for skilled engineers across mechanical, electrical, and industrial disciplines.",
+    market_p2: "Complete Staffing Solutions is headquartered in New England and has placed professionals across Rhode Island for over 25 years. Our local knowledge of the Providence market means faster, better-fit placements for employers across every sector.",
+    employers: ["Major Hospital & Health Systems","Academic Medical Centers","Regional Banks & Credit Unions","Insurance & Financial Services","Advanced Manufacturing Companies","Defense & Aerospace Contractors","Higher Education Institutions","Technology & Software Firms","Construction & Engineering Companies","Corporate & Professional Services"],
+    nearby_h3: "Also Serving Greater Rhode Island",
+    nearby: [['warwick','RI','Warwick, RI'],['cranston','RI','Cranston, RI'],['pawtucket','RI','Pawtucket, RI'],['boston','MA','Boston, MA'],['worcester','MA','Worcester, MA'],['hartford','CT','Hartford, CT']],
+    faq: [
+      ["Does CSS place healthcare workers at Rhode Island hospital systems?", "Yes. We regularly place Registered Nurses, Medical Assistants, Phlebotomists, and administrative healthcare staff at major Rhode Island health systems and their affiliated facilities statewide."],
+      ["Do you staff engineering roles in Providence?", "Absolutely. We place engineers across manufacturing, defense, biotech, and construction throughout Rhode Island. We cover mechanical, electrical, civil, and software engineering disciplines."],
+      ["What finance and accounting roles do you fill in Providence?", "We place Controllers, Staff Accountants, Financial Analysts, Payroll Specialists, and senior finance executives across Providence's banking, insurance, and corporate sectors."],
+      ["How does CSS serve smaller Rhode Island markets like Cranston and Warwick?", "Our Providence-area team covers all of Rhode Island statewide. We regularly fill positions in Warwick, Cranston, Pawtucket, East Providence, Newport, and throughout the state."]
+    ]
+  },
+  'hartford': {
+    name: 'Hartford', state: 'CT', slug: 'hartford-ct',
+    tag: 'Serving Greater Hartford, CT',
+    h1city: 'Hartford',
+    intro_h2: "Hartford's Premier Healthcare, Engineering & Finance Staffing Firm",
+    intro_p: "Hartford is the insurance capital of the world, making it a powerhouse for accounting and finance talent. Connecticut's manufacturing base — particularly in aerospace and defense — drives engineering demand. And Hartford's major hospital systems create consistent healthcare staffing needs. CSS has been placing professionals in Connecticut for over 25 years.",
+    market_p1: "Hartford's identity as the insurance capital creates enormous demand for financial analysts, accountants, and finance professionals. Multiple major insurance carriers and financial services firms have headquarters or significant operations here. Aerospace and defense manufacturers across the state drive engineering hiring. And regional hospital systems and health networks are major healthcare employers throughout Greater Hartford.",
+    market_p2: "Complete Staffing Solutions recruiters specialize in Connecticut's unique market — the intersection of insurance finance, aerospace engineering, and healthcare staffing. That local expertise gives you an edge that national firms simply cannot match.",
+    employers: ["Major Insurance Carriers","Financial Services Headquarters","Aerospace & Defense Manufacturers","Regional Hospital Systems","Energy & Utilities Companies","Higher Education Institutions","State & Municipal Government","Regional Banks & Credit Unions","Manufacturing & Industrial Firms","Technology & Professional Services"],
+    nearby_h3: "Also Serving Greater Connecticut",
+    nearby: [['stamford','CT','Stamford, CT'],['new-haven','CT','New Haven, CT'],['bridgeport','CT','Bridgeport, CT'],['springfield','MA','Springfield, MA'],['providence','RI','Providence, RI'],['worcester','MA','Worcester, MA']],
+    faq: [
+      ["Can CSS fill accounting roles at Hartford's major insurance companies?", "Yes. We have extensive experience placing financial analysts, accountants, accounting managers, and senior finance professionals at Hartford's insurance carriers and financial services firms."],
+      ["Do you staff aerospace engineering positions in Hartford?", "Absolutely. We place mechanical engineers, systems engineers, manufacturing engineers, and project managers at aerospace manufacturers and their supply chain partners throughout Connecticut."],
+      ["How quickly can you fill a nursing role at Hartford hospital systems?", "We typically present qualified Registered Nurses and clinical staff within 24–48 hours. For specialized ICU or OR nursing roles, allow 3–5 business days for a targeted search."],
+      ["Do you serve all of Connecticut?", "Yes. In addition to Hartford, we regularly place in Stamford, New Haven, Bridgeport, Waterbury, Greenwich, Groton, and throughout Connecticut."]
+    ]
+  },
+  'stamford': {
+    name: 'Stamford', state: 'CT', slug: 'stamford-ct',
+    tag: 'Serving Greater Stamford & Fairfield County, CT',
+    h1city: 'Stamford',
+    intro_h2: "Fairfield County's Trusted Staffing Partner",
+    intro_p: "Stamford and Fairfield County sit at the intersection of New York City's financial power and Connecticut's corporate base. Hedge funds, private equity firms, and Fortune 500 companies demand elite accounting and finance talent. Complete Staffing Solutions serves Stamford, Greenwich, Norwalk, and all of Fairfield County.",
+    market_p1: "Stamford is home to major financial services and corporate headquarters — investment management firms, global banks, insurance companies, and media corporations all have significant operations here. Greenwich's investment corridor creates premium demand for finance professionals. Fairfield County's regional hospital systems also drive consistent clinical and administrative healthcare staffing needs.",
+    market_p2: "Our Fairfield County recruiters understand the premium placed on candidate quality and discretion in this market. We maintain relationships with passive candidates who aren't actively looking — the kind of placements that national staffing firms simply cannot make.",
+    employers: ["Major Investment & Hedge Funds","Global Financial Services Firms","Fortune 500 Corporate HQs","Regional Hospital Systems","Insurance Companies","Media & Entertainment Corporations","Technology & Data Analytics Firms","Asset Management Companies","Private Equity Firms","Corporate & Professional Services"],
+    nearby_h3: "Also Serving Fairfield County & Nearby Markets",
+    nearby: [['hartford','CT','Hartford, CT'],['new-haven','CT','New Haven, CT'],['bridgeport','CT','Bridgeport, CT'],['new-york','NY','New York City, NY'],['providence','RI','Providence, RI'],['boston','MA','Boston, MA']],
+    faq: [
+      ["Do you place finance professionals at Stamford investment firms?", "Yes. We work with Fairfield County investment management firms to place financial analysts, accountants, compliance officers, and back-office finance professionals."],
+      ["Can CSS staff Fairfield County hospital systems?", "Absolutely. We place clinical and administrative healthcare professionals at regional Fairfield County healthcare providers and hospital systems."],
+      ["Do you serve Greenwich and Norwalk as well?", "Yes. We serve all of Fairfield County including Greenwich, Norwalk, Westport, Darien, and New Canaan, in addition to Stamford."],
+      ["What engineering roles do you fill in the Stamford area?", "We place civil engineers, project managers, systems engineers, and IT professionals across Fairfield County's corporate sector."]
+    ]
+  },
+  'miami': {
+    name: 'Miami', state: 'FL', slug: 'miami-fl',
+    tag: 'Serving Greater Miami & South Florida',
+    h1city: 'Miami',
+    intro_h2: "Miami's Healthcare, Engineering & Finance Staffing Specialists",
+    intro_p: "Miami is one of the fastest-growing economies in the United States, with booming healthcare systems, major construction and infrastructure projects, and a rapidly expanding financial services sector. Complete Staffing Solutions brings over 25 years of placement expertise to South Florida employers.",
+    market_p1: "South Florida's healthcare market is massive — major hospital systems, specialty care networks, and outpatient facilities across Miami-Dade all require constant clinical and administrative talent. Miami's construction and infrastructure boom drives civil and mechanical engineering demand. And as Miami cements its position as a Latin American financial hub, accounting and finance hiring is accelerating across banking, real estate, and corporate sectors.",
+    market_p2: "Complete Staffing Solutions operates across South Florida including Miami-Dade, Broward, and Palm Beach counties. We understand the bilingual requirements of many Miami employers and maintain a candidate database that reflects the region's diverse workforce.",
+    employers: ["Major Regional Hospital Systems","Specialty Care & Outpatient Networks","International Banking Institutions","Investment & Private Equity Firms","Real Estate Development Companies","Cruise & Hospitality Corporations","Airlines & Transportation Companies","Construction & Infrastructure Firms","Technology & Software Companies","Corporate & Professional Services"],
+    nearby_h3: "Also Serving South Florida",
+    nearby: [['fort-lauderdale','FL','Fort Lauderdale, FL'],['naples','FL','Naples, FL'],['orlando','FL','Orlando, FL'],['tampa','FL','Tampa, FL'],['jacksonville','FL','Jacksonville, FL'],['new-york','NY','New York City, NY']],
+    faq: [
+      ["Can you place bilingual healthcare workers in Miami?", "Yes. We maintain an active pool of bilingual (English/Spanish) healthcare professionals well-suited to South Florida's diverse patient population."],
+      ["Do you staff civil engineers for Miami's construction boom?", "Absolutely. We regularly place civil engineers, project managers, estimators, and construction managers for Miami-Dade's major infrastructure and real estate development projects."],
+      ["What finance roles do you fill in Miami?", "We place Controllers, Financial Analysts, CFOs, Accountants, and back-office finance professionals across Miami's banking, private equity, real estate, and corporate sectors."],
+      ["Does CSS serve Fort Lauderdale and Broward County?", "Yes. We serve all of Miami-Dade, Broward, and Palm Beach counties, as well as Naples and Southwest Florida."]
+    ]
+  },
+  'naples': {
+    name: 'Naples', state: 'FL', slug: 'naples-fl',
+    tag: 'Serving Naples & Southwest Florida',
+    h1city: 'Naples',
+    intro_h2: "Southwest Florida's Healthcare, Engineering & Finance Staffing Firm",
+    intro_p: "Naples and Southwest Florida are experiencing rapid population growth, driving demand across all three of our core verticals. Major regional healthcare systems are expanding aggressively. Major infrastructure and real estate development projects require engineers. And the affluent Naples market demands sophisticated financial and accounting professionals.",
+    market_p1: "Naples, Bonita Springs, Marco Island, and Cape Coral are growing faster than almost any other metro in the country. This creates staffing challenges for local employers who can't find talent fast enough to keep pace with growth. Regional healthcare systems and physician groups have ongoing clinical staffing needs. The construction industry's explosive growth — particularly along major corridors — drives engineering demand year-round.",
+    market_p2: "Complete Staffing Solutions has placed professionals throughout Southwest Florida and understands the unique dynamics of the Naples market — from the seasonality of the healthcare census to the premium placed on accounting talent in this high-net-worth community.",
+    employers: ["Regional Hospital & Health Systems","Physician Groups & Specialty Practices","Real Estate Development Companies","Engineering & Construction Firms","Wealth Management & Financial Advisory","Local & County Government","Medical Device & Healthcare Technology","Hospitality & Resort Operations","Corporate & Professional Services","Collier & Lee County Employers"],
+    nearby_h3: "Also Serving Southwest Florida",
+    nearby: [['miami','FL','Miami, FL'],['tampa','FL','Tampa, FL'],['fort-lauderdale','FL','Fort Lauderdale, FL'],['orlando','FL','Orlando, FL'],['jacksonville','FL','Jacksonville, FL'],['new-york','NY','New York, NY']],
+    faq: [
+      ["Do you staff regional healthcare systems in Naples?", "Yes. We regularly place Registered Nurses, Medical Assistants, surgical support staff, and administrative healthcare professionals at Southwest Florida health systems and physician practices."],
+      ["Can CSS fill engineering roles for Naples construction projects?", "Absolutely. We place civil engineers, project managers, site superintendents, and estimators for residential and commercial construction projects throughout Collier and Lee counties."],
+      ["What accounting talent do you place in the Naples market?", "We place Controllers, Staff Accountants, Bookkeepers, Payroll Specialists, and senior finance executives for Naples's corporate, real estate, and wealth management firms."],
+      ["Do you serve Bonita Springs, Cape Coral, and Fort Myers?", "Yes. We serve all of Collier and Lee counties, including Bonita Springs, Marco Island, Cape Coral, Fort Myers, and Estero."]
+    ]
+  },
+  'new-york': {
+    name: 'New York City', state: 'NY', slug: 'new-york-ny',
+    tag: 'Serving New York City & Tri-State Area',
+    h1city: 'New York City',
+    intro_h2: "New York City's Healthcare, Engineering & Finance Staffing Specialists",
+    intro_p: "New York City is the world's financial capital and one of the largest healthcare markets in the country. The demand for top accounting, finance, engineering, and healthcare talent is constant and competitive. Complete Staffing Solutions connects NYC employers with pre-screened professionals across all disciplines.",
+    market_p1: "New York City's healthcare system — comprising dozens of major hospital networks, academic medical centers, and specialty care facilities — is among the largest in the world and perpetually needs qualified clinical staff. The financial district and Midtown represent the most concentrated demand for accounting and finance professionals anywhere in the country. And NYC's ongoing infrastructure, real estate, and transit projects drive engineering talent demand continuously.",
+    market_p2: "We serve Manhattan, Brooklyn, Queens, the Bronx, Staten Island, and the broader tri-state area including Northern New Jersey and Westchester. Our NYC-region recruiters understand the pace, the premium on talent quality, and the speed at which decisions must be made.",
+    employers: ["Major Hospital & Academic Medical Centers","Global Investment Banks","Asset Management & Hedge Funds","Fortune 500 Corporate HQs","Media & Technology Companies","Real Estate Development Firms","Transit & Infrastructure Agencies","Energy & Utilities Companies","Insurance & Financial Services","Law Firms & Professional Services"],
+    nearby_h3: "Also Serving the Tri-State Region",
+    nearby: [['stamford','CT','Stamford, CT'],['albany','NY','Albany, NY'],['buffalo','NY','Buffalo, NY'],['boston','MA','Boston, MA'],['hartford','CT','Hartford, CT'],['providence','RI','Providence, RI']],
+    faq: [
+      ["Do you staff Registered Nurses in NYC hospital systems?", "Yes. We place Registered Nurses, NPs, Medical Assistants, and clinical support staff at major NYC hospital systems and academic medical centers throughout the five boroughs."],
+      ["Can CSS fill accounting roles at Wall Street firms?", "Absolutely. We place Financial Analysts, Controllers, Accountants, and senior finance professionals at investment banks, hedge funds, private equity firms, and corporate finance departments throughout NYC."],
+      ["Do you staff infrastructure engineers in New York?", "Yes. We place civil engineers, project managers, systems engineers, and construction professionals for NYC's ongoing transit, real estate, and infrastructure projects."],
+      ["How quickly can you fill positions in New York City?", "We present qualified candidates within 24–48 hours for most roles. NYC's competitive talent market means we maintain a deep active pipeline of pre-screened candidates."]
+    ]
+  }
+};
+
+// Add fallback data for remaining cities
+const fallbackCity = (name, state, slug) => ({
+  name, state, slug,
+  tag: `Serving ${name}, ${state}`,
+  h1city: name,
+  intro_h2: `Healthcare, Engineering & Finance Staffing in ${name}, ${state}`,
+  intro_p: `Complete Staffing Solutions provides expert staffing services in ${name}, ${state}, specializing in Healthcare, Engineering, and Accounting & Finance placements. With over 25 years of experience and 200,000+ placements, we connect ${name} employers with qualified candidates in 48 hours or less.`,
+  market_p1: `${name}'s growing economy creates consistent demand for healthcare professionals, skilled engineers, and finance experts. Our specialized recruiters understand the local market and maintain deep candidate pipelines in the ${name} area.`,
+  market_p2: `Whether you need a Registered Nurse, a Civil Engineer, or a Senior Accountant, Complete Staffing Solutions delivers pre-screened, qualified candidates ready to contribute from day one.`,
+  employers: [`Major ${state} Healthcare Systems`,`Local Engineering Firms`,`Regional Financial Institutions`,`Corporate Headquarters`,`Manufacturing Companies`,`Construction & Infrastructure`],
+  nearby_h3: `Also Serving the Greater ${name} Region`,
+  nearby: [],
+  faq: [
+    [`How quickly can you fill positions in ${name}?`, `We typically present qualified candidates within 24–48 hours. For specialized roles, allow 3–5 business days.`],
+    [`What healthcare roles do you fill in ${name}?`, `We place Registered Nurses, Medical Assistants, Phlebotomists, Physical Therapists, Medical Billers, and administrative healthcare staff throughout ${state}.`],
+    [`Do you offer engineering staffing in ${name}?`, `Yes. We place mechanical, civil, electrical, software, and manufacturing engineers across ${name} and Greater ${state}.`],
+    [`What finance roles do you place in ${name}?`, `Controllers, CFOs, Financial Analysts, Staff Accountants, AP/AR Specialists, and Payroll Professionals across all sectors.`]
+  ]
+});
+
+const cityMap = {
+  'worcester': fallbackCity('Worcester','MA','worcester-ma'),
+  'cambridge': fallbackCity('Cambridge','MA','cambridge-ma'),
+  'lowell': fallbackCity('Lowell','MA','lowell-ma'),
+  'springfield': fallbackCity('Springfield','MA','springfield-ma'),
+  'marlborough': fallbackCity('Marlborough','MA','marlborough-ma'),
+  'new-haven': fallbackCity('New Haven','CT','new-haven-ct'),
+  'bridgeport': fallbackCity('Bridgeport','CT','bridgeport-ct'),
+  'waterbury': fallbackCity('Waterbury','CT','waterbury-ct'),
+  'groton': fallbackCity('Groton','CT','groton-ct'),
+  'warwick': fallbackCity('Warwick','RI','warwick-ri'),
+  'cranston': fallbackCity('Cranston','RI','cranston-ri'),
+  'pawtucket': fallbackCity('Pawtucket','RI','pawtucket-ri'),
+  'east-providence': fallbackCity('East Providence','RI','east-providence-ri'),
+  'albany': fallbackCity('Albany','NY','albany-ny'),
+  'buffalo': fallbackCity('Buffalo','NY','buffalo-ny'),
+  'rochester': fallbackCity('Rochester','NY','rochester-ny'),
+  'syracuse': fallbackCity('Syracuse','NY','syracuse-ny'),
+  'tampa': fallbackCity('Tampa','FL','tampa-fl'),
+  'orlando': fallbackCity('Orlando','FL','orlando-fl'),
+  'jacksonville': fallbackCity('Jacksonville','FL','jacksonville-fl'),
+  'fort-lauderdale': fallbackCity('Fort Lauderdale','FL','fort-lauderdale-fl'),
+  ...cities
+};
+
+// ─────────────────────────────────────────────
+// SELECT CITY — updates all dynamic content
+// ─────────────────────────────────────────────
+function selectCity(cityKey, state) {
+  const c = cityMap[cityKey];
+  if (!c) return;
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Update tab UI
+  document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.city-tab').forEach(t => {
+    if (t.getAttribute('onclick') === `selectCity('${cityKey}','${state}')`) {
+      t.classList.add('active');
+    }
+  });
+
+  // SEO meta
+  const title = `Staffing Agency in ${c.name}, ${c.state} | Healthcare, Engineering & Finance Recruiting | Complete Staffing Solutions`;
+  const desc = `Complete Staffing Solutions is ${c.name}'s trusted staffing agency specializing in Healthcare, Engineering, and Accounting & Finance placements. 25+ years experience. Call (401) 475-8800.`;
+  const url = `https://www.completestaffingsolutions.com/staffing-agency-${c.slug}`;
+
+  document.title = title;
+  document.getElementById('page-title').textContent = title;
+  document.getElementById('meta-desc').setAttribute('content', desc);
+  document.getElementById('canonical').setAttribute('href', url);
+  document.getElementById('og-title').setAttribute('content', `Staffing Agency in ${c.name}, ${c.state} | Complete Staffing Solutions`);
+  document.getElementById('og-desc').setAttribute('content', desc);
+  document.getElementById('og-url').setAttribute('content', url);
+
+  // Breadcrumb
+  document.getElementById('bc-city').textContent = `Staffing Agency — ${c.name}, ${c.state}`;
+
+  // Hero
+  document.getElementById('hero-tag-text').textContent = c.tag;
+  document.getElementById('hero-h1-city').textContent = c.name;
+  document.getElementById('hero-p-city').textContent = c.name;
+
+  // Intro
+  document.getElementById('intro-h2').textContent = c.intro_h2;
+  document.getElementById('intro-p').textContent = c.intro_p;
+
+  // Industry card titles
+  document.getElementById('hc-title').textContent = `Healthcare Staffing in ${c.name}, ${c.state}`;
+  document.getElementById('en-title').textContent = `Engineering Staffing in ${c.name}, ${c.state}`;
+  document.getElementById('fi-title').textContent = `Accounting & Finance Staffing in ${c.name}, ${c.state}`;
+
+  // Market section
+  document.getElementById('market-h2').textContent = `Why ${c.name} Companies Choose Complete Staffing Solutions`;
+  document.getElementById('market-p1').textContent = c.market_p1;
+  document.getElementById('market-p2').textContent = c.market_p2;
+
+  // Employer pills
+  const pillsEl = document.getElementById('market-pills');
+  pillsEl.innerHTML = c.employers.map(e => `<span class="market-pill">${e}</span>`).join('');
+
+  // Nearby cities
+  document.getElementById('nearby-h3').textContent = c.nearby_h3;
+  const nearbyEl = document.getElementById('nearby-links');
+  if (c.nearby.length) {
+    nearbyEl.innerHTML = c.nearby.map(([k, s, label]) =>
+      `<a class="city-link" onclick="selectCity('${k}','${s}')">${label}</a>`
+    ).join('');
+  }
+
+  // FAQ
+  const faqs = c.faq || [];
+  document.querySelectorAll('.faq-item').forEach((item, i) => {
+    if (faqs[i]) {
+      item.querySelector('.faq-q span').textContent = faqs[i][0];
+      item.querySelector('.faq-a').textContent = faqs[i][1];
+      item.classList.remove('open');
+    }
+  });
+
+  // CTA
+  document.getElementById('cta-h2').textContent = `Ready to hire in ${c.name}?`;
+
+  // Update schema
+  const schema = document.getElementById('schema-org');
+  const schemaData = JSON.parse(schema.textContent);
+  if (schemaData['@graph'][1]) {
+    schemaData['@graph'][1]['@id'] = url;
+    schemaData['@graph'][1]['name'] = title;
+    schemaData['@graph'][1]['description'] = desc;
+    schemaData['@graph'][1].breadcrumb.itemListElement[2].name = `${c.name}, ${c.state}`;
+    schemaData['@graph'][1].breadcrumb.itemListElement[2].item = url;
+  }
+  if (schemaData['@graph'][2] && faqs.length) {
+    schemaData['@graph'][2].mainEntity = faqs.map(([q, a]) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a }
+    }));
+  }
+  schema.textContent = JSON.stringify(schemaData, null, 2);
+}
+
+// ─────────────────────────────────────────────
+// FAQ ACCORDION
+// ─────────────────────────────────────────────
+function toggleFaq(item) {
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
