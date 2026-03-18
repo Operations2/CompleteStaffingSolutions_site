@@ -51,8 +51,6 @@ export async function POST(req: NextRequest) {
     const toRecipients = [
       "marketing@completestaffingnsolutions.com",
       "amartin@completestaffongsolutions.com",
-      "noumandev1221@gmail.com",
-      "nt50616849@gmail.com"
     ];
 
     const html = `
