@@ -81,7 +81,7 @@ export default function FlexibleSection({
                 src={image}
                 alt={title}
                 fill
-                className="object-cover object-left"
+                className="object-cover object-[20%_70%]"
                 sizes="(max-width: 1024px) 100vw, 1280px"
               />
             </div>

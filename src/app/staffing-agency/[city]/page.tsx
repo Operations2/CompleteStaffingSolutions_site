@@ -327,7 +327,7 @@ export default async function StaffingAgencyCityPage({ params }: PageProps) {
       <SchemaJsonLd slug={slug} city={city} />
 
       {/* City selector bar (reference style) */}
-      <div className="sticky top-16 z-30 w-full bg-white border-b border-[#EEF0F5] shadow-[0_2px_8px_rgba(10,22,40,0.06)]">
+      <div className="w-full bg-white border-b border-[#EEF0F5] shadow-[0_2px_8px_rgba(10,22,40,0.06)]">
         <div className="w-full max-w-[1100px] mx-auto px-4 sm:px-8 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex min-w-max">
             {Object.entries(stateCityIndex).map(([stateCode, group]) => (

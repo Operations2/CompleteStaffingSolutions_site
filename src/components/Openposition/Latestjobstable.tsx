@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { computeCategoryCounts, type Job, normalizeJobId } from "@/lib/jobs";
 
 type CategoryKey =
   | "healthcare"
@@ -71,150 +72,29 @@ const CATEGORIES: {
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1600&q=80";
 
-function normalizeJobId(value: string) {
-  return value.replace(/^#/, "").trim();
-}
-
-export type Job = {
-  title: string;
-  id: string;
-  location: string;
-  department: string;
-  type: string;
-  status?: string;
-  // Raw HTML description pulled from the XML <description> CDATA
-  descriptionHtml?: string;
-  // Original published date string from the XML <date> tag
-  publishedDateRaw?: string;
-  // External URL for the full job detail / application page
-  applyUrl?: string;
+type JobsApiResponse = {
+  jobs: Job[];
+  total: number;
+  page: number;
+  hasMore: boolean;
 };
 
-// Fallback jobs in case XML feed is unavailable
-const FALLBACK_JOBS: Job[] = [
-  {
-    title: "Licensed Practical Nurse (LPN)",
-    id: "#84238",
-    location: "Bridgeport, CT",
-    department: "Healthcare",
-    type: "Full-Time",
-    status: "Urgent",
-    applyUrl: "/employment-form",
-  },
-  {
-    title: "CNC Machinist",
-    id: "#83912",
-    location: "Stamford, CT",
-    department: "Manufacturing",
-    type: "Full-Time",
-    status: "",
-    applyUrl: "/employment-form",
-  },
-  {
-    title: "Financial Analyst",
-    id: "#84567",
-    location: "New Haven, CT",
-    department: "Finance",
-    type: "Full-Time",
-    status: "New",
-    applyUrl: "/employment-form",
-  },
-  {
-    title: "Customer Service Representative",
-    id: "#84101",
-    location: "Remote / USA",
-    department: "Customer Service",
-    type: "Part-Time",
-    status: "",
-    applyUrl: "/employment-form",
-  },
-  {
-    title: "Radiology Technician",
-    id: "#84325",
-    location: "Danbury, CT",
-    department: "Healthcare",
-    type: "Full-Time",
-    status: "",
-    applyUrl: "/employment-form",
-  },
-];
+function buildJobsApiUrl(params: {
+  page: number;
+  limit: number;
+  search?: string;
+  location?: string;
+  category?: string;
+}) {
+  const url = new URL("/api/jobs", window.location.origin);
+  url.searchParams.set("page", String(params.page));
+  url.searchParams.set("limit", String(params.limit));
 
-// Helper to parse a jobs XML feed into Job[]
-export function parseJobsFromXml(xmlText: string): Job[] {
-  if (typeof window === "undefined" || !xmlText) return [];
+  if (params.search) url.searchParams.set("search", params.search);
+  if (params.location) url.searchParams.set("location", params.location);
+  if (params.category) url.searchParams.set("category", params.category);
 
-  // Some exported XML files (especially if copied from a browser view)
-  // may contain leading human-readable text before the first "<" tag.
-  // Strip everything before the first "<" so the XML parser can succeed.
-  let cleaned = xmlText.trim();
-  const firstTagIndex = cleaned.indexOf("<");
-  if (firstTagIndex > 0) {
-    cleaned = cleaned.slice(firstTagIndex);
-  }
-
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(cleaned, "application/xml");
-
-  // If parsing failed, bail out so we can fall back gracefully.
-  if (xmlDoc.getElementsByTagName("parsererror").length > 0) {
-    return [];
-  }
-
-  const jobNodes = Array.from(xmlDoc.getElementsByTagName("job"));
-
-  // NOTE: The tag names below (`jobtitle`, `jobid`, `city`, `state`, `category`, `jobtype`, `status`)
-  // are based on a typical ATS XML format. If your actual XML uses different
-  // tag names, you can update the lookups inside this map.
-  const jobs: Job[] = jobNodes.map((node, index) => {
-    const get = (tag: string) =>
-      node.getElementsByTagName(tag)[0]?.textContent?.trim() || "";
-
-    const title =
-      get("jobtitle") || get("title") || `Job ${index + 1}`;
-
-    // Many ATS XML feeds (including the Complete Staffing feed) use
-    // <referencenumber> for the external job ID, so prioritize that.
-    const id =
-      get("referencenumber") || get("jobid") || get("id") || `#${index + 1}`;
-
-    const city = get("city");
-    const state = get("state");
-    const location =
-      city && state ? `${city}, ${state}` : city || state || get("location");
-
-    const department =
-      get("category") || get("department") || "General";
-
-    const type =
-      get("jobtype") || get("type") || "Full-Time";
-
-    const status =
-      get("status") || (get("hot_job") === "true" ? "Urgent" : "");
-
-    // Description is HTML wrapped in CDATA in the XML feed.
-    const descriptionNode = node.getElementsByTagName("description")[0];
-    const descriptionHtml =
-      descriptionNode?.textContent?.trim() ||
-      get("jobdescription") ||
-      "";
-
-    const publishedDateRaw = get("date");
-    const applyUrl = get("url");
-
-    return {
-      title,
-      id,
-      location: location || "Location not specified",
-      department,
-      type,
-      status,
-      descriptionHtml,
-      publishedDateRaw,
-      applyUrl,
-    };
-  });
-
-  return jobs;
+  return url.toString();
 }
 
 interface LatestJobsTableProps {
@@ -227,160 +107,30 @@ export default function LatestJobsTable({
   initialCategory = "",
 }: LatestJobsTableProps) {
   const [jobs, setJobs] = useState<Job[]>([]);
-  const [visibleCount, setVisibleCount] = useState<number>(10);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
   const [hasError, setHasError] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>(initialSearch);
+  const [debouncedSearch, setDebouncedSearch] = useState<string>(initialSearch);
   const [locationFilter, setLocationFilter] = useState<string>("");
   const [categoryFilter, setCategoryFilter] = useState<string>(initialCategory);
+  const [page, setPage] = useState<number>(1);
+  const [hasMore, setHasMore] = useState<boolean>(false);
+  const [total, setTotal] = useState<number>(0);
+  const limit = 20;
   const router = useRouter();
+  const fetchSeq = useRef(0);
 
   const categoryCounts = useMemo(() => {
-    const counts: Record<CategoryKey, number> = {
-      healthcare: 0,
-      financeAccounting: 0,
-      informationTechnology: 0,
-      manufacturing: 0,
-      customerService: 0,
-      administrative: 0,
-    };
-
-    jobs.forEach((job) => {
-      const dept = job.department?.toLowerCase() || "";
-
-      if (dept.includes("health")) {
-        counts.healthcare += 1;
-      }
-
-      if (dept.includes("finance") || dept.includes("account")) {
-        counts.financeAccounting += 1;
-      }
-
-      if (
-        dept.includes("it") ||
-        dept.includes("information technology") ||
-        dept.includes("technology") ||
-        dept.includes("software")
-      ) {
-        counts.informationTechnology += 1;
-      }
-
-      if (
-        dept.includes("manufactur") ||
-        dept.includes("operations") ||
-        dept.includes("production")
-      ) {
-        counts.manufacturing += 1;
-      }
-
-      if (
-        dept.includes("customer service") ||
-        dept.includes("customer support") ||
-        dept.includes("call center")
-      ) {
-        counts.customerService += 1;
-      }
-
-      if (
-        dept.includes("admin") ||
-        dept.includes("office") ||
-        dept.includes("clerical")
-      ) {
-        counts.administrative += 1;
-      }
-    });
-
-    return counts;
+    return computeCategoryCounts(jobs);
   }, [jobs]);
 
-  const filteredJobs = useMemo(() => {
-    const keyword = searchTerm.trim().toLowerCase();
-    const locationQuery = locationFilter.trim().toLowerCase();
-    const categoryQuery = categoryFilter.trim().toLowerCase();
-
-    if (!keyword && !locationQuery && !categoryQuery) {
-      return jobs;
-    }
-
-    return jobs.filter((job) => {
-      const title = job.title?.toLowerCase() ?? "";
-      const department = job.department?.toLowerCase() ?? "";
-      const location = job.location?.toLowerCase() ?? "";
-      const description = job.descriptionHtml?.toLowerCase() ?? "";
-
-      // Reuse the same broad category matching logic that powers the
-      // "Browse Jobs by Category" card counts so that clicking a card
-      // (e.g. "Finance & Accounting") actually shows those jobs.
-      const matchesCategory = () => {
-        if (!categoryQuery) return true;
-
-        if (categoryQuery === "healthcare") {
-          return department.includes("health");
-        }
-
-        if (categoryQuery === "finance & accounting") {
-          return department.includes("finance") || department.includes("account");
-        }
-
-        if (categoryQuery === "information technology") {
-          return (
-            department.includes("it") ||
-            department.includes("information technology") ||
-            department.includes("technology") ||
-            department.includes("software")
-          );
-        }
-
-        if (categoryQuery === "manufacturing") {
-          return (
-            department.includes("manufactur") ||
-            department.includes("operations") ||
-            department.includes("production")
-          );
-        }
-
-        if (categoryQuery === "customer service") {
-          return (
-            department.includes("customer service") ||
-            department.includes("customer support") ||
-            department.includes("call center")
-          );
-        }
-
-        if (categoryQuery === "administrative") {
-          return (
-            department.includes("admin") ||
-            department.includes("office") ||
-            department.includes("clerical")
-          );
-        }
-
-        // Fallback: simple substring match for all other specific
-        // dropdown selections (e.g. "Real Estate", "Education", etc).
-        return department.includes(categoryQuery);
-      };
-
-      if (keyword) {
-        const matchesKeyword =
-          title.includes(keyword) ||
-          department.includes(keyword) ||
-          location.includes(keyword) ||
-          description.includes(keyword);
-
-        if (!matchesKeyword) return false;
-      }
-
-      if (locationQuery && !location.includes(locationQuery)) {
-        return false;
-      }
-
-      if (!matchesCategory()) {
-        return false;
-      }
-
-      return true;
-    });
-  }, [jobs, searchTerm, locationFilter, categoryFilter]);
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      setDebouncedSearch(searchTerm);
+    }, 300);
+    return () => window.clearTimeout(t);
+  }, [searchTerm]);
 
   const formatJobCount = (count: number) => {
     const safeCount = Number.isFinite(count) ? count : 0;
@@ -389,55 +139,69 @@ export default function LatestJobsTable({
     return `${formatted} Job${safeCount === 1 ? "" : "s"}`;
   };
 
-  useEffect(() => {
-    let isMounted = true;
+  async function fetchJobsPage(args: {
+    page: number;
+    replace: boolean;
+    search: string;
+    location: string;
+    category: string;
+  }) {
+    const seq = ++fetchSeq.current;
+    const isFirstPage = args.page === 1;
 
-    async function loadJobsFromXml() {
-      try {
-        // Prefer a configurable public env var, fall back to a local /jobs.xml file.
-        const feedUrl =
-          process.env.NEXT_PUBLIC_JOBS_FEED_URL || "/jobs.xml";
-
-        const res = await fetch(feedUrl);
-
-        if (!res.ok) {
-          throw new Error(`Failed to fetch jobs XML: ${res.status}`);
-        }
-
-        const xmlText = await res.text();
-        const parsedJobs = parseJobsFromXml(xmlText);
-
-        if (!isMounted) return;
-
-        if (parsedJobs.length > 0) {
-          setJobs(parsedJobs);
-          setHasError(false);
-        } else {
-          // If XML was empty or parsing failed, fall back to static jobs.
-          setJobs(FALLBACK_JOBS);
-          setHasError(true);
-        }
-      } catch (error) {
-        if (!isMounted) return;
-        // On any error, fall back to static jobs so the UI still shows listings.
-        setJobs(FALLBACK_JOBS);
-        setHasError(true);
-      } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
+    if (isFirstPage) {
+      setIsLoading(true);
+      setHasError(false);
+    } else {
+      setIsLoadingMore(true);
+      setHasError(false);
     }
 
-    loadJobsFromXml();
+    try {
+      const url = buildJobsApiUrl({
+        page: args.page,
+        limit,
+        search: args.search,
+        location: args.location,
+        category: args.category,
+      });
 
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Failed to load jobs: ${res.status}`);
 
-  const visibleJobs = filteredJobs.slice(0, visibleCount);
-  const canLoadMore = visibleCount < filteredJobs.length;
+      const data = (await res.json()) as JobsApiResponse;
+      if (seq !== fetchSeq.current) return;
+
+      setTotal(Number.isFinite(data.total) ? data.total : 0);
+      setHasMore(Boolean(data.hasMore));
+      setPage(Number.isFinite(data.page) ? data.page : args.page);
+
+      setJobs((prev) => (args.replace ? data.jobs : [...prev, ...data.jobs]));
+    } catch {
+      if (seq !== fetchSeq.current) return;
+      if (args.replace) setJobs([]);
+      setHasMore(false);
+      setTotal(0);
+      setHasError(true);
+    } finally {
+      if (seq !== fetchSeq.current) return;
+      setIsLoading(false);
+      setIsLoadingMore(false);
+    }
+  }
+
+  // Initial load + whenever filters change (search is debounced).
+  useEffect(() => {
+    fetchJobsPage({
+      page: 1,
+      replace: true,
+      search: debouncedSearch,
+      location: locationFilter,
+      category: categoryFilter,
+    });
+  }, [debouncedSearch, locationFilter, categoryFilter]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const visibleJobs = jobs;
 
   const handleApplyClick = (job: Job) => {
     const normalizedId = normalizeJobId(job.id);
@@ -633,7 +397,19 @@ export default function LatestJobsTable({
                   <option>Sales</option>
                   <option>Warehouse</option>
                 </select>
-                <button className="w-full sm:w-auto sm:flex-none whitespace-nowrap rounded-full bg-[#6CA642] px-6 sm:px-7 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[#5a9238] transition-colors">
+                <button
+                  className="w-full sm:w-auto sm:flex-none whitespace-nowrap rounded-full bg-[#6CA642] px-6 sm:px-7 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md hover:bg-[#5a9238] transition-colors"
+                  onClick={() => {
+                    setDebouncedSearch(searchTerm);
+                    fetchJobsPage({
+                      page: 1,
+                      replace: true,
+                      search: searchTerm,
+                      location: locationFilter,
+                      category: categoryFilter,
+                    });
+                  }}
+                >
                   Search
                 </button>
               </div>
@@ -823,7 +599,9 @@ export default function LatestJobsTable({
                         colSpan={6}
                         className="px-4 sm:px-6 py-6 text-center text-neutral-500"
                       >
-                        No job listings are available right now.
+                        {hasError
+                          ? "We couldn't load jobs right now. Please try again."
+                          : "No job listings are available right now."}
                       </td>
                     </tr>
                   )}
@@ -897,13 +675,24 @@ export default function LatestJobsTable({
             </div>
 
             {/* Load more row */}
-            {canLoadMore && (
+            {!isLoading && visibleJobs.length > 0 && (
               <div className="px-4 sm:px-6 md:px-8 py-4 text-center bg-white">
                 <button
                   className="text-sm font-semibold text-[#19478e] hover:underline"
-                  onClick={() => setVisibleCount(filteredJobs.length)}
+                  onClick={() => {
+                    if (isLoadingMore || !hasMore) return;
+                    fetchJobsPage({
+                      page: page + 1,
+                      replace: false,
+                      search: debouncedSearch,
+                      location: locationFilter,
+                      category: categoryFilter,
+                    });
+                  }}
+                  disabled={!hasMore || isLoadingMore}
+                  aria-disabled={!hasMore || isLoadingMore}
                 >
-                  Load More Job Listings
+                  {isLoadingMore ? "Loading..." : "Load More Job Listings"}
                 </button>
               </div>
             )}

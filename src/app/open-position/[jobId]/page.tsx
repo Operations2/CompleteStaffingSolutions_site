@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import type { Job } from "@/components/Openposition/Latestjobstable";
-import { parseJobsFromXml } from "@/components/Openposition/Latestjobstable";
+import type { Job } from "@/lib/jobs";
 import JobApplicationForm from "@/components/Openposition/JobApplicationForm";
 
 function normalizeJobId(value: string) {
@@ -36,21 +35,18 @@ export default function JobDetailPage() {
 
     async function loadJob() {
       try {
-        const feedUrl = process.env.NEXT_PUBLIC_JOBS_FEED_URL || "/jobs.xml";
+        const url = new URL("/api/jobs", window.location.origin);
+        url.searchParams.set("id", normalizedParamId);
+        url.searchParams.set("page", "1");
+        url.searchParams.set("limit", "1");
 
-        const res = await fetch(feedUrl);
-        if (!res.ok) {
-          throw new Error(`Failed to fetch jobs XML: ${res.status}`);
-        }
+        const res = await fetch(url.toString());
+        if (!res.ok) throw new Error(`Failed to load job: ${res.status}`);
 
-        const xmlText = await res.text();
-        const jobs = parseJobsFromXml(xmlText);
+        const data = (await res.json()) as { jobs?: Job[] };
+        const found = data.jobs?.[0] ?? null;
 
         if (!isMounted) return;
-
-        const found = jobs.find(
-          (j) => normalizeJobId(j.id) === normalizedParamId
-        );
 
         if (found) {
           setJob(found);

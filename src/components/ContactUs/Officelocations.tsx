@@ -95,16 +95,16 @@ const OfficeLocations: React.FC = () => {
   return (
     <section className="w-full bg-sky-100/70 pb-5 md:p-7 ">
       <div className="w-full max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-8 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-8 lg:gap-10 items-stretch">
           {/* Left: Contact form */}
-          <div className="order-2 lg:order-1 flex flex-col gap-4">
+          <div className="order-2 lg:order-1 flex h-full flex-col gap-4">
             {/* Green info box above the card */}
-            <div className="w-full rounded-md border border-[#8dcf9b] bg-[#e3f9e7] px-4 py-3 text-[13px] sm:text-sm leading-relaxed text-[#295634] shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
+            <div className="w-full rounded-md border border-[#8dcf9b] bg-[#e3f9e7] px-4 py-3 text-[13px] min-h-[80px] md:min-h-[90px] sm:text-sm leading-relaxed text-[#295634] shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
               No office near you? No problem — we place candidates across all 50 states. Tell us your location and we&apos;ll
               connect you with the right team.
             </div>
 
-            <div className="flex w-full min-h-[260px] sm:min-h-[320px] flex-col gap-6 rounded-2xl bg-[#19478e] px-5 py-7 sm:px-7 sm:py-8 md:px-8 md:py-9 shadow-[3px_4px_20.5px_3px_rgba(0,0,0,0.25)] font-[var(--font-inter)]">
+            <div className="flex w-full flex-1 min-h-[220px] sm:min-h-[280px] flex-col gap-6 rounded-2xl bg-[#19478e] px-5 py-7 sm:px-7 sm:py-8 md:px-8 md:py-9 shadow-[3px_4px_20.5px_3px_rgba(0,0,0,0.25)] font-[var(--font-inter)]">
               <div>
                 <h2 className="font-[var(--font-plus-jakarta)] text-[clamp(22px,3.2vw,30px)] font-bold uppercase leading-tight text-white">
                   Contact Us
@@ -192,7 +192,7 @@ const OfficeLocations: React.FC = () => {
                   <textarea
                     id="contact-message"
                     name="message"
-                    className="min-h-[110px] md:min-h-[130px] w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 py-3 text-[15px] sm:text-[16px] text-white outline-none placeholder:text-[#e8e8e880]"
+                    className="min-h-[95px] md:min-h-[115px] w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 py-3 text-[15px] sm:text-[16px] text-white outline-none placeholder:text-[#e8e8e880]"
                     placeholder="Tell us about your hiring needs or career goals."
                   />
                 </div>
@@ -208,9 +208,9 @@ const OfficeLocations: React.FC = () => {
           </div>
 
           {/* Right: Offices list */}
-          <div className="order-1 lg:order-2 flex flex-col gap-4">
+          <div className="order-1 lg:order-2 flex h-full flex-col gap-4">
             {/* Blue info box above the card */}
-            <div className="rounded-md border border-[#c2d8f5] bg-[#f3f7ff] px-4 py-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+            <div className="rounded-md border border-[#c2d8f5] bg-[#f3f7ff] px-4 py-3 shadow-[0_1px_2px_rgba(0,0,0,0.04)] min-h-[80px] md:min-h-[90px]">
               <h3 className="mb-1 text-[13px] sm:text-[14px] font-semibold text-[#19478e]">
                 We go where your business goes
               </h3>
@@ -220,7 +220,7 @@ const OfficeLocations: React.FC = () => {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-white shadow-lg border border-neutral-100 px-5 py-6 sm:px-7 sm:py-7 md:px-8 md:py-8 font-[var(--font-inter)]">
+            <div className="flex h-full flex-col rounded-2xl bg-white shadow-lg border border-neutral-100 px-5 py-6 sm:px-7 sm:py-7 md:px-8 md:py-8 font-[var(--font-inter)] max-h-[860px]">
               <span className="inline-block text-[#19478e] font-semibold text-xs sm:text-sm uppercase tracking-[0.16em] mb-2">
                 Our offices
               </span>
@@ -232,7 +232,7 @@ const OfficeLocations: React.FC = () => {
                 for searches across the U.S.
               </p>
 
-              <div className="mt-1 max-h-[560px] overflow-y-auto pr-1 space-y-3">
+              <div className="mt-1 flex-1 min-h-0 overflow-y-auto pr-1 space-y-3">
                 {OFFICES.map((office) => (
                   <div
                     key={office.name}
