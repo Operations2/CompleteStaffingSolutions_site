@@ -50,7 +50,7 @@ const ProcessSummarySection: React.FC = () => {
         {/* --- MOBILE VIEW (Hidden on Desktop) --- */}
         <div className="w-full md:hidden flex flex-col items-center">
           {/* Using a grid to get the 3-over-2 look from your image */}
-          <div className="flex justify-between gap-1 w-full overflow-hidden px-2">
+          <div className="flex justify-between gap-1 w-full overflow-hidden px-6">
             {TIMELINE_STEPS.map((step, index) => (
               <div 
                 key={`mobile-${step.letter}`}
