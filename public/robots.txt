@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://completestaffingsolutions.com
+
+# Sitemaps
+Sitemap: https://completestaffingsolutions.com/sitemap.xml
