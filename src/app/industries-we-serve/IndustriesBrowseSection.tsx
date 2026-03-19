@@ -7,10 +7,24 @@ import DepartmentCards from "../../components/Departments/Departmentcards";
 
 const INDUSTRIES = [
   {
+    id: "communication",
+    image: "/industries/cards/construction.webp",
+    title: "Communication",
+    description: "Connecting organizations with storytelling, PR, and digital media experts",
+    iconColor: "#6CA642",
+  },
+  {
     id: "corporateservices",
     image: "/industries/cards/corporate services.webp",
     title: "Corporate Services",
     description: "Professional staff for corporate operations and business services",
+    iconColor: "#6CA642",
+  },
+  {
+    id: "engineering-supply-chain",
+    image: "/industries/cards/construction.webp",
+    title: "Engineering / Supply Chain",
+    description: "Skilled professionals for engineering operations, sourcing, logistics, and supply continuity",
     iconColor: "#6CA642",
   },
   {
@@ -21,13 +35,12 @@ const INDUSTRIES = [
     iconColor: "#6CA642",
   },
   {
-    id: "healthcare",
-    image: "/industries/cards/healthcare.webp",
-    title: "Healthcare",
-    description: "Qualified healthcare professionals for hospitals, clinics, and care facilities",
+    id: "financial-services",
+    image: "/industries/cards/information.webp",
+    title: "Financial Services",
+    description: "Strategic expertise in banking, investment management, and global compliance",
     iconColor: "#6CA642",
   },
-
   {
     id: "hardware",
     image: "/industries/cards/hardware.webp",
@@ -35,7 +48,20 @@ const INDUSTRIES = [
     description: "Technical professionals for hardware systems and network infrastructure",
     iconColor: "#6CA642",
   },
-
+  {
+    id: "healthcare",
+    image: "/industries/cards/healthcare.webp",
+    title: "Healthcare",
+    description: "Qualified healthcare professionals for hospitals, clinics, and care facilities",
+    iconColor: "#6CA642",
+  },
+  {
+    id: "insurance",
+    image: "/industries/cards/insurance.webp",
+    title: "Insurance",
+    description: "Professional staffing for risk assessment, underwriting, and claims management",
+    iconColor: "#6CA642",
+  },
   {
     id: "legal",
     image: "/industries/cards/legal.webp",
@@ -64,7 +90,6 @@ const INDUSTRIES = [
     description: "Property management professionals for residential, commercial, and facility operations",
     iconColor: "#6CA642",
   },
-
   {
     id: "real-estate",
     image: "/industries/cards/real estate.webp",
@@ -84,27 +109,6 @@ const INDUSTRIES = [
     image: "/industries/cards/transportation.webp",
     title: "Transportation & Logistics",
     description: "Workers for supply chain, warehousing and distribution",
-    iconColor: "#6CA642",
-  },
-  {
-    id: "financial-services",
-    image: "/industries/cards/information.webp",
-    title: "Financial Services",
-    description: "Strategic expertise in banking, investment management, and global compliance",
-    iconColor: "#6CA642",
-  },
-  {
-    id: "communications",
-    image: "/industries/cards/construction.webp",
-    title: "Communications",
-    description: "Connecting organizations with storytelling, PR, and digital media experts",
-    iconColor: "#6CA642",
-  },
-  {
-    id: "insurance",
-    image: "/industries/cards/insurance.webp",
-    title: "Insurance",
-    description: "Professional staffing for risk assessment, underwriting, and claims management",
     iconColor: "#6CA642",
   },
 ];
@@ -207,33 +211,21 @@ export default function IndustriesBrowseSection() {
 
   const FILTERS = [
     "All",
-    // "Agriculture",
-    // "Arts",
-    "Construction",
-    // "Consumer Goods",
+    "Communication",
     "Corporate Services",
-    // "Design",
-    // "Education",
-    // "Energy & Mining",
-    // "Entertainment",
+    "Engineering / Supply Chain",
     "Finance",
+    "Financial Services",
     "Hardware & Networking",
     "Healthcare",
+    "Insurance",
     "Legal",
     "Manufacturing",
-    // "Media & Communications",
     "Nonprofit",
-    // "Public Administration",
     "Property Management",
     "Real Estate",
-    // "Recreation & Travel",
-    // "Retail",
     "Software & IT Services",
     "Transportation & Logistics",
-    "Financial Services",
-    "Communications",
-    "Insurance"
-    // "Wellness & Fitness",
   ];
 
   // Filter industries
