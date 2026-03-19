@@ -106,8 +106,8 @@ const ProcessSteps: React.FC = () => {
           >
             <div className="">
               {/* Connector line: only on lg when 5 columns */}
-              <div className="flex md:flex-col items-center">
-                <div className="relative w-full">
+              <div className="flex md:flex-col justify-around items-center">
+                <div className="relative">
                   <div
                     className="absolute top-1/2 -translate-y-1/2 left-0 w-full h-0.5 lg:h-1 bg-gradient-to-r from-[#4DAED8] to-[#2F60AA] z-10 hidden lg:block transition-opacity duration-500 ease-out"
                     style={{
