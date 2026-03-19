@@ -39,7 +39,6 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
-a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* ── PAGE ANIMATION ────────────────────────────────────────── */
