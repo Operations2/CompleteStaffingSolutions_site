@@ -87,7 +87,7 @@ export default function Footer() {
               </b>
               <div className="linksList flex flex-col items-start gap-2.5 text-[15px] text-neutral-800 lg:items-center">
                 <Link
-                  href="/Departments"
+                  href="/open-position"
                   className="footerLink text-neutral-800 no-underline transition-colors hover:text-neutral-900"
                 >
                   Primary Positions
