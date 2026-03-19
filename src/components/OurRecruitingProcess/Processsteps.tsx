@@ -68,7 +68,7 @@ const ProcessSteps: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full bg-[#F7F9FC] pb-10 pt-6 sm:pb-16 sm:pt-0 ${isVisible ? "active" : ""}`}
+      className={`w-full bg-[#F7F9FC] pb-10 sm:pt-0 ${isVisible ? "active" : ""}`}
     >
       <div
         className="mx-auto text-center px-4 sm:px-6 reveal revealUp"

@@ -12,8 +12,8 @@ const TIMELINE_STEPS = [
 
 const ProcessSummarySection: React.FC = () => {
   return (
-    <section className="w-full bg-[#F7F9FC] py-12">
-      <div className="mx-auto px-4 sm:px-6 max-w-[1200px]">
+    <section className="w-full bg-[#F7F9FC] pt-12 md:py-16">
+      <div className="mx-auto px-3 sm:px-6 max-w-[1200px]">
         
         {/* --- DESKTOP VIEW (Hidden on Mobile) --- */}
         <div className="hidden md:block">
@@ -48,9 +48,9 @@ const ProcessSummarySection: React.FC = () => {
         </div>
 
         {/* --- MOBILE VIEW (Hidden on Desktop) --- */}
-        <div className="md:hidden flex flex-col items-center">
+        <div className="w-full md:hidden flex flex-col items-center">
           {/* Using a grid to get the 3-over-2 look from your image */}
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-7 ">
+          <div className="flex justify-between gap-1 border w-full overflow-hidden px-1">
             {TIMELINE_STEPS.map((step, index) => (
               <div 
                 key={`mobile-${step.letter}`}
@@ -59,15 +59,15 @@ const ProcessSummarySection: React.FC = () => {
                 }`}
               >
                 {/* Circle */}
-                <div className="flex items-center justify-center rounded-full text-white font-bold shadow-[0_4px_14px_rgba(45,127,193,0.4)] bg-[linear-gradient(135deg,#2D7FC1,#3455A5)] w-14 h-14 text-xl mb-3">
+                <div className="flex items-center justify-center rounded-full text-white font-bold shadow-[0_4px_14px_rgba(45,127,193,0.4)] bg-[linear-gradient(135deg,#2D7FC1,#3455A5)] w-12 h-12 text-xl mb-3 ">
                   {step.letter}
                 </div>
                 {/* Text Content */}
                 <div className="text-[#2B3A4B]">
-                  <div className="text-base font-bold leading-tight -mt-0.5">
+                  <div className="text-xs font-bold leading-tight -mt-0.5">
                     {step.title}
                   </div>
-                  <div className="text-xs font-normal text-gray-500 mt-1.5">
+                  <div className="text-[8px] font-normal text-gray-500 mt-1.5">
                     {step.subtitle}
                   </div>
                 </div>
