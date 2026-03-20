@@ -86,15 +86,15 @@ const INDUSTRIES = [
     roles: ['Executive Assistant', 'HR Coordinator', 'Office Manager'],
     link: '/industries-we-serve',
     label: 'Explore Admin Staffing',
-  },
-  {
-    icon: '🏢',
-    title: 'Real Estate',
-    desc: 'Property management, leasing, development, and real estate operations talent for residential and commercial firms throughout the Northeast, Florida, and across the U.S.',
-    roles: ['Property Manager', 'Leasing Agent', 'Development Analyst'],
-    link: '/industries-we-serve/real-estate',
-    label: 'Explore Real Estate Staffing',
-  },
+    },
+    {
+      icon: '⚖️',
+      title: 'Legal',
+      desc: 'Paralegals, legal assistants, and litigation support talent for law firms and corporate legal teams throughout the Northeast, Florida, and across the U.S.',
+      roles: ['Paralegal', 'Legal Assistant', 'Litigation Support Specialist'],
+      link: '/industries-we-serve/legal',
+      label: 'Explore Legal Staffing',
+    },
 ]
 
 const MARKETS = [
@@ -159,6 +159,13 @@ export default function HomePage() {
 
           {/* Left copy */}
           <div className="hero-left">
+            <div className="hero-logo-circle" aria-hidden="true">
+              <img
+                src="/logo.svg"
+                alt="Complete Staffing Solutions"
+                className="hero-logo-img"
+              />
+            </div>
             <div className="hero-kicker">
               <span className="kicker-dot" aria-hidden="true" />
               <span>Nationwide Staffing Agency — All 50 States</span>

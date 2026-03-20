@@ -168,11 +168,30 @@ main { animation: fadeUp .35s var(--ease); }
   mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.5) 20%, rgba(0,0,0,.5) 80%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.5) 20%, rgba(0,0,0,.5) 80%, transparent);
 }
+
+/* Green circle logo placeholder in hero */
+.hero-logo-circle {
+  position: absolute;
+  z-index: 2;
+  top: 4.8rem;
+  left: -15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-logo-img {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
+}
+
 .hero-inner {
   max-width: 1320px; margin: 0 auto; width: 100%;
-  display: grid; grid-template-columns: 1fr 460px;
-  gap: 5rem; align-items: center; position: relative;
+  display: grid; grid-template-columns: 1fr 540px;
+  gap: 4.5rem; align-items: center; position: relative;
 }
+.hero-left { position: relative; }
 .hero-left > * {
   animation: fadeUp .6s var(--ease) both;
 }
@@ -229,7 +248,7 @@ main { animation: fadeUp .35s var(--ease); }
 .hero-card {
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.1);
-  border-radius: 20px; padding: 2.25rem;
+  border-radius: 22px; padding: 3rem;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
@@ -238,16 +257,16 @@ main { animation: fadeUp .35s var(--ease); }
   text-transform: uppercase; color: var(--green3); margin-bottom: .5rem;
 }
 .card-title {
-  font-family: var(--fh); font-size: 1.35rem; font-weight: 700;
+  font-family: var(--fh); font-size: 1.55rem; font-weight: 700;
   color: var(--white); margin-bottom: .3rem; letter-spacing: -.02em;
 }
-.card-sub { font-size: .83rem; color: rgba(255,255,255,.38); margin-bottom: 1.65rem; }
+.card-sub { font-size: .92rem; color: rgba(255,255,255,.38); margin-bottom: 1.9rem; }
 .card-field {
   width: 100%; background: rgba(255,255,255,.06);
   border: 1.5px solid rgba(255,255,255,.1);
-  border-radius: 9px; padding: .72rem 1rem;
-  color: var(--white); font-size: .875rem;
-  transition: border-color .15s; margin-bottom: .65rem;
+  border-radius: 12px; padding: .95rem 1.1rem;
+  color: var(--white); font-size: .98rem;
+  transition: border-color .15s; margin-bottom: .85rem;
   display: block; font-family: var(--fb);
 }
 .card-field::placeholder { color: rgba(255,255,255,.3); }
@@ -255,10 +274,10 @@ main { animation: fadeUp .35s var(--ease); }
 .card-field option { background: var(--navy3); color: var(--white); }
 .card-btn {
   width: 100%; background: var(--green); color: var(--white);
-  border-radius: 9px; padding: .88rem; font-size: .92rem;
+  border-radius: 12px; padding: 1rem; font-size: 1rem;
   font-weight: 600; cursor: pointer; transition: all .18s;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--fb); margin-top: .35rem; text-decoration: none;
+  font-family: var(--fb); margin-top: .45rem; text-decoration: none;
 }
 .card-btn:hover { background: var(--green2); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(106,166,59,.35); }
 .card-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.1rem; }
@@ -596,5 +615,12 @@ main { animation: fadeUp .35s var(--ease); }
   .footer-grid     { grid-template-columns: 1fr; }
   .cta-band        { padding: 2.5rem 1.75rem; }
   .hero-stats      { flex-wrap: wrap; gap: 1.5rem; }
+  .hero-logo-circle {
+    position: static;
+    width: 108px;
+    height: 108px;
+    margin-bottom: .95rem;
+  }
+  .hero-logo-img { width: 78px; }
   .topbar-left     { display: none; }
 }
