@@ -360,7 +360,7 @@ export default function HomePage() {
             </div>
 
             {/* Stats card */}
-            {/* <div className="why-card">
+            {<div className="why-card">
               <div className="wc-num">50K<span className="wc-plus">+</span></div>
               <div className="wc-label">Successful placements since 1999</div>
               <div className="wc-bars">
@@ -378,7 +378,7 @@ export default function HomePage() {
                     <span className="wc-bar-pct">{pct}%</span>
                   </div>
                 ))}
-              </div> */}
+              </div>}
               <div className="wc-footer">
                 <div className="wc-footer-label">Employer satisfaction rate</div>
                 <div className="wc-footer-row">
