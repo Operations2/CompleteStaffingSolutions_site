@@ -210,7 +210,7 @@ export default function Header() {
               onClick={() => setShowFraudModal(true)}
               className="hidden md:inline-flex items-center justify-center h-9 px-4 rounded bg-[#6ca642] text-xs sm:text-sm font-semibold shadow-sm hover:bg-[#5a8e37] hover:-translate-y-0.5 hover:shadow-lg transition-all"
             >
-              Recruitment Fraud Notice
+              A Quick Note About Safety
             </button>
           </div>
 
