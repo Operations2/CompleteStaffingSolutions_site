@@ -1,8 +1,3 @@
-// app/page.tsx
-// Complete Staffing Solutions — SEO-optimised homepage
-// Word count: ~1,500 | All 50 states | Retained Search included
-
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
@@ -86,15 +81,15 @@ const INDUSTRIES = [
     roles: ['Executive Assistant', 'HR Coordinator', 'Office Manager'],
     link: '/industries-we-serve',
     label: 'Explore Admin Staffing',
-    },
-    {
-      icon: '⚖️',
-      title: 'Legal',
-      desc: 'Paralegals, legal assistants, and litigation support talent for law firms and corporate legal teams throughout the Northeast, Florida, and across the U.S.',
-      roles: ['Paralegal', 'Legal Assistant', 'Litigation Support Specialist'],
-      link: '/industries-we-serve/legal',
-      label: 'Explore Legal Staffing',
-    },
+  },
+  {
+    icon: '⚖️',
+    title: 'Legal',
+    desc: 'Paralegals, legal assistants, and litigation support talent for law firms and corporate legal teams throughout the Northeast, Florida, and across the U.S.',
+    roles: ['Paralegal', 'Legal Assistant', 'Litigation Support Specialist'],
+    link: '/industries-we-serve/legal',
+    label: 'Explore Legal Staffing',
+  },
 ]
 
 const MARKETS = [
@@ -159,22 +154,25 @@ export default function HomePage() {
 
           {/* Left copy */}
           <div className="hero-left">
-            <div className="hero-logo-circle" aria-hidden="true">
-              <img
-                src="/logo.svg"
-                alt="Complete Staffing Solutions"
-                className="hero-logo-img"
-              />
-            </div>
             <div className="hero-kicker">
               <span className="kicker-dot" aria-hidden="true" />
               <span>Nationwide Staffing Agency — All 50 States</span>
             </div>
-            <h1 className="hero-h1">
-              The right hire.<br />
-              <em>Right now.</em><br />
-              <span className="line2">Every market.</span>
-            </h1>
+            <div className="hero-heading-lockup">
+              <h1 className="hero-h1">
+                <span className="hero-topline">
+                  <img
+                    src="/logo.svg"
+                    alt="Complete Staffing Solutions"
+                    className="hero-logo-inline"
+                  />
+                  <span>The right hire.</span>
+                </span>
+
+                <em>Right now.</em><br />
+                <span className="line2">Every market.</span>
+              </h1>
+            </div>
             <p className="hero-sub">
               Complete Staffing Solutions places{' '}
               <strong>qualified professionals across all 50 states</strong> — with deep expertise and
@@ -358,37 +356,6 @@ export default function HomePage() {
                 <Link href="/our-recruiting-process" className="btn btn-outline btn-lg">Our Process</Link>
               </div>
             </div>
-
-            {/* Stats card */}
-            {/*
-            <div className="why-card">
-              <div className="wc-num">50K<span className="wc-plus">+</span></div>
-              <div className="wc-label">Successful placements since 1999</div>
-              <div className="wc-bars">
-                {[
-                  { label: 'Healthcare', pct: 78, color: 'var(--green3)' },
-                  { label: 'Finance & Acctg', pct: 65, color: 'var(--sky2)' },
-                  { label: 'Engineering', pct: 55, color: '#A78BFA' },
-                  { label: 'Admin & Other', pct: 42, color: '#FB923C' },
-                ].map(({ label, pct, color }) => (
-                  <div key={label} className="wc-bar-row">
-                    <span className="wc-bar-label">{label}</span>
-                    <div className="wc-bar-track">
-                      <div className="wc-bar-fill" style={{ width: `${pct}%`, background: color }} />
-                    </div>
-                    <span className="wc-bar-pct">{pct}%</span>
-                  </div>
-                ))}
-              </div>
-              <div className="wc-footer">
-                <div className="wc-footer-label">Employer satisfaction rate</div>
-                <div className="wc-footer-row">
-                  <span className="wc-footer-num">94%</span>
-                  <span className="wc-footer-sub">of employers re-engage within 90 days</span>
-                </div>
-              </div>
-            </div>
-            */}
           </div>
         </div>
       </section>

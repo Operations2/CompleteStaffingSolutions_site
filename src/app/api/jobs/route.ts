@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
+  computeCategoryCounts,
   FALLBACK_JOBS,
   filterJobs,
   normalizeJobId,
@@ -12,6 +13,7 @@ type JobsResponse = {
   total: number;
   page: number;
   hasMore: boolean;
+  categoryCounts: ReturnType<typeof computeCategoryCounts>;
 };
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
@@ -159,13 +161,14 @@ export async function GET(req: NextRequest) {
         : all;
 
     const filtered = filterJobs(filteredById, { search, location, category });
+    const categoryCounts = computeCategoryCounts(all);
 
     const start = (page - 1) * limit;
     const jobs = filtered.slice(start, start + limit);
     const total = filtered.length;
     const hasMore = start + limit < total;
 
-    const body: JobsResponse = { jobs, total, page, hasMore };
+    const body: JobsResponse = { jobs, total, page, hasMore, categoryCounts };
     return NextResponse.json(body, {
       status: 200,
       headers: {

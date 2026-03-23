@@ -10,17 +10,6 @@ const VIDEO_SYNOPSIS =
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* <Hero />
-      <IndustriesGridSection />
-      <section className="w-full bg-[#c8eaff] border-y border-neutral-100">
-        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 text-center">
-          <p className="font-[var(--font-inter)] italic text-[#343134] text-base sm:text-lg lg:text-xl xl:text-2xl font-semibold leading-relaxed">
-            "{VIDEO_SYNOPSIS}"
-          </p>
-        </div>
-      </section>
-      <LandingVideoSection />
-      <JobRequestSection /> */}
       <HomePage />
     </main>
   );

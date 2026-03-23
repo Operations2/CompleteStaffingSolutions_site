@@ -2,14 +2,70 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { US_AREA_CODES } from "../../constants/usAreaCodes";
 
 const PLACEHOLDER_IMAGE = "/for%20employer/pic.jpg";
 const UPLOAD_ICON = "/for%20employer/material-symbols-light_upload-file-outline.svg";
+const US_AREA_CODE_SET = new Set(US_AREA_CODES);
+const US_STATES = [
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+];
 
 export default function ForEmployerForm() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [fileName, setFileName] = useState<string>("No file chosen");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [phoneValue, setPhoneValue] = useState("");
+  const [phoneAreaCodeError, setPhoneAreaCodeError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -31,6 +87,58 @@ export default function ForEmployerForm() {
     });
   };
 
+  const formatPhoneNumber = (value: string): string => {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    const area = digits.slice(0, 3);
+    const first = digits.slice(3, 6);
+    const second = digits.slice(6, 10);
+
+    if (digits.length <= 3) return area;
+    if (digits.length <= 6) return `(${area}) ${first}`;
+    return `(${area}) ${first}-${second}`;
+  };
+
+  const handlePhoneInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    const rawValue = input.value;
+    const cursorPosition = input.selectionStart ?? rawValue.length;
+    const digitsBeforeCursor = rawValue
+      .slice(0, cursorPosition)
+      .replace(/\D/g, "").length;
+    const formatted = formatPhoneNumber(rawValue);
+    const digits = formatted.replace(/\D/g, "");
+    const areaCode = digits.slice(0, 3);
+
+    setPhoneValue(formatted);
+    if (digits.length >= 3 && !US_AREA_CODE_SET.has(areaCode)) {
+      setPhoneAreaCodeError("Please enter a valid US area code.");
+    } else {
+      setPhoneAreaCodeError(null);
+    }
+
+    requestAnimationFrame(() => {
+      let nextCursor = formatted.length;
+
+      if (digitsBeforeCursor === 0) {
+        nextCursor = 0;
+      } else {
+        let seenDigits = 0;
+        for (let i = 0; i < formatted.length; i += 1) {
+          if (/\d/.test(formatted[i])) {
+            seenDigits += 1;
+          }
+
+          if (seenDigits >= digitsBeforeCursor) {
+            nextCursor = i + 1;
+            break;
+          }
+        }
+      }
+
+      input.setSelectionRange(nextCursor, nextCursor);
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formElement = e.currentTarget;
@@ -44,7 +152,7 @@ export default function ForEmployerForm() {
       const email = (formData.get("email") as string | null) ?? "";
       const firstName = (formData.get("firstName") as string | null) ?? "";
       const lastName = (formData.get("lastName") as string | null) ?? "";
-      const phone = (formData.get("phone") as string | null) ?? "";
+      const phone = ((formData.get("phone") as string | null) ?? "").trim();
 
       const jobTitle = (formData.get("jobTitle") as string | null) ?? "";
       const jobId = (formData.get("jobId") as string | null) ?? "";
@@ -52,7 +160,7 @@ export default function ForEmployerForm() {
       const street = (formData.get("street") as string | null) ?? "";
       const city = (formData.get("city") as string | null) ?? "";
       const state = (formData.get("state") as string | null) ?? "";
-      const zipCode = (formData.get("zipCode") as string | null) ?? "";
+      const zipCode = ((formData.get("zipCode") as string | null) ?? "").trim();
 
       const salary = (formData.get("salary") as string | null) ?? "";
 
@@ -66,6 +174,26 @@ export default function ForEmployerForm() {
 
       if (!email || !firstName || !lastName || !phone) {
         setSubmitError("Please fill in all required fields.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (!/^\(\d{3}\) \d{3}-\d{4}$/.test(phone)) {
+        setSubmitError("Phone number must be in the format (xxx) xxx-xxxx.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      const phoneDigits = phone.replace(/\D/g, "");
+      const phoneAreaCode = phoneDigits.slice(0, 3);
+      if (!US_AREA_CODE_SET.has(phoneAreaCode)) {
+        setSubmitError("Please enter a phone number with a valid US area code.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      if (!/^\d{5}$/.test(zipCode)) {
+        setSubmitError("Zip code must be exactly 5 digits.");
         setIsSubmitting(false);
         return;
       }
@@ -116,6 +244,8 @@ export default function ForEmployerForm() {
 
       setSubmitSuccess(true);
       formElement.reset();
+      setPhoneValue("");
+      setPhoneAreaCodeError(null);
       setSelectedFile(null);
       setFileName("No file chosen");
     } catch (error) {
@@ -306,12 +436,21 @@ export default function ForEmployerForm() {
               >
                 State
               </label>
-              <input
+              <select
                 id="state"
-                type="text"
                 name="state"
-                className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
-              />
+                className="h-11 w-full appearance-none rounded border border-[#e8e8e8] bg-transparent px-3.5 pr-11 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
+                defaultValue=""
+              >
+                <option className="text-black" value="">
+                  Select a state
+                </option>
+                {US_STATES.map((stateName) => (
+                  <option key={stateName} className="text-black" value={stateName}>
+                    {stateName}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="flex w-full flex-col gap-2">
               <label
@@ -326,6 +465,13 @@ export default function ForEmployerForm() {
                 name="zipCode"
                 className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
                 inputMode="numeric"
+                pattern="\d{5}"
+                maxLength={5}
+                required
+                onInput={(e) => {
+                  const input = e.currentTarget;
+                  input.value = input.value.replace(/\D/g, "").slice(0, 5);
+                }}
               />
             </div>
           </div>
@@ -342,8 +488,17 @@ export default function ForEmployerForm() {
                 id="phone"
                 type="tel"
                 name="phone"
+                value={phoneValue}
                 className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
+                placeholder="(xxx) xxx-xxxx"
+                pattern="\(\d{3}\) \d{3}-\d{4}"
+                maxLength={14}
+                required
+                onChange={handlePhoneInputChange}
               />
+              {phoneAreaCodeError && (
+                <p className="text-sm text-red-200">{phoneAreaCodeError}</p>
+              )}
             </div>
             <div className="flex w-full flex-col gap-2">
               <label

@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { US_AREA_CODES } from "../../../constants/usAreaCodes";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const US_AREA_CODE_SET = new Set(US_AREA_CODES);
 
 export async function POST(req: NextRequest) {
   try {
@@ -48,6 +50,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (!/^\(\d{3}\) \d{3}-\d{4}$/.test(phone)) {
+      return NextResponse.json(
+        { error: "Phone number must be in the format (xxx) xxx-xxxx." },
+        { status: 400 },
+      );
+    }
+
+    const phoneDigits = phone.replace(/\D/g, "");
+    const areaCode = phoneDigits.slice(0, 3);
+    if (!US_AREA_CODE_SET.has(areaCode)) {
+      return NextResponse.json(
+        { error: "Please enter a phone number with a valid US area code." },
+        { status: 400 },
+      );
+    }
+
     const toRecipients = [
       "marketing@completestaffingsolutions.com",
       "amartin@completestaffingsolutions.com",
@@ -59,9 +77,9 @@ export async function POST(req: NextRequest) {
       <table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">
         <tr><td><strong>Job Title</strong></td><td>${jobTitle || "-"}</td></tr>
         <tr><td><strong>Job ID / Reference</strong></td><td>${jobId || "-"}</td></tr>
-        <tr><td><strong>Email</strong></td><td>${email}</td></tr>
+        <tr><td><strong>Email</strong></td><td><a href="mailto:${email}">${email}</a></td></tr>
         <tr><td><strong>Full Name</strong></td><td>${fullName}</td></tr>
-        <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
+        <tr><td><strong>Phone</strong></td><td><a href="tel:${phone.replace(/\D/g, "")}">${phone}</a></td></tr>
         <tr><td><strong>Street Address</strong></td><td>${street || "-"}</td></tr>
         <tr><td><strong>City</strong></td><td>${city || "-"}</td></tr>
         <tr><td><strong>State</strong></td><td>${state || "-"}</td></tr>

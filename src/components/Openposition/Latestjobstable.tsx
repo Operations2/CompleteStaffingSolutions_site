@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { computeCategoryCounts, type Job, normalizeJobId } from "@/lib/jobs";
+import { type Job, normalizeJobId } from "@/lib/jobs";
 
 type CategoryKey =
   | "healthcare"
@@ -77,6 +77,16 @@ type JobsApiResponse = {
   total: number;
   page: number;
   hasMore: boolean;
+  categoryCounts?: Record<CategoryKey, number>;
+};
+
+const DEFAULT_CATEGORY_COUNTS: Record<CategoryKey, number> = {
+  healthcare: 0,
+  financeAccounting: 0,
+  informationTechnology: 0,
+  manufacturing: 0,
+  customerService: 0,
+  administrative: 0,
 };
 
 function buildJobsApiUrl(params: {
@@ -117,13 +127,10 @@ export default function LatestJobsTable({
   const [page, setPage] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(false);
   const [total, setTotal] = useState<number>(0);
+  const [categoryCounts, setCategoryCounts] = useState<Record<CategoryKey, number>>(DEFAULT_CATEGORY_COUNTS);
   const limit = 20;
   const router = useRouter();
   const fetchSeq = useRef(0);
-
-  const categoryCounts = useMemo(() => {
-    return computeCategoryCounts(jobs);
-  }, [jobs]);
 
   useEffect(() => {
     const t = window.setTimeout(() => {
@@ -175,6 +182,7 @@ export default function LatestJobsTable({
       setTotal(Number.isFinite(data.total) ? data.total : 0);
       setHasMore(Boolean(data.hasMore));
       setPage(Number.isFinite(data.page) ? data.page : args.page);
+      setCategoryCounts(data.categoryCounts ?? DEFAULT_CATEGORY_COUNTS);
 
       setJobs((prev) => (args.replace ? data.jobs : [...prev, ...data.jobs]));
     } catch {
@@ -346,7 +354,6 @@ export default function LatestJobsTable({
                   <option>Customer Service</option>
                   <option>Administrative</option>
                   <option disabled>──────────</option>
-                  {/* More specific ATS-style categories */}
                   <option>Accounting</option>
                   <option>Accounts Payable</option>
                   <option>Accounts Receivable</option>
