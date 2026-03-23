@@ -380,7 +380,6 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              {*/}
               <div className="wc-footer">
                 <div className="wc-footer-label">Employer satisfaction rate</div>
                 <div className="wc-footer-row">
@@ -391,6 +390,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        {*/}
       </section>
 
       {/* ── HOW IT WORKS ───────────────────────────────────────── */}
