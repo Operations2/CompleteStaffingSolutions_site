@@ -38,32 +38,7 @@ export async function POST(req: NextRequest) {
         content?: string;
       } | null;
     };
-
-    // #region agent log
-    fetch('http://127.0.0.1:7570/ingest/7981dddb-5043-41b5-b056-f02d8ae9367c', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Debug-Session-Id': 'e0ba7e',
-      },
-      body: JSON.stringify({
-        sessionId: 'e0ba7e',
-        runId: 'initial',
-        hypothesisId: 'A',
-        location: 'api/employment-application/route.ts:36',
-        message: 'Parsed employment application payload',
-        data: {
-          hasEmail: !!email,
-          hasFullName: !!fullName,
-          hasPhone: !!phone,
-          hasEmploymentTypes: Array.isArray(employmentTypes),
-          hasResume: !!resume && !!resume?.content,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {});
-    // #endregion agent log
-
+    
     if (!email || !fullName || !phone) {
       return NextResponse.json(
         { error: "Missing required fields." },
