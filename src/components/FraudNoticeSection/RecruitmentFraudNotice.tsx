@@ -24,6 +24,12 @@ export default function RecruitmentFraudNotice() {
             </svg>
           </div>
           <h1 className={styles.mainTitle}>A Quick Note About Safety</h1>
+          <p className={styles.subIntro}>
+  Complete Staffing Solutions is committed to protecting your personal information. We do not collect Social Security Numebers or sensitive personal data through this website.
+  If a specific client or Vendor Management System requires identity verification as part of the submission process, a secure link will be sent to you directly through our 
+  system, along with a disclosure agreement outlining how your information will be used and distributed. You will always have the opportunity to review and consent before any
+  personal information is shared.
+</p>
         </div>
 
         <div className={styles.contentGrid}>
