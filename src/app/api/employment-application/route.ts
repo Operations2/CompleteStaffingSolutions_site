@@ -72,8 +72,8 @@ export async function POST(req: NextRequest) {
     }
 
     const toRecipients = [
-      "marketing@completestaffingnsolutions.com",
-      "amartin@completestaffongsolutions.com",
+      "marketing@completestaffingsolutions.com",
+      "amartin@completestaffingsolutions.com",
     ];
 
     const html = `
@@ -95,7 +95,7 @@ export async function POST(req: NextRequest) {
     `;
 
     const from =
-      process.env.RESEND_FROM_EMAIL || "no-reply@completestaffingsolutions.com";
+      process.env.RESEND_FROM_EMAIL || "no-reply@send.completestaffingsolutions.com";
 
     const attachments =
       resume && resume.content

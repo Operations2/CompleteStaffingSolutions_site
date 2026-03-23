@@ -33,8 +33,8 @@ export async function POST(req: NextRequest) {
     }
 
     const toRecipients = [
-      "marketing@completestaffingnsolutions.com",
-      "amartin@completestaffongsolutions.com",
+      "marketing@completestaffingsolutions.com",
+      "amartin@completestaffingsolutions.com",
     ];
 
     const safe = (value?: string) => (value && value.trim().length > 0 ? value : "-");
