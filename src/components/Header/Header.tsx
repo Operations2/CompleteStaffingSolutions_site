@@ -500,7 +500,7 @@ export default function Header() {
               }}
               className="mt-3 inline-flex w-full items-center justify-center rounded-md bg-[#6ca642] px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#5a8e37] transition-colors"
             >
-              Recruitment Fraud Notice
+              A Quick Note About Safety
             </button>
           </div>
         </nav>
