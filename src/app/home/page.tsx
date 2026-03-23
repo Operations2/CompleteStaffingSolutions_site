@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nationwide Staffing Agency — Healthcare, Finance & Engineering | Complete Staffing Solutions',
     description:
-      'Nationwide staffing agency with deep roots in New England and Florida. 25+ years. 200,000+ placements. Healthcare, Finance, Engineering, and retained search specialists.',
+      'Nationwide staffing agency with deep roots in New England and Florida. 25+ years. 50,000+ placements. Healthcare, Finance, Engineering, and retained search specialists.',
     url: 'https://www.completestaffingsolutions.com/',
     type: 'website',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
@@ -193,7 +193,7 @@ export default function HomePage() {
             <div className="hero-stats" aria-label="Key statistics">
               {[
                 { num: '25+', label: 'Years Experience' },
-                { num: '200K+', label: 'Placements Made' },
+                { num: '50K+', label: 'Placements Made' },
                 { num: '35K+', label: 'Companies Served' },
                 { num: '7', label: 'Regional Offices' },
               ].map(({ num, label }) => (
