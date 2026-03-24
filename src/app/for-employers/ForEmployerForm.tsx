@@ -262,7 +262,7 @@ export default function ForEmployerForm() {
 
   return (
     <section
-      className="mx-auto flex max-w-6xl items-stretch justify-center gap-8 px-4 pb-20 pt-16 font-inter md:px-5 lg:px-6 lg:pt-[60px]"
+      className="mx-auto flex max-w-7xl items-stretch justify-center gap-8 px-4 pb-20 pt-16 font-inter md:px-5 lg:px-6 lg:pt-[60px]"
       aria-labelledby="for-employer-form-title"
     >
       <div className="flex w-full min-h-[200px] xs:min-h-[300px] sm:min-h-[400px] flex-1 flex-col items-center gap-8 rounded-2xl bg-[#19478e] px-6 pb-10 pt-8 shadow-[3px_4px_20.5px_3px_rgba(0,0,0,0.25)] md:px-5 md:pb-9 md:pt-7 ">
@@ -670,7 +670,7 @@ export default function ForEmployerForm() {
         alt=""
         width={689}
         height={1208}
-        className="hidden h-auto min-h-[400px] w-full max-w-[450px] shrink-0 rounded-2xl object-cover shadow-[3px_4px_20.5px_3px_rgba(0,0,0,0.25)] md:block md:w-[400px] lg:max-w-[450px]"
+        className="hidden h-auto min-h-[400px] w-full max-w-[450px] shrink-0 rounded-2xl object-cover shadow-[3px_4px_20.5px_3px_rgba(0,0,0,0.25)] lg:block md:w-[400px] lg:max-w-[450px]"
         sizes="(max-width: 768px) 0px, (max-width: 992px) 50vw, 689px"
       />
     </section>

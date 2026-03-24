@@ -584,7 +584,13 @@ main { animation: fadeUp .35s var(--ease); }
   color: var(--white); margin-bottom: .4rem; letter-spacing: -.03em;
 }
 .cta-band p { color: rgba(255,255,255,.42); font-size: .92rem; }
-.cta-btns { display: flex; gap: .85rem; flex-wrap: wrap; flex-shrink: 0; }
+.cta-btns { display: flex; gap: .85rem; flex-wrap: wrap; flex-shrink: 0; justify-content: center; }
+
+@media (max-width: 768px) {
+  .cta-btns {
+    flex-direction: column;
+  }
+}
 
 .footer-grid {
   max-width: 1320px; margin: 0 auto;
