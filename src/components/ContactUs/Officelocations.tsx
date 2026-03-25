@@ -30,7 +30,7 @@ const OFFICES: Office[] = [
     address: "260 Franklin St, Suite 710",
     city: "Boston",
     state: "MA 02110",
-    phone: "(617) 555-0123",
+    phone: "(857) 265-3500",
     image: assets.boston_ma,
   },
   {
@@ -38,7 +38,7 @@ const OFFICES: Office[] = [
     address: "1 Albion Rd, Suite 105",
     city: "Lincoln",
     state: "RI 02865",
-    phone: "(401) 555-0145",
+    phone: "(401) 475-8800",
     image: assets.rhode_island_office,
   },
   {
@@ -70,7 +70,7 @@ const OFFICES: Office[] = [
     address: "4575 Via Royale Suite 218",
     city: "Fort Myers",
     state: "FL 33907",
-    phone: "(239) 555-0185",
+    phone: "(239) 519-9990",
     image: assets.fort_myers_fl,
   },
   {
