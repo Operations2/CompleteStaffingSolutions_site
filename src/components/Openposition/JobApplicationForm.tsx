@@ -1,11 +1,65 @@
  "use client";
 
 import { useRef, useState } from "react";
+import { US_AREA_CODES } from "../../constants/usAreaCodes";
 
 const OFFICE_ILLUSTRATION =
   "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80";
 const UPLOAD_ICON =
   "/for%20employer/material-symbols-light_upload-file-outline.svg";
+const US_AREA_CODE_SET = new Set(US_AREA_CODES);
+const US_STATES = [
+  "Alabama",
+  "Alaska",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "Florida",
+  "Georgia",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+];
 
 type JobApplicationFormProps = {
   jobTitle: string;
@@ -23,6 +77,62 @@ export default function JobApplicationForm({
     "idle" | "success" | "error"
   >("idle");
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [phoneValue, setPhoneValue] = useState("");
+  const [phoneAreaCodeError, setPhoneAreaCodeError] = useState<string | null>(
+    null,
+  );
+
+  const formatPhoneNumber = (value: string): string => {
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    const area = digits.slice(0, 3);
+    const first = digits.slice(3, 6);
+    const second = digits.slice(6, 10);
+
+    if (digits.length <= 3) return area;
+    if (digits.length <= 6) return `(${area}) ${first}`;
+    return `(${area}) ${first}-${second}`;
+  };
+
+  const handlePhoneInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.currentTarget;
+    const rawValue = input.value;
+    const cursorPosition = input.selectionStart ?? rawValue.length;
+    const digitsBeforeCursor = rawValue
+      .slice(0, cursorPosition)
+      .replace(/\D/g, "").length;
+    const formatted = formatPhoneNumber(rawValue);
+    const digits = formatted.replace(/\D/g, "");
+    const areaCode = digits.slice(0, 3);
+
+    setPhoneValue(formatted);
+    if (digits.length >= 3 && !US_AREA_CODE_SET.has(areaCode)) {
+      setPhoneAreaCodeError("Please enter a valid US area code.");
+    } else {
+      setPhoneAreaCodeError(null);
+    }
+
+    requestAnimationFrame(() => {
+      let nextCursor = formatted.length;
+
+      if (digitsBeforeCursor === 0) {
+        nextCursor = 0;
+      } else {
+        let seenDigits = 0;
+        for (let i = 0; i < formatted.length; i += 1) {
+          if (/\d/.test(formatted[i])) {
+            seenDigits += 1;
+          }
+
+          if (seenDigits >= digitsBeforeCursor) {
+            nextCursor = i + 1;
+            break;
+          }
+        }
+      }
+
+      input.setSelectionRange(nextCursor, nextCursor);
+    });
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -66,16 +176,30 @@ export default function JobApplicationForm({
         jobId: jobId || (formData.get("jobId") as string | null),
         email: formData.get("email") as string | null,
         fullName: formData.get("fullName") as string | null,
-        phone: formData.get("phone") as string | null,
+        phone: (formData.get("phone") as string | null)?.trim() ?? "",
         street: formData.get("street") as string | null,
         city: formData.get("city") as string | null,
         state: formData.get("state") as string | null,
-        zip: formData.get("zip") as string | null,
+        zip: (formData.get("zip") as string | null)?.trim() ?? "",
         salary: formData.get("salary") as string | null,
         hearAbout: formData.get("hearAbout") as string | null,
         employmentTypes: formData.getAll("type") as string[],
         resume,
       };
+
+      if (!/^\(\d{3}\) \d{3}-\d{4}$/.test(payload.phone)) {
+        throw new Error("Phone number must be in the format (xxx) xxx-xxxx.");
+      }
+
+      const phoneDigits = payload.phone.replace(/\D/g, "");
+      const phoneAreaCode = phoneDigits.slice(0, 3);
+      if (!US_AREA_CODE_SET.has(phoneAreaCode)) {
+        throw new Error("Please enter a phone number with a valid US area code.");
+      }
+
+      if (!/^\d{5}$/.test(payload.zip)) {
+        throw new Error("Zip code must be exactly 5 digits.");
+      }
 
       const res = await fetch("/api/job-application", {
         method: "POST",
@@ -93,6 +217,8 @@ export default function JobApplicationForm({
       setSubmitStatus("success");
       form.reset();
       setFileName("No file chosen");
+      setPhoneValue("");
+      setPhoneAreaCodeError(null);
     } catch (err: any) {
       setSubmitStatus("error");
       setSubmitError(
@@ -160,10 +286,19 @@ export default function JobApplicationForm({
                       id="phone"
                       type="tel"
                       name="phone"
+                      value={phoneValue}
                       className="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 transition-all"
-                      placeholder="Your phone number"
+                      placeholder="(xxx) xxx-xxxx"
+                      pattern="\(\d{3}\) \d{3}-\d{4}"
+                      maxLength={14}
                       required
+                      onChange={handlePhoneInputChange}
                     />
+                    {phoneAreaCodeError && (
+                      <p className="mt-2 text-sm text-red-200">
+                        {phoneAreaCodeError}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -223,13 +358,25 @@ export default function JobApplicationForm({
                     >
                       State
                     </label>
-                    <input
+                    <select
                       id="state"
-                      type="text"
                       name="state"
-                      className="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 transition-all"
-                      placeholder="Your state"
-                    />
+                      className="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 transition-all cursor-pointer"
+                      defaultValue=""
+                    >
+                      <option value="" className="text-neutral-900">
+                        Select a state
+                      </option>
+                      {US_STATES.map((stateName) => (
+                        <option
+                          key={stateName}
+                          value={stateName}
+                          className="text-neutral-900"
+                        >
+                          {stateName}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 
@@ -247,6 +394,14 @@ export default function JobApplicationForm({
                       name="zip"
                       className="w-full px-4 py-3 rounded-lg border-2 border-white/20 bg-white/10 backdrop-blur-sm text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 transition-all"
                       placeholder="Your zip code"
+                      inputMode="numeric"
+                      pattern="\d{5}"
+                      maxLength={5}
+                      required
+                      onInput={(e) => {
+                        const input = e.currentTarget;
+                        input.value = input.value.replace(/\D/g, "").slice(0, 5);
+                      }}
                     />
                   </div>
                   <div>
