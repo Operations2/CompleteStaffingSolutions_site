@@ -7,7 +7,7 @@ import Image from "next/image";
 import { PhoneIcon, ChevronDownIcon } from "./icons";
 import RecruitmentFraudNotice from "@/components/FraudNoticeSection/RecruitmentFraudNotice";
 
-const specificPathnames = ["/why-choose-us", `/open-position/[jobId]`];
+const specificPathnames = ["/why-choose-us", "/blog", `/open-position/[jobId]`];
 
 // Function to check if current pathname matches static or dynamic routes
 const isSpecificPath = (pathname: string) => {
