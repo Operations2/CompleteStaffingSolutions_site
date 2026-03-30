@@ -21,7 +21,7 @@ export default function BlogPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#e6f2ff] px-6 py-16 max-w-5xl mx-auto">
+    <main className="min-h-screen bg-[#cfe8ff] px-6 py-16 max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold mb-6">
         Staffing Insights & Hiring Guides
       </h1>
