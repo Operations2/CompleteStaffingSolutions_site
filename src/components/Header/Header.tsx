@@ -295,7 +295,13 @@ export default function Header() {
               >
                 Our Recruiting Process
               </Link>
-
+              <Link
+                href="/blog"
+                className={navItemClass("/blog")}
+                onClick={() => setDesktopOpenDropdown(null)}
+              >
+              Blog
+              </Link>
               <DesktopDropdown
                 label="Job Seekers"
                 dropdownKey="jobseekers"
@@ -420,7 +426,13 @@ export default function Header() {
             >
               Our Recruiting Process
             </Link>
-
+            <Link
+              href="/blog"
+              className="block py-4 font-semibold text-neutral-900 border-t border-neutral-200"
+              onClick={closeMobileMenu}
+            >
+              Blog
+            </Link>
             {/* Job Seekers dropdown */}
             <div className="border-t border-neutral-200 py-2">
               <button
