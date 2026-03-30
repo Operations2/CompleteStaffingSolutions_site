@@ -74,22 +74,26 @@ function SchemaJsonLd({ slug, city }: { slug: string; city: City }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": `${SITE_URL}/#organization`,
-        name: "Complete Staffing Solutions",
-        description:
-          "Full-service staffing and recruitment agency specializing in Healthcare, Engineering, and Accounting & Finance placements across Connecticut, Rhode Island, Massachusetts, New York, and Florida.",
-        url: SITE_URL,
+        "@type": "EmploymentAgency",
+        "@id": `${url}#employmentagency`,
+        name: `Complete Staffing Solutions - ${city.name}, ${city.state}`,
+        description,
+        url,
         telephone: "+14014758800",
         email: "contactus@completestaffingsolutions.com",
         foundingDate: "1999",
-        areaServed: ["Connecticut", "Rhode Island", "Massachusetts", "New York", "Florida"],
+        areaServed: {
+          "@type": "City",
+          name: city.name,
+          containedInPlace: {
+            "@type": "State",
+            name: city.state,
+          },
+        },
         address: {
           "@type": "PostalAddress",
-          streetAddress: "33 Boston Post Road West, Suite 190",
-          addressLocality: "Marlborough",
-          addressRegion: "MA",
-          postalCode: "01752",
+          addressLocality: city.name,
+          addressRegion: city.state,
           addressCountry: "US",
         },
         sameAs: ["https://www.linkedin.com/company/complete-staffing-solutions/"],
