@@ -12,7 +12,9 @@ const specificPathnames = ["/why-choose-us", "/blog", `/open-position/[jobId]`];
 // Function to check if current pathname matches static or dynamic routes
 const isSpecificPath = (pathname: string) => {
   if (!pathname) return false;
-
+  
+  if (pathname.startsWith("/blog")) return true;
+  
   return specificPathnames.some((route) => {
     // Dynamic route pattern
     if (route.includes("[") && route.includes("]")) {
