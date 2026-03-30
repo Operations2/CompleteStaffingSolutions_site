@@ -78,7 +78,7 @@ export default async function BlogPostPage({
   }
 
   return (
-    <main className="min-h-screen bg-[#cfe8ff] px-6 py-16 max-w-4xl mx-auto">
+    <main className="min-h-screen bg-white px-6 py-16 max-w-4xl mx-auto">
       <a href="/blog" className="text-sm text-blue-600 hover:underline">
         ← Back to Blog
       </a>
