@@ -23,7 +23,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Complete Staffing Solutions",
+  title: 'Staffing Agency | Healthcare, Finance & Engineering Recruiting | Complete Staffing Solutions',
   description: "Complete Staffing Solutions - Recruitment and staffing services",
 };
 
