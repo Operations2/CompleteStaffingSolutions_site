@@ -12,18 +12,18 @@ const posts: BlogPost[] = [
     description:
       'Everything Connecticut employers need to know about sourcing, credentialing, and hiring travel nurses fast — including what agencies won’t tell you.',
     content: [
-      'Connecticut hospitals and outpatient practices have been running lean for a while now. The nurse shortage isn’t new — but the competition for qualified travel nurses has gotten sharper, especially in the Hartford corridor and coastal communities where census swings are hard to predict.',
+      'Connecticut hospitals and outpatient practices have been running lean for a while now. The nurse shortage isn’t new — but the competition for qualified travel nurses has gotten sharper.',
 
-      "If you've tried to fill a travel nurse position in the past year, you already know that posting a job and waiting doesn’t work. The facilities that move fast and present clear offers win. The ones with slow internal approval processes lose candidates to someone else.",
+      "If you've tried to fill a travel nurse position recently, you already know that posting and waiting doesn’t work. Speed and clarity win.",
 
       '## What “Travel Nurse” Means',
-      'A travel nurse is a licensed registered nurse (or LPN, in some settings) who takes short-term assignments — typically 13 weeks — at facilities that need temporary clinical coverage. They are experienced professionals who have deliberately chosen contract work for flexibility and higher earning potential.',
+      'A travel nurse is a licensed RN or LPN working short-term assignments, typically 13 weeks, by choice for flexibility and pay.',
 
       '## Connecticut Licensure',
-      'Connecticut is not part of the Nurse Licensure Compact (NLC). That means any out-of-state nurse needs a Connecticut license before working. Applications typically take 4–8 weeks, so confirming licensure status upfront is critical to avoid delays.',
+      'Connecticut is not part of the Nurse Licensure Compact. Out-of-state nurses must obtain a CT license, which takes 4–8 weeks.',
 
       '## What to Include in a Job Order',
-      'The more specific your job order, the faster you will get qualified candidates.',
+      'The more specific your job order, the faster you get candidates.',
       '• Unit or specialty',
       '• Shift and float expectations',
       '• EMR system',
@@ -33,35 +33,128 @@ const posts: BlogPost[] = [
       '• Patient-to-nurse ratios',
 
       '## Pay Packages Explained',
-      'Travel nurse compensation is structured differently from permanent hires. Packages include a taxable hourly rate plus non-taxed stipends for housing and meals based on GSA guidelines. In 2026, Connecticut bill rates typically range from $65–$90 per hour depending on specialty.',
+      'Travel nurse pay includes hourly wages plus tax-free stipends. Connecticut rates typically range $65–$90/hour.',
 
       '## Evaluating a Staffing Agency',
-      'Not all staffing agencies operate the same way. Employers should ask whether candidates are pre-screened for Connecticut licensure, whether the agency is Joint Commission certified, and how quickly they respond to job orders.',
+      'Not all agencies are equal. Screening quality and speed matter.',
       '• Pre-screens for CT licensure',
       '• Joint Commission certified',
       '• Provides liability coverage',
       '• Responds within 24 hours',
 
       '## When Assignments Go Sideways',
-      'Occasionally, an assignment does not work out. Strong agencies communicate early, resolve issues professionally, and ensure coverage continuity instead of leaving gaps in patient care.',
+      'Strong agencies resolve issues early and protect continuity of care.',
 
       '## The Bottom Line',
-      'The bottom line is simple: hire fast, verify licensure early, be specific in your job order, and work with agencies that pre-vet candidates. Those four factors consistently separate organizations that fill roles in two weeks from those still searching after six.',
+      'Move fast, verify licensure early, be specific, and work with agencies that pre-vet.',
 
-      'CTA: Complete Staffing Solutions places travel nurses across Connecticut — Hartford, New Haven, Fairfield County, and beyond.',
+      'CTA: Complete Staffing Solutions places travel nurses across Connecticut.',
     ],
   },
+
   {
     title: 'Controller Salary Boston 2026: What Employers Should Expect',
     slug: 'controller-salary-boston-2026',
     description:
-      'Boston controller salary expectations in 2026, plus hiring pressure, market competition, and what employers can do to attract stronger finance candidates.',
+      'Current salary ranges for Controllers in Boston and how to compete for talent.',
     content: [
-      'Boston remains one of the most competitive finance hiring markets in the Northeast, and Controller compensation reflects that. Employers should expect salary pressure from both cost of living and ongoing demand for experienced accounting leadership.',
-      'A strong Controller candidate is usually being evaluated on more than technical accounting. Companies increasingly want leadership ability, process improvement experience, systems knowledge, and the ability to partner with ownership or executive teams.',
-      'That means compensation is only one part of the equation. Employers that win top Controller talent usually combine strong base salary with clear responsibilities, decision-making authority, and a realistic hiring process.',
-      'If your interview cycle drags, your best candidates will disappear. In Boston especially, experienced finance professionals often have multiple conversations happening at once.',
-      'The lesson for employers is straightforward: know the market, make decisions quickly, and position the role as a business-critical leadership seat rather than a back-office accounting job.',
+      'Boston remains one of the tightest finance hiring markets in the country. Controller compensation pressure has increased significantly.',
+
+      '## Salary Ranges in Boston (2026)',
+      'Compensation varies by company size and scope.',
+      '• Small business: $95K–$120K',
+      '• Mid-market: $120K–$160K',
+      '• Large/public: $155K–$200K+',
+
+      '## What’s Driving Compensation',
+      'CPA pipeline decline, cost of living, and increased technical expectations are all pushing salaries higher.',
+
+      '## What Candidates Want',
+      'Salary is only part of the equation.',
+      '• Decision-making authority',
+      '• Clean financials',
+      '• Fast interview process',
+      '• Hybrid flexibility',
+
+      '## Competitive Offer Structure',
+      'Typical competitive package:',
+      '• $135K–$155K base',
+      '• 10–15% bonus',
+      '• Hybrid schedule',
+      '• Strong benefits + 401k',
+
+      '## Recruiting Reality',
+      'Top candidates are not applying—they respond to targeted outreach.',
+
+      'CTA: Complete Staffing Solutions places Controllers across Boston.',
+    ],
+  },
+
+  {
+    title: 'Staffing Agency Hartford CT: How to Choose the Right Recruiting Partner',
+    slug: 'staffing-agency-hartford-ct',
+    description:
+      'How Hartford employers should evaluate staffing agencies before committing.',
+    content: [
+      'Hartford hiring is driven by insurance, healthcare, and manufacturing sectors.',
+
+      '## Biggest Hiring Mistake',
+      'Working with generalist firms that lack deep networks.',
+
+      '## What to Ask an Agency',
+      '• Placement history in Hartford',
+      '• Recruiter specialization',
+      '• Sourcing process',
+      '• Guarantee terms',
+
+      '## Hartford Market Reality',
+      '• Finance and insurance dominate',
+      '• Healthcare hiring is constant',
+      '• Engineering demand exceeds supply',
+
+      '## Direct Hire vs Temp-to-Hire',
+      'Direct hire fits permanent roles. Temp-to-hire reduces risk and speeds onboarding.',
+
+      '## Why Specialization Matters',
+      'Recruiting is relationship-driven. Specialists outperform generalists every time.',
+
+      'CTA: Contact our Hartford-area recruiting team.',
+    ],
+  },
+
+  {
+    title: 'Direct Hire vs. Temp-to-Hire: What’s Right for Your Company',
+    slug: 'direct-hire-vs-temp-to-hire',
+    description:
+      'Understand the real difference between direct hire and temp-to-hire.',
+    content: [
+      'Choosing between direct hire and temp-to-hire impacts speed, risk, and long-term success.',
+
+      '## What Direct Hire Means',
+      'Permanent placement from day one.',
+      '• Best for senior roles',
+      '• Faster long-term stability',
+      '• Higher upfront risk',
+
+      '## What Temp-to-Hire Means',
+      'Trial period before permanent conversion.',
+      '• Evaluate real performance',
+      '• Lower hiring risk',
+      '• Faster onboarding',
+
+      '## Risk Comparison',
+      'Direct hire = upfront risk. Temp-to-hire = distributed risk.',
+
+      '## When to Use Each',
+      '• Controller → Direct hire',
+      '• Admin team → Temp-to-hire',
+      '• Engineers → Direct hire',
+      '• Production roles → Temp-to-hire',
+
+      '## Key Insight',
+      'Temp-to-hire often shortens time-to-productivity, not lengthens it.',
+
+      'CTA: Talk to a recruiter about the right hiring model.',
     ],
   },
 ];
@@ -75,10 +168,7 @@ function renderContent(content: string[]) {
 
     if (block.startsWith('## ')) {
       elements.push(
-        <h2
-          key={`h-${i}`}
-          className="text-2xl font-semibold mt-10 mb-3 text-gray-900"
-        >
+        <h2 key={i} className="text-2xl font-semibold mt-10 mb-3">
           {block.replace('## ', '')}
         </h2>
       );
@@ -88,16 +178,15 @@ function renderContent(content: string[]) {
 
     if (block.startsWith('• ')) {
       const bullets = [];
-
       while (i < content.length && content[i].startsWith('• ')) {
         bullets.push(content[i].replace('• ', ''));
         i++;
       }
 
       elements.push(
-        <ul key={`ul-${i}`} className="list-disc pl-6 space-y-2">
-          {bullets.map((item, idx) => (
-            <li key={idx}>{item}</li>
+        <ul key={i} className="list-disc pl-6 space-y-2">
+          {bullets.map((b, idx) => (
+            <li key={idx}>{b}</li>
           ))}
         </ul>
       );
@@ -106,13 +195,13 @@ function renderContent(content: string[]) {
 
     if (block.startsWith('CTA: ')) {
       elements.push(
-        <div key={`cta-${i}`} className="mt-10 rounded-lg bg-[#EEF0F5] p-5">
+        <div key={i} className="mt-10 p-5 bg-[#EEF0F5] rounded-lg">
           <p className="mb-2">{block.replace('CTA: ', '')}</p>
           <a
-            href="https://www.completestaffingsolutions.com/job-request"
-            className="font-semibold text-blue-600 underline"
+            href="https://www.completestaffingsolutions.com/contact"
+            className="text-blue-600 font-semibold underline"
           >
-            Place a job request →
+            Get in touch →
           </a>
         </div>
       );
@@ -120,72 +209,48 @@ function renderContent(content: string[]) {
       continue;
     }
 
-    elements.push(<p key={`p-${i}`}>{block}</p>);
+    elements.push(<p key={i}>{block}</p>);
     i++;
   }
 
   return elements;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: any) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
 
-  if (!post) {
-    return {
-      title: 'Blog Post Not Found | Complete Staffing Solutions',
-    };
-  }
-
   return {
-    title: `${post.title} | Complete Staffing Solutions`,
-    description: post.description,
+    title: post
+      ? `${post.title} | Complete Staffing Solutions`
+      : 'Blog Post Not Found',
+    description: post?.description,
   };
 }
 
 export async function generateStaticParams() {
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: any) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
-    return (
-      <main className="min-h-screen max-w-4xl mx-auto bg-white px-6 py-16">
-        <h1 className="mb-4 text-3xl font-bold">Post not found</h1>
-        <p className="text-gray-600">
-          The article you requested does not exist.
-        </p>
-      </main>
-    );
+    return <div>Post not found</div>;
   }
 
   return (
-    <main className="min-h-screen max-w-4xl mx-auto bg-white px-6 py-16">
-      <a
-        href="/blog"
-        className="inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:underline"
-      >
+    <main className="max-w-4xl mx-auto px-6 py-16">
+      <a href="/blog" className="text-blue-600 underline">
         ← Back to Blog
       </a>
 
       <article className="mt-6">
-        <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
-        <p className="mb-10 text-lg text-gray-600">{post.description}</p>
+        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+        <p className="text-gray-600 mb-10">{post.description}</p>
 
-        <div className="space-y-6 text-lg leading-8 text-gray-800">
+        <div className="space-y-6 text-lg leading-8">
           {renderContent(post.content)}
         </div>
       </article>
