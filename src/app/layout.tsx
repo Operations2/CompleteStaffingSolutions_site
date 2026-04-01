@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
@@ -23,8 +24,21 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Staffing Agency | Healthcare, Finance & Engineering Recruiting | Complete Staffing Solutions',
+  title:
+    "Staffing Agency | Healthcare, Finance & Engineering Recruiting | Complete Staffing Solutions",
   description: "Complete Staffing Solutions - Recruitment and staffing services",
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EmploymentAgency",
+  name: "Complete Staffing Solutions",
+  url: "https://www.completestaffingsolutions.com",
+  description: "Recruitment and staffing services across healthcare, finance, engineering, and administrative roles.",
+  areaServed: {
+    "@type": "Country",
+    name: "United States",
+  },
 };
 
 export default function RootLayout({
@@ -33,8 +47,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${dmSans.variable} ${plusJakarta.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${dmSans.variable} ${plusJakarta.variable}`}
+    >
       <body className="antialiased">
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         <Header />
         {children}
         <Footer />
