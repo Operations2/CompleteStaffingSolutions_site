@@ -37,6 +37,10 @@ const structuredData = {
       "@id": "https://www.completestaffingsolutions.com/#organization",
       name: "Complete Staffing Solutions",
       url: "https://www.completestaffingsolutions.com",
+      logo: {
+      "@type": "ImageObject",
+      url: "https://www.completestaffingsolutions.com/logo.svg"
+      },
       description:
         "Recruitment and staffing services across healthcare, finance, engineering, and administrative roles.",
       sameAs: [
