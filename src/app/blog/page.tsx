@@ -16,7 +16,19 @@ export default function BlogPage() {
       title: 'Controller Salary Boston 2026: What Employers Should Expect',
       slug: 'controller-salary-boston-2026',
       excerpt:
-        'A breakdown of current salary ranges, hiring trends, and what it takes to attract top finance talent in Boston.',
+        "Current salary ranges for Controllers in Boston, what's driving compensation pressure, and how to attract strong candidates before they take another offer.",
+    },
+    {
+      title: 'Staffing Agency Hartford CT: How to Choose the Right Recruiting Partner',
+      slug: 'staffing-agency-hartford-ct',
+      excerpt:
+        "Not all Hartford staffing agencies work the same way. Here's what employers in the Hartford market should actually be evaluating before they sign with a firm.",
+    },
+    {
+      title: "Direct Hire vs. Temp-to-Hire: What's the Difference and Which Is Right for Your Company",
+      slug: 'direct-hire-vs-temp-to-hire',
+      excerpt:
+        "The difference between direct hire and temp-to-hire isn't just cost — it's about risk, speed, and what you actually know about a candidate before they're on your payroll.",
     },
   ];
 
