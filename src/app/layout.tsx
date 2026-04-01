@@ -34,11 +34,33 @@ const organizationSchema = {
   "@type": "EmploymentAgency",
   name: "Complete Staffing Solutions",
   url: "https://www.completestaffingsolutions.com",
-  description: "Recruitment and staffing services across healthcare, finance, engineering, and administrative roles.",
+  description:
+    "Recruitment and staffing services across healthcare, finance, engineering, and administrative roles.",
+  telephone: "+1-401-475-8800",
+  sameAs: [
+    "https://www.linkedin.com/company/complete-staffing-solutions/",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "33 Boston Post Road West, Suite 190",
+    addressLocality: "Marlborough",
+    addressRegion: "MA",
+    postalCode: "01752",
+    addressCountry: "US",
+  },
   areaServed: {
     "@type": "Country",
     name: "United States",
   },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      telephone: "+1-401-475-8800",
+      areaServed: "US",
+      availableLanguage: ["English"],
+    },
+  ],
 };
 
 export default function RootLayout({
