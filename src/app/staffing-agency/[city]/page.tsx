@@ -55,11 +55,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     alternates: { canonical },
     openGraph: {
-      type: "website",
-      title,
-      description,
-      url: canonicalUrl,
+  type: "website",
+  title,
+  description,
+  url: canonicalUrl,
+  images: [
+    {
+      url: "/og-image.jpg",
+      width: 1200,
+      height: 630,
     },
+  ],
+},
   };
 }
 

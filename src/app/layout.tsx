@@ -15,7 +15,24 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+
+  openGraph: {
+    type: "website",
+    url: "https://www.completestaffingsolutions.com",
+    title:
+      "Complete Staffing Solutions | National Staffing Agency",
+    description:
+      "Staffing specialists in healthcare, finance, and engineering. 25+ years. All 50 states. Direct hire, temp-to-hire, contract, and retained search.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
+
 import Script from "next/script";
 import { Inter, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";

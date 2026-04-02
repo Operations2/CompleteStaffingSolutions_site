@@ -289,8 +289,22 @@ export async function generateMetadata({
     alternates: {
       canonical: `/blog/${post.slug}`,
     },
+    openGraph: {
+    type: "article",
+    url: `/blog/${post.slug}`,
+    title: post.title,
+    description: post.description,
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+};
   };
-}
+
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
