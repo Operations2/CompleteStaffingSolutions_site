@@ -5,6 +5,9 @@ export const metadata = {
   title: "Staffing Agency Locations | Complete Staffing Solutions",
   description:
     "Browse staffing markets served by Complete Staffing Solutions across MA, CT, RI, NY, and FL.",
+  alternates: {
+    canonical: "/staffing-agency",
+  },
 };
 
 export default function StaffingAgencyIndexPage() {
