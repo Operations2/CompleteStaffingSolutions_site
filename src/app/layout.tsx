@@ -1,4 +1,21 @@
 import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.completestaffingsolutions.com"),
+
+  title: {
+    default:
+      "Staffing Agency | Healthcare, Finance & Engineering Recruiting | Complete Staffing Solutions",
+    template: "%s | Complete Staffing Solutions",
+  },
+
+  description:
+    "Complete Staffing Solutions - Recruitment and staffing services",
+
+  alternates: {
+    canonical: "/",
+  },
+};
 import Script from "next/script";
 import { Inter, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -22,12 +39,6 @@ const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
-export const metadata: Metadata = {
-  title:
-    "Staffing Agency | Healthcare, Finance & Engineering Recruiting | Complete Staffing Solutions",
-  description: "Complete Staffing Solutions - Recruitment and staffing services",
-};
 
 const structuredData = {
   "@context": "https://schema.org",
