@@ -269,6 +269,39 @@ function renderContent(content: string[]) {
   return elements;
 }
 
+function BlogPostJsonLd({ post }: { post: BlogPost }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    image: ["https://www.completestaffingsolutions.com/og-image.jpg"],
+    author: {
+      "@type": "Organization",
+      name: "Complete Staffing Solutions",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Complete Staffing Solutions",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.completestaffingsolutions.com/logo.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.completestaffingsolutions.com/blog/${post.slug}`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -290,21 +323,26 @@ export async function generateMetadata({
       canonical: `/blog/${post.slug}`,
     },
     openGraph: {
-    type: "article",
-    url: `/blog/${post.slug}`,
-    title: post.title,
-    description: post.description,
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-};
+      type: "article",
+      url: `/blog/${post.slug}`,
+      title: post.title,
+      description: post.description,
+      images: [
+        {
+          url: "/og-image.jpg",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: ["/og-image.jpg"],
+    },
   };
-
+}
 
 export async function generateStaticParams() {
   return posts.map((post) => ({
@@ -333,6 +371,8 @@ export default async function BlogPostPage({
 
   return (
     <main className="min-h-screen max-w-4xl mx-auto bg-white px-6 py-16">
+      <BlogPostJsonLd post={post} />
+
       <Link
         href="/blog"
         className="inline-flex items-center rounded-md px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 hover:underline"
