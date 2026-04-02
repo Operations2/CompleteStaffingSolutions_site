@@ -8,7 +8,7 @@ export const metadata = {
     "Staffing by industry, specialists by discipline. Our recruiters specialize in the fields they hire for—qualified candidates, better fit.",
   alternates: {
     canonical: "/industries-we-serve",
-  };
+  }
 };
 
 export default function IndustriesWeServePage() {
