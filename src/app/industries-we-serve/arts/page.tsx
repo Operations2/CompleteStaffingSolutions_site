@@ -8,6 +8,9 @@ export const metadata = {
   title: "Arts Staffing Solutions | Complete Staffing Solutions",
   description:
     "Specialized staffing for museums, galleries, and performing arts. Creative talent and niche administrative support.",
+    alternates: {
+    canonical: "/industries-we-serve/arts",
+  },
 };
 
 export default function ArtsPage() {

@@ -8,7 +8,10 @@ export const metadata = {
   title: "Consumer Goods Staffing Solutions | Complete Staffing Solutions",
   description:
     "Top talent for product development, marketing, and distribution. Agility, customer-centric professionals, and supply chain expertise.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/consumergoods",
+  },
+  };
 
 export default function ConsumerGoodsPage() {
   return (

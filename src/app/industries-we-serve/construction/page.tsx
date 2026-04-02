@@ -8,7 +8,10 @@ export const metadata = {
   title: "Construction Staffing Solutions | Complete Staffing Solutions",
   description:
     "Expert construction staffing for skilled trades and project management.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/construction",
+  },
+  };
 
 export default function ConstructionPage() {
   return (

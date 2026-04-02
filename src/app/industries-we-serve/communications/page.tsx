@@ -8,7 +8,10 @@ export const metadata = {
   title: "Communications Staffing Solutions | Complete Staffing Solutions",
   description:
     "Staffing for digital media, PR, and journalism. Creative storytelling, digital media innovators, and audience engagement specialists.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/communications",
+  },
+  };
 
 export default function CommunicationsPage() {
   return (
