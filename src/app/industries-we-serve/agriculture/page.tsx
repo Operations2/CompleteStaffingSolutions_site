@@ -8,6 +8,9 @@ export const metadata = {
   title: "Agriculture Staffing Solutions | Complete Staffing Solutions",
   description:
     "Dedicated staffing for organic farms, nurseries, and agribusinesses. Experienced agricultural workers and scalable labor solutions.",
+  alternates: {
+    canonical: "/industries-we-serve/agriculture",
+  },
 };
 
 export default function AgriculturePage() {
