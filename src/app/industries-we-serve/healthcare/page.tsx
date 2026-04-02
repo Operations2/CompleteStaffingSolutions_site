@@ -8,6 +8,9 @@ export const metadata = {
   title: "Healthcare Staffing Solutions | Complete Staffing Solutions",
   description:
     "Expert healthcare staffing services for hospitals, clinics, and medical facilities.",
+  alternates: {
+    canonical: "/industries-we-serve/healthcare",
+  },
 };
 
 export default function HealthcarePage() {
