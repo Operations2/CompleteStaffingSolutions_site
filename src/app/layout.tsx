@@ -31,6 +31,14 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    site: "@CSS_JobPosts",
+    title: "Complete Staffing Solutions | National Staffing Agency",
+  description:
+    "Healthcare, finance, and engineering staffing across all 50 states. Direct hire, temp-to-hire, contract, and retained search.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 import Script from "next/script";
