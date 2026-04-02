@@ -5,9 +5,12 @@ import IndustryChallenges from "./IndustryChallenges";
 import IndustryRoles from "./IndustryRoles";
 
 export const metadata = {
-  title: "Agriculture Staffing Solutions | Complete Staffing Solutions",
+  title: "Agricultural Staffing Solutions | Complete Staffing Solutions",
   description:
-    "Dedicated staffing for organic farms, nurseries, and agribusinesses. Experienced agricultural workers and scalable labor solutions.",
+    "Expert Agricultural staffing services for Agricultural Facilities.",
+  alternates: {
+    canonical: "/industries-we-serve/Agriculture",
+  },
 };
 
 export default function AgriculturePage() {
