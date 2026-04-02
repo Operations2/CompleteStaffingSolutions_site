@@ -5,7 +5,10 @@ export const metadata = {
   title: "Contact Us | Complete Staffing Solutions",
   description:
     "Contact Complete Staffing Solutions. Reach our recruiting and client service teams by email, phone, or visit one of our offices.",
-};
+  alternates: {
+    canonical: "/contact",
+  },
+  };
 
 export default function ContactUs() {
   return (
