@@ -8,7 +8,10 @@ export const metadata = {
   title: "Financial Services Staffing Solutions | Complete Staffing Solutions",
   description:
     "Wealth management, private banking, and compliance talent. Regulatory experts, certified advisors, scalable staffing.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/financial-services",
+  },
+  };
 
 export default function FinancialServicesPage() {
   return (

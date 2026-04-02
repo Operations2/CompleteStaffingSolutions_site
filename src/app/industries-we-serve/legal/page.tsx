@@ -8,7 +8,10 @@ export const metadata = {
   title: "Legal Staffing Solutions | Complete Staffing Solutions",
   description:
     "Paralegals, attorneys, and administrators for law firms and legal departments. Legal expertise, ethical standards, and professionalism.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/legal",
+  },
+  };
 
 export default function LegalPage() {
   return (

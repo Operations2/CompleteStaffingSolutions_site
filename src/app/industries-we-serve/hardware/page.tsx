@@ -8,7 +8,10 @@ export const metadata = {
   title: "Hardware & Networking Staffing Solutions | Complete Staffing Solutions",
   description:
     "IT services, telecomm, and networking infrastructure talent. Technical innovation, system scalability, and cybersecurity focus.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/hardware",
+  },
+  };
 
 export default function HardwarePage() {
   return (

@@ -8,7 +8,10 @@ export const metadata = {
   title: "Transportation & Logistics Staffing Solutions | Complete Staffing Solutions",
   description:
     "Shipping and warehousing talent. Efficiency, supply chain optimization, and skilled logistics.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/transportation",
+  },
+  };
 
 export default function TransportationPage() {
   return (

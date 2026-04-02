@@ -8,7 +8,10 @@ export const metadata = {
   title: "Engineering / Supply Chain Staffing Solutions | Complete Staffing Solutions",
   description:
     "Skilled professionals for engineering operations, sourcing, logistics, and supply continuity. Staffing solutions built for reliability and speed.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/engineering-supply-chain",
+  },
+  };
 
 export default function EngineeringSupplyChainPage() {
   return (

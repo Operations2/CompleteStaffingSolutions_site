@@ -8,7 +8,10 @@ export const metadata = {
   title: "Energy Staffing Solutions | Complete Staffing Solutions",
   description:
     "Recruitment for renewable energy, utilities, and oil & gas. Sustainability focus, regulatory compliance, and engineering expertise.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/energy",
+  },
+  };
 
 export default function EnergyPage() {
   return (

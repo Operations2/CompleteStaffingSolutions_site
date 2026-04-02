@@ -8,7 +8,10 @@ export const metadata = {
   title: "Wellness Staffing Solutions | Complete Staffing Solutions",
   description:
     "Fitness centers, spas, and retreats. Certified expertise, empathy, motivation, and client accountability.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/wellness",
+  },
+  };
 
 export default function WellnessPage() {
   return (

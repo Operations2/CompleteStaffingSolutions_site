@@ -8,7 +8,10 @@ export const metadata = {
   title: "Manufacturing Staffing Solutions | Complete Staffing Solutions",
   description:
     "Automotive, aerospace, and equipment sectors. Quality, operational safety, and skilled industrial labor.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/manufacturing",
+  },
+  };
 
 export default function ManufacturingPage() {
   return (

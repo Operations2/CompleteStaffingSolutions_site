@@ -8,7 +8,10 @@ export const metadata = {
   title: "Finance Staffing Solutions | Complete Staffing Solutions",
   description:
     "Experts for banking, investment, and insurance. Integrity, risk management, and financial accuracy.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/finance",
+  },
+  };
 
 export default function FinancePage() {
   return (

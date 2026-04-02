@@ -8,7 +8,10 @@ export const metadata = {
   title: "Retail Staffing Solutions | Complete Staffing Solutions",
   description:
     "Fashion, tech, and specialty stores. Product knowledge, adaptability, and sales growth.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/retail",
+  },
+  };
 
 export default function RetailPage() {
   return (

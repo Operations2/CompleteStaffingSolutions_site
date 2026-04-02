@@ -8,7 +8,10 @@ export const metadata = {
   title: "Entertainment Staffing Solutions | Complete Staffing Solutions",
   description:
     "Staffing for film, music, gaming, and theater. Creative vision alignment, fast-paced adaptability, and talent management.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/entertainment",
+  },
+  };
 
 export default function EntertainmentPage() {
   return (

@@ -8,7 +8,10 @@ export const metadata = {
   title: "Software & IT Services Staffing Solutions | Complete Staffing Solutions",
   description:
     "Cloud, software engineering, and data analysis talent. Problem-solving skills, technical expertise, and collaborative development.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/it",
+  },
+  };
 
 export default function ITPage() {
   return (

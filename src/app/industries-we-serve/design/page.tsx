@@ -8,7 +8,10 @@ export const metadata = {
   title: "Design Staffing Solutions | Complete Staffing Solutions",
   description:
     "Creative design talent with technical mastery and collaborative mindsets. Portfolio-verified designers.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/design",
+  },
+  };
 
 export default function DesignPage() {
   return (

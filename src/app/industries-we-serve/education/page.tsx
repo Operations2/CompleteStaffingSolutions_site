@@ -8,7 +8,10 @@ export const metadata = {
   title: "Education Staffing Solutions | Complete Staffing Solutions",
   description:
     "Tailored recruitment for K-12, higher ed, and nonprofits. Instructional excellence, diversity, and administrative expertise.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/education",
+  },
+  };
 
 export default function EducationPage() {
   return (

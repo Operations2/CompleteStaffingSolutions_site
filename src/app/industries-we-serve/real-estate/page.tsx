@@ -8,7 +8,10 @@ export const metadata = {
   title: "Real Estate Staffing Solutions | Complete Staffing Solutions",
   description:
     "Expert real estate staffing for residential and commercial firms—sales, leasing, and property management talent.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/real-estate",
+  },
+  };
 
 export default function RealEstatePage() {
   return (

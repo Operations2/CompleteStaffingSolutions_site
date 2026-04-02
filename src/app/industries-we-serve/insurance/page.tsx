@@ -8,7 +8,10 @@ export const metadata = {
   title: "Insurance Staffing Solutions | Complete Staffing Solutions",
   description:
     "Underwriters, claims specialists, and risk consultants. Risk management, claims adjusters, and licensed insurance professionals.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/insurance",
+  },
+  };
 
 export default function InsurancePage() {
   return (

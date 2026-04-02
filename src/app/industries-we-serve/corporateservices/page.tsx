@@ -8,7 +8,10 @@ export const metadata = {
   title: "Corporate Services Staffing Solutions | Complete Staffing Solutions",
   description:
     "HR, Finance, and leadership talent for your organization. Professionalism, comprehensive support, and organizational fit.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/corporateservices",
+  },
+  };
 
 export default function CorporateServicesPage() {
   return (

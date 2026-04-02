@@ -8,7 +8,10 @@ export const metadata = {
   title: "Travel Staffing Solutions | Complete Staffing Solutions",
   description:
     "Hotels, resorts, and tour operators. Customer service excellence, safety, and passion for travel.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/travel",
+  },
+  };
 
 export default function TravelPage() {
   return (

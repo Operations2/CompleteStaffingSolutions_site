@@ -8,7 +8,10 @@ export const metadata = {
   title: "Public Administration Staffing Solutions | Complete Staffing Solutions",
   description:
     "Government agencies and public utilities. Accountable talent, public service mission, and leadership.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/public",
+  },
+  };
 
 export default function PublicPage() {
   return (

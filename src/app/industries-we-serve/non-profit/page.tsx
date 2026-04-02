@@ -8,7 +8,10 @@ export const metadata = {
   title: "Non-profit Staffing Solutions | Complete Staffing Solutions",
   description:
     "Social services, education, and conservation groups. Mission alignment, community engagement, and transparent operations.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/non-profit",
+  },
+  };
 
 export default function NonProfitPage() {
   return (

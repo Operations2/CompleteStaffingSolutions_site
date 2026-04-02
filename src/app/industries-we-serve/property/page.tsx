@@ -8,7 +8,10 @@ export const metadata = {
   title: "Property Management Staffing Solutions | Complete Staffing Solutions",
   description:
     "Strategic staffing for property oversight and tenant satisfaction. Tenant focus, strategic plans, and regulatory compliance.",
-};
+  alternates: {
+    canonical: "/industries-we-serve/property",
+  },
+  };
 
 export default function PropertyPage() {
   return (
