@@ -19,6 +19,16 @@ export const blogPosts: BlogPost[] = [
       // 👈 paste SAME content array you already created
     ],
   },
-
+  {
+  title: "How to Hire a Travel Nurse in Connecticut (2026 Guide)",
+  slug: "hire-travel-nurse-connecticut",
+  description:
+    "Everything employers need to know about sourcing, screening, and hiring travel nurses in Connecticut.",
+  date: "2026-03-28",
+  category: "Healthcare",
+  content: [
+    // paste existing content array
+  ],
+},
   // 👇 move ALL your other posts here exactly as-is
 ];
