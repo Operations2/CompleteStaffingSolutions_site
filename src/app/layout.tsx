@@ -5,12 +5,12 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Staffing Agency | Healthcare, Finance & Engineering Recruiting | Complete Staffing Solutions",
+      "Staffing Agency | Healthcare, Finance & Engineering Jobs",
     template: "%s | Complete Staffing Solutions",
   },
 
   description:
-    "Complete Staffing Solutions - Recruitment and staffing services",
+    "National staffing agency specializing in healthcare, finance, and engineering recruitment. Fast placements, local expertise, and proven hiring results.",
 
   alternates: {
     canonical: "/",
