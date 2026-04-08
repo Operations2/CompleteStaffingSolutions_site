@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { US_AREA_CODES } from "../../constants/usAreaCodes";
 
 const PLACEHOLDER_IMAGE = "/for%20employer/pic.jpg";
-const UPLOAD_ICON = "/for%20employer/material-symbols-light_upload-file-outline.svg";
 const US_AREA_CODE_SET = new Set(US_AREA_CODES);
 const US_STATES = [
   "Alabama",
@@ -61,31 +60,11 @@ const US_STATES = [
 ];
 
 export default function ForEmployerForm() {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [fileName, setFileName] = useState<string>("No file chosen");
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [phoneValue, setPhoneValue] = useState("");
   const [phoneAreaCodeError, setPhoneAreaCodeError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const fileToBase64 = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const result = reader.result;
-        if (typeof result === "string") {
-          const base64 = result.split(",")[1] ?? "";
-          resolve(base64);
-        } else {
-          reject(new Error("Failed to read file"));
-        }
-      };
-      reader.onerror = () => reject(reader.error ?? new Error("File read error"));
-      reader.readAsDataURL(file);
-    });
-  };
 
   const formatPhoneNumber = (value: string): string => {
     const digits = value.replace(/\D/g, "").slice(0, 10);
@@ -156,21 +135,20 @@ export default function ForEmployerForm() {
 
       const jobTitle = (formData.get("jobTitle") as string | null) ?? "";
       const jobId = (formData.get("jobId") as string | null) ?? "";
+      const companyName = (formData.get("companyName") as string | null) ?? "";
+      const contactTitle = (formData.get("title") as string | null) ?? "";
 
       const street = (formData.get("street") as string | null) ?? "";
       const city = (formData.get("city") as string | null) ?? "";
       const state = (formData.get("state") as string | null) ?? "";
       const zipCode = ((formData.get("zipCode") as string | null) ?? "").trim();
 
-      const salary = (formData.get("salary") as string | null) ?? "";
+      const linkedInUrl = (formData.get("linkedInUrl") as string | null) ?? "";
 
       const hearAbout =
         (formData.get("hearAbout") as string | null) ?? "";
 
-      const employmentTypes = formData
-        .getAll("employmentTypes")
-        .map((value) => String(value))
-        .filter((value) => value.trim().length > 0);
+      const comments = (formData.get("comments") as string | null) ?? "";
 
       if (!email || !firstName || !lastName || !phone) {
         setSubmitError("Please fill in all required fields.");
@@ -198,38 +176,25 @@ export default function ForEmployerForm() {
         return;
       }
 
-      let resume: {
-        fileName?: string;
-        mimeType?: string;
-        content?: string;
-      } | null = null;
-
-      if (selectedFile) {
-        const base64Content = await fileToBase64(selectedFile);
-        resume = {
-          fileName: selectedFile.name,
-          mimeType: selectedFile.type || "application/octet-stream",
-          content: base64Content,
-        };
-      }
-
       const payload = {
-        jobTitle: jobTitle || "Job Request",
-        jobId: jobId || undefined,
         email,
-        fullName: `${firstName} ${lastName}`.trim(),
+        firstName,
+        lastName,
+        jobTitle: jobTitle || undefined,
+        companyName: companyName || undefined,
+        contactTitle: contactTitle || undefined,
+        jobId: jobId || undefined,
         phone,
         street: street || undefined,
         city: city || undefined,
         state: state || undefined,
         zip: zipCode || undefined,
-        salary: salary || undefined,
+        linkedInUrl: linkedInUrl || undefined,
         hearAbout: hearAbout || undefined,
-        employmentTypes: employmentTypes.length > 0 ? employmentTypes : undefined,
-        resume,
+        comments: comments.trim() || undefined,
       };
 
-      const res = await fetch("/api/job-application", {
+      const res = await fetch("/api/lead-forward", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -246,8 +211,6 @@ export default function ForEmployerForm() {
       formElement.reset();
       setPhoneValue("");
       setPhoneAreaCodeError(null);
-      setSelectedFile(null);
-      setFileName("No file chosen");
     } catch (error) {
       console.error("Error submitting job request form:", error);
       setSubmitError(
@@ -395,6 +358,21 @@ export default function ForEmployerForm() {
                 className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
               />
             </div>
+            <div className="flex w-full flex-col gap-2">
+              <label
+                htmlFor="linkedInUrl"
+                className="text-[16px] font-normal text-[#e8e8e8] md:text-[18px]"
+              >
+                LinkedIn URL
+              </label>
+              <input
+                id="linkedInUrl"
+                type="url"
+                name="linkedInUrl"
+                className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
+                placeholder="https://www.linkedin.com/in/..."
+              />
+            </div>
           </div>
 
           <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-5 lg:gap-7">
@@ -476,45 +454,28 @@ export default function ForEmployerForm() {
             </div>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 md:gap-5 lg:gap-7">
-            <div className="flex w-full flex-col gap-2">
-              <label
-                htmlFor="phone"
-                className="text-[16px] font-normal text-[#e8e8e8] md:text-[18px]"
-              >
-                Phone Number
-              </label>
-              <input
-                id="phone"
-                type="tel"
-                name="phone"
-                value={phoneValue}
-                className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
-                placeholder="(xxx) xxx-xxxx"
-                pattern="\(\d{3}\) \d{3}-\d{4}"
-                maxLength={14}
-                required
-                onChange={handlePhoneInputChange}
-              />
-              {phoneAreaCodeError && (
-                <p className="text-sm text-red-200">{phoneAreaCodeError}</p>
-              )}
-            </div>
-            <div className="flex w-full flex-col gap-2">
-              <label
-                htmlFor="salary"
-                className="text-[16px] font-normal text-[#e8e8e8] md:text-[18px]"
-              >
-                Desired Salary Range
-              </label>
-              <input
-                id="salary"
-                type="text"
-                name="salary"
-                className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
-                placeholder="e.g. $60k - $80k"
-              />
-            </div>
+          <div className="flex w-full flex-col gap-2">
+            <label
+              htmlFor="phone"
+              className="text-[16px] font-normal text-[#e8e8e8] md:text-[18px]"
+            >
+              Phone Number
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              value={phoneValue}
+              className="h-11 w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-12"
+              placeholder="(xxx) xxx-xxxx"
+              pattern="\(\d{3}\) \d{3}-\d{4}"
+              maxLength={14}
+              required
+              onChange={handlePhoneInputChange}
+            />
+            {phoneAreaCodeError && (
+              <p className="text-sm text-red-200">{phoneAreaCodeError}</p>
+            )}
           </div>
 
           <div className="flex w-full flex-col gap-2">
@@ -539,50 +500,6 @@ export default function ForEmployerForm() {
           </div>
 
           <div className="flex w-full flex-col gap-2">
-            <span className="text-[16px] font-normal text-[#e8e8e8] md:text-[18px]">
-              Type of Employment Desired
-            </span>
-            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              <label className="flex items-center gap-2 text-[15px] text-[#e8e8e8]">
-                <input
-                  type="checkbox"
-                  name="employmentTypes"
-                  value="Full-time"
-                  className="h-4 w-4"
-                />
-                <span>Full-time</span>
-              </label>
-              <label className="flex items-center gap-2 text-[15px] text-[#e8e8e8]">
-                <input
-                  type="checkbox"
-                  name="employmentTypes"
-                  value="Part-time"
-                  className="h-4 w-4"
-                />
-                <span>Part-time</span>
-              </label>
-              <label className="flex items-center gap-2 text-[15px] text-[#e8e8e8]">
-                <input
-                  type="checkbox"
-                  name="employmentTypes"
-                  value="Contract"
-                  className="h-4 w-4"
-                />
-                <span>Contract</span>
-              </label>
-              <label className="flex items-center gap-2 text-[15px] text-[#e8e8e8]">
-                <input
-                  type="checkbox"
-                  name="employmentTypes"
-                  value="Temporary"
-                  className="h-4 w-4"
-                />
-                <span>Temporary</span>
-              </label>
-            </div>
-          </div>
-
-          <div className="flex w-full flex-col gap-2">
             <label
               htmlFor="comments"
               className="text-[16px] font-normal text-[#e8e8e8] md:text-[18px]"
@@ -595,56 +512,6 @@ export default function ForEmployerForm() {
               className="min-h-[100px] w-full rounded border border-[#e8e8e8] bg-transparent px-3.5 py-3 text-[16px] text-white outline-none placeholder:text-[#e8e8e880] md:h-[123px]"
               placeholder="Message"
             />
-          </div>
-
-          <div className="flex w-full flex-col gap-3">
-            <span className="text-[20px] font-bold text-white">
-              Job Description
-            </span>
-            <span className="text-[18px] text-[#e8e8e8]">
-              Please upload a .docx or .pdf file with your job description.
-            </span>
-            <div className="flex flex-wrap items-center gap-5 md:flex-row md:items-center">
-              <input
-                ref={fileInputRef}
-                type="file"
-                id="jobDescription"
-                name="jobDescription"
-                accept=".doc,.docx,.pdf"
-                className="sr-only"
-                aria-label="Upload job description file"
-                onChange={(e) => {
-                  const file = e.target.files?.[0] ?? null;
-                  setSelectedFile(file);
-                  setFileName(file?.name ?? "No file chosen");
-                }}
-              />
-              <button
-                type="button"
-                className="flex h-22 w-[136px] shrink-0 items-center justify-center rounded-[10px] border border-[#e8e8e8] bg-transparent transition-colors hover:bg-white/10"
-                onClick={() => fileInputRef.current?.click()}
-                aria-label="Choose file"
-              >
-                <Image
-                  src={UPLOAD_ICON}
-                  alt=""
-                  width={50}
-                  height={50}
-                  className="h-[50px] w-[50px] object-contain text-[#e8e8e8]"
-                />
-              </button>
-              <div>
-                <span
-                  className="text-[18px] text-[#e8e8e8]"
-                  aria-live="polite"
-                >
-                  {fileName}
-                </span>
-                <div className="w-full text-[18px] text-[#e8e8e8]">
-                  Max. file size: 128 MB.
-                </div>
-              </div>
-            </div>
           </div>
 
           <button

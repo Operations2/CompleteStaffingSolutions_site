@@ -72,8 +72,8 @@ export async function POST(req: NextRequest) {
     ];
 
     const html = `
-      <h2>New Job Application</h2>
-      <p>A new job-specific application has been submitted via the website.</p>
+      <h2>New Job Application (Candidate)</h2>
+      <p>A candidate submitted an application for an open position on the website.</p>
       <table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">
         <tr><td><strong>Job Title</strong></td><td>${jobTitle || "-"}</td></tr>
         <tr><td><strong>Job ID / Reference</strong></td><td>${jobId || "-"}</td></tr>
@@ -123,10 +123,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
-
-
-
-
-
-

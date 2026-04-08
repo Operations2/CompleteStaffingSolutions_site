@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useRef, useState } from "react";
 import { US_AREA_CODES } from "../../constants/usAreaCodes";
