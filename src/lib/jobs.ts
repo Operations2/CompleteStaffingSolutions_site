@@ -91,7 +91,6 @@ function pickText(value: unknown): string {
   if (typeof value === "object") {
     const obj = value as Record<string, unknown>;
 
-    // Prefer CDATA content when present, as used in the jobs.xml feed.
     const cdata = obj["__cdata"];
     if (typeof cdata === "string") return cdata.trim();
 
@@ -108,6 +107,33 @@ function getField(obj: Record<string, unknown>, ...keys: string[]) {
     if (text) return text;
   }
   return "";
+}
+
+function hasWholeWord(value: string, word: string) {
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`\\b${escaped}\\b`, "i").test(value);
+}
+
+function isInformationTechnologyDepartment(departmentRaw: string) {
+  const department = (departmentRaw || "").toLowerCase();
+
+  return (
+    hasWholeWord(department, "it") ||
+    department.includes("information technology") ||
+    department.includes("technology") ||
+    department.includes("software")
+  );
+}
+
+function isManufacturingDepartment(departmentRaw: string) {
+  const department = (departmentRaw || "").toLowerCase();
+
+  return (
+    department.includes("manufactur") ||
+    department.includes("operations") ||
+    department.includes("production") ||
+    department.includes("facility services")
+  );
 }
 
 export function parseJobsFromXmlServer(xmlText: string): Job[] {
@@ -128,7 +154,6 @@ export function parseJobsFromXmlServer(xmlText: string): Job[] {
 
   const root = parsed as Record<string, unknown>;
 
-  // Temporary debugging to inspect feed structure on the server.
   try {
     console.log("[parseJobsFromXmlServer] Root keys:", Object.keys(root));
     const sourceNode = root["source"] as any;
@@ -152,7 +177,6 @@ export function parseJobsFromXmlServer(xmlText: string): Job[] {
     // Ignore logging failures so parsing still proceeds.
   }
 
-  // Try common root shapes in order, without short-circuiting on empty arrays.
   let jobNodes: any[] = [];
 
   jobNodes = toArray((root["jobs"] as any)?.["job"]);
@@ -227,19 +251,10 @@ export function matchesCategoryLabel(
     return department.includes("finance") || department.includes("account");
   }
   if (categoryLabel === "information technology") {
-    return (
-      department.includes("it") ||
-      department.includes("information technology") ||
-      department.includes("technology") ||
-      department.includes("software")
-    );
+    return isInformationTechnologyDepartment(department);
   }
   if (categoryLabel === "manufacturing") {
-    return (
-      department.includes("manufactur") ||
-      department.includes("operations") ||
-      department.includes("production")
-    );
+    return isManufacturingDepartment(department);
   }
   if (categoryLabel === "customer service") {
     return (
@@ -313,17 +328,8 @@ export function computeCategoryCounts(jobs: Job[]) {
 
     if (dept.includes("health")) counts.healthcare += 1;
     if (dept.includes("finance") || dept.includes("account")) counts.financeAccounting += 1;
-    if (
-      dept.includes("it") ||
-      dept.includes("information technology") ||
-      dept.includes("technology") ||
-      dept.includes("software")
-    ) {
-      counts.informationTechnology += 1;
-    }
-    if (dept.includes("manufactur") || dept.includes("operations") || dept.includes("production")) {
-      counts.manufacturing += 1;
-    }
+    if (isInformationTechnologyDepartment(dept)) counts.informationTechnology += 1;
+    if (isManufacturingDepartment(dept)) counts.manufacturing += 1;
     if (
       dept.includes("customer service") ||
       dept.includes("customer support") ||
@@ -338,4 +344,3 @@ export function computeCategoryCounts(jobs: Job[]) {
 
   return counts;
 }
-
