@@ -7,7 +7,7 @@ import IndustryRoles from "./IndustryRoles";
 export const metadata = {
   title: "Finance Staffing Solutions | Complete Staffing Solutions",
   description:
-    "Experts for banking, investment, and insurance. Integrity, risk management, and financial accuracy.",
+    "Finance and accounting staffing in all 50 states. Controllers, CFOs, and Staff Accountants placed in 5–10 days by experienced recruiters.",
   alternates: {
     canonical: "/industries-we-serve/finance",
   },

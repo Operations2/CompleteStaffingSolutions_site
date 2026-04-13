@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Script from 'next/script'
 import './home.css'
+import Image from "next/image";
 
 /* ── PAGE METADATA ───────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -161,9 +162,11 @@ export default function HomePage() {
             <div className="hero-heading-lockup">
               <h1 className="hero-h1">
                 <span className="hero-topline">
-                  <img
+                  <Image
                     src="/logo.svg"
                     alt="Complete Staffing Solutions"
+                    width={180}
+                    height={40}
                     className="hero-logo-inline"
                   />
                   <span>The right hire.</span>

@@ -7,7 +7,7 @@ import IndustryRoles from "./IndustryRoles";
 export const metadata = {
   title: "Healthcare Staffing Solutions",
   description:
-    "Healthcare staffing services for hospitals, clinics, and medical facilities hiring nurses, allied health, and clinical support staff.",
+    "Healthcare staffing agency serving CT, RI, MA, and FL. We place nurses, allied health, and clinical staff quickly with local recruiting expertise.",
 
   alternates: {
     canonical:
