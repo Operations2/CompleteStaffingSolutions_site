@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-25",
     category: "Finance",
     content: [
-      "Boston [Staffing Industry CT](/boston-ma) remains one of the tightest finance hiring markets in the country. That’s been true for years, but the pressure on Controller compensation specifically has increased — driven partly by attrition at the senior accountant level that’s pushing experienced people into controller roles faster than the market can absorb them.",
+      "Boston [Boston, MA](/city/boston-ma) remains one of the tightest finance hiring markets in the country. That’s been true for years, but the pressure on Controller compensation specifically has increased — driven partly by attrition at the senior accountant level that’s pushing experienced people into controller roles faster than the market can absorb them.",
       "If you're trying to hire a Controller in 2026 and your salary expectations are based on what you paid three years ago, you're going to lose candidates. Here’s what the current market actually looks like.",
       "## Controller Salary Ranges in Boston: 2026",
       "Compensation depends heavily on company size, industry, and scope of the role. Here’s a realistic breakdown for the Greater Boston area:",
