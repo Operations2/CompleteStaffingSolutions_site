@@ -138,7 +138,7 @@ export const blogPosts: BlogPost[] = [
       "• Realistic interview timelines. Boston finance candidates are usually in multiple conversations at once. A four-round interview process spread over six weeks will cost you your first choice almost every time.",
       "• Hybrid flexibility. Three days in the office is generally the floor that candidates will accept for a senior finance role in Boston right now.",
       "## How to Structure a Competitive Offer",
-      "If you’re targeting an experienced controller [Industries - Financial Services](industries-we-serve/financial-services) — five to ten years, CPA preferred, team management background — here’s what a competitive offer looks like in Boston in 2026:",
+      "If you’re targeting an experienced controller [Industries - Financial Services](/industries-we-serve/financial-services) — five to ten years, CPA preferred, team management background — here’s what a competitive offer looks like in Boston in 2026:",
       "• Base salary: $135,000–$155,000 for mid-market",
       "• Annual bonus: 10–15% target, performance-based",
       "• Hybrid schedule: 2–3 days in office",
