@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-28",
     category: "Healthcare",
     content: [
-      "Connecticut[Staffing Industry CT](/hartford-ct)hospitals and outpatient practices have been running lean for a while now. The nurse shortage isn’t new — but the competition for qualified travel nurses has gotten sharper, especially in the Hartford corridor and coastal communities where census swings are hard to predict.",
+      "Connecticut [Staffing Industry CT](/staffing-agency/hartford-ct) hospitals and outpatient practices have been running lean for a while now. The nurse shortage isn’t new — but the competition for qualified travel nurses has gotten sharper, especially in the Hartford corridor and coastal communities where census swings are hard to predict.",
       "If you've tried to fill a travel nurse position in the past year, you already know that posting a job and waiting doesn’t work. The facilities that move fast and present clear offers win. The ones with slow internal approval processes lose candidates to someone else.",
       "## What “Travel Nurse” Means",
       "A travel nurse is a licensed registered nurse (or LPN, in some settings) who takes short-term assignments — typically 13 weeks — at facilities that need temporary clinical coverage. They are experienced professionals who have deliberately chosen contract work for flexibility and higher earning potential.",
