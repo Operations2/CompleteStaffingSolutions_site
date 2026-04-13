@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-28",
     category: "Healthcare",
     content: [
-      "Connecticut hospitals and outpatient practices have been running lean for a while now. The nurse shortage isn’t new — but the competition for qualified travel nurses has gotten sharper, especially in the Hartford corridor and coastal communities where census swings are hard to predict.",
+      "Connecticut[Staffing Industry CT](/hartford-ct)hospitals and outpatient practices have been running lean for a while now. The nurse shortage isn’t new — but the competition for qualified travel nurses has gotten sharper, especially in the Hartford corridor and coastal communities where census swings are hard to predict.",
       "If you've tried to fill a travel nurse position in the past year, you already know that posting a job and waiting doesn’t work. The facilities that move fast and present clear offers win. The ones with slow internal approval processes lose candidates to someone else.",
       "## What “Travel Nurse” Means",
       "A travel nurse is a licensed registered nurse (or LPN, in some settings) who takes short-term assignments — typically 13 weeks — at facilities that need temporary clinical coverage. They are experienced professionals who have deliberately chosen contract work for flexibility and higher earning potential.",
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
       "## When Assignments Go Sideways",
       "Occasionally, an assignment does not work out. Strong agencies communicate early, resolve issues professionally, and ensure coverage continuity instead of leaving gaps in patient care.",
       "## The Bottom Line",
-      "The bottom line is simple: hire fast, verify licensure early, be specific in your job order, and work with agencies that pre-vet candidates. Those four factors consistently separate organizations that fill roles in two weeks from those still searching after six.",
+      "The bottom line is simple: hire fast, verify licensure early, be specific in your job order, and work with agencies [Contact our team](/contact) that pre-vet candidates. Those four factors consistently separate organizations that fill roles in two weeks from those still searching after six.",
       "CTA: Complete Staffing Solutions places travel nurses across Connecticut — Hartford, New Haven, Fairfield County, and beyond.|https://www.completestaffingsolutions.com/job-request|Place a job request →",
     ],
   },
