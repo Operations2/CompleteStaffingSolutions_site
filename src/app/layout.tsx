@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
+
+import Script from "next/script";
+import { Inter, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.completestaffingsolutions.com"),
@@ -41,11 +48,6 @@ export const metadata: Metadata = {
   },
 };
 
-import Script from "next/script";
-import { Inter, DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -212,7 +214,7 @@ const structuredData = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html
