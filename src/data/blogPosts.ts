@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
 
   "Complete Staffing Solutions is a New England-based healthcare staffing agency with physical offices in Lincoln, RI, Glastonbury, CT, Shelton, CT, Boston, MA, Burlington, MA, and Marlborough, MA. Our healthcare recruiters work the New England market every day. We understand local licensure timelines, regional compensation benchmarks, and the specific clinical environments our candidates are stepping into.",
 
-  "For small hospitals that need a partner [Contact our team](/contact)— not just a vendor — regional expertise makes a meaningful difference.",
+  "For small hospitals that need a partner [Contact our team](/contact) — not just a vendor — regional expertise makes a meaningful difference.",
 
   "## Building a Long-Term Healthcare Workforce Strategy",
 
@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-25",
     category: "Finance",
     content: [
-      "Boston [Boston, MA](/staffing-agency/boston-ma) remains one of the tightest finance hiring markets in the country. That’s been true for years, but the pressure on Controller compensation specifically has increased — driven partly by attrition at the senior accountant level that’s pushing experienced people into controller roles faster than the market can absorb them.",
+      "[Boston, MA](/staffing-agency/boston-ma) remains one of the tightest finance hiring markets in the country. That’s been true for years, but the pressure on Controller compensation specifically has increased — driven partly by attrition at the senior accountant level that’s pushing experienced people into controller roles faster than the market can absorb them.",
       "If you're trying to hire a Controller in 2026 and your salary expectations are based on what you paid three years ago, you're going to lose candidates. Here’s what the current market actually looks like.",
       "## Controller Salary Ranges in Boston: 2026",
       "Compensation depends heavily on company size, industry, and scope of the role. Here’s a realistic breakdown for the Greater Boston area:",
@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-20",
     category: "Hiring Strategy",
     content: [
-      "Hartford has a specific hiring market. Insurance and financial services dominate downtown and the Bloomfield-Windsor corridor. Healthcare is a constant — Hartford HealthCare, Trinity Health, and the broader hospital network generate consistent demand for clinical and administrative staff. Manufacturing and aerospace have a footprint in the broader central Connecticut area. Engineering firms run from Glastonbury to East Hartford.",
+      "[Hartford, CT](/staffing-agency/hartford-ct) has a specific hiring market. Insurance and financial services dominate downtown and the Bloomfield-Windsor corridor. Healthcare is a constant — Hartford HealthCare, Trinity Health, and the broader hospital network generate consistent demand for clinical and administrative staff. Manufacturing and aerospace have a footprint in the broader central Connecticut area. Engineering firms run from Glastonbury to East Hartford.",
       "If you’re an employer in one of those sectors, you’ve probably worked with a staffing agency at some point — or you’re evaluating one now. This is a rundown of how to separate the firms that will actually help you from the ones that send resumes and invoice you regardless of outcome.",
       "## The Biggest Mistake Employers Make When Choosing a Staffing Agency",
       "Signing with a generalist firm that claims to cover every discipline. A firm that tells you they place nurses on Monday and truck drivers on Tuesday and software engineers on Wednesday probably doesn’t have deep relationships in any of those markets. They’re sourcing from the same public job boards you could access yourself.",
@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
       "Direct hire is the right call for roles where you know exactly what you need, the position is permanent, and you’re comfortable making a hiring decision based on interviews. Finance roles, senior administrative positions, engineering leadership — these are typically direct hire.",
       "Temp-to-hire works well when there’s volume uncertainty, or when you want to evaluate someone before committing to a permanent offer. Many Hartford employers use temp-to-hire for accounting support, administrative and office roles, and light industrial positions where fit and reliability matter as much as skills on paper.",
       "The advantage of temp-to-hire isn’t just risk reduction — it also shortens your hiring cycle. You can bring someone on quickly without a lengthy internal approval process and convert them if they perform.",
-      "## Working with Complete Staffing Solutions in Hartford",
+      "## Working with Complete Staffing Solutions in Hartford [Contact our team](/contact)",
       "Our Glastonbury office has been placing professionals in the Hartford market for years — in finance, accounting, healthcare, administrative, and engineering roles. Our recruiters specialize, which means when you give us a Controller search in Hartford, the person working that role has placed Controllers in Hartford before.",
       "We offer direct hire, temp-to-hire, contract, and retained search placements. For confidential or senior searches, our retained practice provides dedicated, exclusive recruiting with a guaranteed shortlist.",
       "CTA: Contact our Glastonbury team.|https://www.completestaffingsolutions.com/contact|Contact our Glastonbury team →",

@@ -7,7 +7,7 @@ import './home.css'
 export const metadata: Metadata = {
   title: 'Staffing Agency — Healthcare, Finance & Engineering | Nationwide | Complete Staffing Solutions',
   description:
-    'Complete Staffing Solutions is a nationwide staffing agency headquartered in New England with offices across CT, RI, MA, NY, and FL. 25+ years placing Healthcare, Finance, Engineering, and Administrative professionals across all 50 states. Direct hire, temp-to-hire, contract, and retained search.',
+    'National staffing agency placing healthcare, finance, and engineering professionals. Fast direct hire and contract placements. 25+ years experience.',
   alternates: { canonical: 'https://www.completestaffingsolutions.com/' },
   openGraph: {
     title: 'Nationwide Staffing Agency — Healthcare, Finance & Engineering | Complete Staffing Solutions',
