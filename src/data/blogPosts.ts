@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     content: [
   "Travel nursing and contract healthcare staffing give small hospitals a practical, cost-effective way to maintain continuity of care without overextending their permanent teams.",
 
-  "A qualified travel RN, LPN, CNA, or allied health professional placed by a regional staffing agency can be integrated quickly, credentialed efficiently, and deployed directly into your unit. For a small hospital managing a 13-week maternity leave or bridging a gap during a permanent search, a single well-matched placement can be the difference between keeping a unit open and shutting it down temporarily.",
+  "A qualified travel RN, LPN, CNA, or allied health professional placed by a regional staffing agency [Explore healthcare staffing](/industries-we-serve/healthcare) can be integrated quickly, credentialed efficiently, and deployed directly into your unit. For a small hospital managing a 13-week maternity leave or bridging a gap during a permanent search, a single well-matched placement can be the difference between keeping a unit open and shutting it down temporarily.",
 
   "Beyond immediate coverage, travel staff from other facilities bring clinical experience and fresh perspective that smaller teams can genuinely benefit from. A travel nurse who has worked in Boston, Providence, and Hartford brings practice patterns and exposure to patient populations that enrich the permanent team rather than simply supplementing it.",
 
@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
 
   "Complete Staffing Solutions is a New England-based healthcare staffing agency with physical offices in Lincoln, RI, Glastonbury, CT, Shelton, CT, Boston, MA, Burlington, MA, and Marlborough, MA. Our healthcare recruiters work the New England market every day. We understand local licensure timelines, regional compensation benchmarks, and the specific clinical environments our candidates are stepping into.",
 
-  "For small hospitals that need a partner — not just a vendor — regional expertise makes a meaningful difference.",
+  "For small hospitals that need a partner [Contact our team](/contact)— not just a vendor — regional expertise makes a meaningful difference.",
 
   "## Building a Long-Term Healthcare Workforce Strategy",
 

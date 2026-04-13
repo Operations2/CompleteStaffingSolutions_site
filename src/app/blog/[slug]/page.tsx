@@ -59,7 +59,27 @@ function renderContent(content: string[]) {
       continue;
     }
 
-    elements.push(<p key={`p-${i}`}>{block}</p>);
+    elements.push(
+  <p key={`p-${i}`}>
+    {block.split(/(\[.*?\]\(.*?\))/g).map((part, idx) => {
+      const match = part.match(/\[(.*?)\]\((.*?)\)/);
+
+      if (match) {
+        return (
+          <Link
+            key={idx}
+            href={match[2]}
+            className="text-blue-600 underline font-medium hover:text-blue-800"
+          >
+            {match[1]}
+          </Link>
+        );
+      }
+
+      return part;
+    })}
+  </p>
+);
     i++;
   }
 
